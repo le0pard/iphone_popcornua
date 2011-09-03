@@ -14,10 +14,12 @@
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
+@synthesize rootController = _rootController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [self.window addSubview:self.rootController.view];
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -60,6 +62,7 @@
 
 - (void)dealloc
 {
+    [_rootController release];
     [_window release];
     [__managedObjectContext release];
     [__managedObjectModel release];
