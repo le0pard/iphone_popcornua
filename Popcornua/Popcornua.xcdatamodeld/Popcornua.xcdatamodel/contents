@@ -1,4 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="562" systemVersion="11B26" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Afisha">
+        <attribute name="data_begin" optional="YES" attributeType="Date"/>
+        <attribute name="data_end" optional="YES" attributeType="Date"/>
+        <attribute name="prices" optional="YES" attributeType="String"/>
+        <attribute name="times" optional="YES" attributeType="String"/>
+        <attribute name="zal_title" optional="YES" attributeType="String"/>
+        <relationship name="cinema" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Cinema" inverseName="afishas" inverseEntity="Cinema"/>
+        <relationship name="movie" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Movie" inverseName="afishas" inverseEntity="Movie"/>
+    </entity>
+    <entity name="Cinema">
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="call_phone" optional="YES" attributeType="String"/>
+        <attribute name="latitude" optional="YES" attributeType="String"/>
+        <attribute name="link" optional="YES" attributeType="String"/>
+        <attribute name="longitude" optional="YES" attributeType="String"/>
+        <attribute name="phone" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="afishas" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Afisha" inverseName="cinema" inverseEntity="Afisha"/>
+    </entity>
+    <entity name="Movie">
+        <attribute name="cached_poster" optional="YES" attributeType="Binary"/>
+        <attribute name="casts" optional="YES" attributeType="String"/>
+        <attribute name="descr" optional="YES" attributeType="String"/>
+        <attribute name="orig_title" optional="YES" attributeType="String"/>
+        <attribute name="poster" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="year" optional="YES" attributeType="String"/>
+        <relationship name="afishas" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Afisha" inverseName="movie" inverseEntity="Afisha"/>
+    </entity>
+    <elements>
+        <element name="Cinema" positionX="160" positionY="192" width="128" height="165"/>
+        <element name="Movie" positionX="-164" positionY="237" width="128" height="165"/>
+        <element name="Afisha" positionX="9" positionY="411" width="128" height="150"/>
+    </elements>
 </model>

@@ -18,7 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [[self.rootController.viewControllers objectAtIndex:0] setTitle:NSLocalizedString(@"Cinemas", @"")];
+    [[self.rootController.viewControllers objectAtIndex:1] setTitle:NSLocalizedString(@"Movies", @"")];
     [self.window addSubview:self.rootController.view];
     [self.window makeKeyAndVisible];
     return YES;

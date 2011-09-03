@@ -11,10 +11,7 @@
 		B39135471412A75A0053C84B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39135461412A75A0053C84B /* Foundation.framework */; };
 		B39135491412A75A0053C84B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39135481412A75A0053C84B /* CoreGraphics.framework */; };
 		B391354B1412A75A0053C84B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B391354A1412A75A0053C84B /* CoreData.framework */; };
-		B39135511412A75A0053C84B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B391354F1412A75A0053C84B /* InfoPlist.strings */; };
 		B39135531412A75A0053C84B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B39135521412A75A0053C84B /* main.m */; };
-		B39135571412A75A0053C84B /* PopcornuaAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B39135561412A75A0053C84B /* PopcornuaAppDelegate.m */; };
-		B391355A1412A75B0053C84B /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B39135581412A75B0053C84B /* MainWindow.xib */; };
 		B391355D1412A75B0053C84B /* Popcornua.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B391355B1412A75B0053C84B /* Popcornua.xcdatamodeld */; };
 		B39135651412A75B0053C84B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39135641412A75B0053C84B /* SenTestingKit.framework */; };
 		B39135661412A75B0053C84B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39135441412A75A0053C84B /* UIKit.framework */; };
@@ -28,11 +25,16 @@
 		B391358D1412B09A0053C84B /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B39135871412B09A0053C84B /* icon.png */; };
 		B391358E1412B09A0053C84B /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B39135881412B09A0053C84B /* icon@2x.png */; };
 		B391358F1412B09A0053C84B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B391358A1412B09A0053C84B /* Default.png */; };
-		B39135961412B3700053C84B /* CinemasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B39135941412B3700053C84B /* CinemasViewController.m */; };
-		B39135971412B3700053C84B /* CinemasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B39135951412B3700053C84B /* CinemasViewController.xib */; };
-		B391359B1412B38A0053C84B /* MoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B39135991412B38A0053C84B /* MoviesViewController.m */; };
-		B391359C1412B38A0053C84B /* MoviesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B391359A1412B38A0053C84B /* MoviesViewController.xib */; };
 		B391359F1412B3D80053C84B /* book_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B391359E1412B3D80053C84B /* book_icon.png */; };
+		B39135D01412D20B0053C84B /* CinemasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B39135CB1412D20B0053C84B /* CinemasViewController.m */; };
+		B39135D11412D20B0053C84B /* MoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B39135CD1412D20B0053C84B /* MoviesViewController.m */; };
+		B39135D21412D20B0053C84B /* PopcornuaAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B39135CF1412D20B0053C84B /* PopcornuaAppDelegate.m */; };
+		B39135D61412D21A0053C84B /* CinemasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B39135D31412D21A0053C84B /* CinemasViewController.xib */; };
+		B39135D71412D21A0053C84B /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B39135D41412D21A0053C84B /* MainWindow.xib */; };
+		B39135D81412D21A0053C84B /* MoviesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B39135D51412D21A0053C84B /* MoviesViewController.xib */; };
+		B39135E11412D3350053C84B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B391356F1412A75B0053C84B /* InfoPlist.strings */; };
+		B39135E91412D5100053C84B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B39135E71412D5100053C84B /* InfoPlist.strings */; };
+		B39135EC1412D57B0053C84B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B39135EA1412D57B0053C84B /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,9 +57,6 @@
 		B39135501412A75A0053C84B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B39135521412A75A0053C84B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B39135541412A75A0053C84B /* Popcornua-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Popcornua-Prefix.pch"; sourceTree = "<group>"; };
-		B39135551412A75A0053C84B /* PopcornuaAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopcornuaAppDelegate.h; sourceTree = "<group>"; };
-		B39135561412A75A0053C84B /* PopcornuaAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopcornuaAppDelegate.m; sourceTree = "<group>"; };
-		B39135591412A75B0053C84B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		B391355C1412A75B0053C84B /* Popcornua.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Popcornua.xcdatamodel; sourceTree = "<group>"; };
 		B39135631412A75B0053C84B /* PopcornuaTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopcornuaTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B39135641412A75B0053C84B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -70,13 +69,19 @@
 		B39135881412B09A0053C84B /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		B391358A1412B09A0053C84B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		B391358B1412B09A0053C84B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		B39135931412B3700053C84B /* CinemasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinemasViewController.h; sourceTree = "<group>"; };
-		B39135941412B3700053C84B /* CinemasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CinemasViewController.m; sourceTree = "<group>"; };
-		B39135951412B3700053C84B /* CinemasViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CinemasViewController.xib; sourceTree = "<group>"; };
-		B39135981412B38A0053C84B /* MoviesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviesViewController.h; sourceTree = "<group>"; };
-		B39135991412B38A0053C84B /* MoviesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviesViewController.m; sourceTree = "<group>"; };
-		B391359A1412B38A0053C84B /* MoviesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoviesViewController.xib; sourceTree = "<group>"; };
 		B391359E1412B3D80053C84B /* book_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = book_icon.png; sourceTree = "<group>"; };
+		B39135CA1412D20B0053C84B /* CinemasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CinemasViewController.h; path = Classes/CinemasViewController.h; sourceTree = "<group>"; };
+		B39135CB1412D20B0053C84B /* CinemasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CinemasViewController.m; path = Classes/CinemasViewController.m; sourceTree = "<group>"; };
+		B39135CC1412D20B0053C84B /* MoviesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoviesViewController.h; path = Classes/MoviesViewController.h; sourceTree = "<group>"; };
+		B39135CD1412D20B0053C84B /* MoviesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MoviesViewController.m; path = Classes/MoviesViewController.m; sourceTree = "<group>"; };
+		B39135CE1412D20B0053C84B /* PopcornuaAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PopcornuaAppDelegate.h; path = Classes/PopcornuaAppDelegate.h; sourceTree = "<group>"; };
+		B39135CF1412D20B0053C84B /* PopcornuaAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PopcornuaAppDelegate.m; path = Classes/PopcornuaAppDelegate.m; sourceTree = "<group>"; };
+		B39135D31412D21A0053C84B /* CinemasViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CinemasViewController.xib; path = VIews/CinemasViewController.xib; sourceTree = "<group>"; };
+		B39135D41412D21A0053C84B /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainWindow.xib; path = VIews/MainWindow.xib; sourceTree = "<group>"; };
+		B39135D51412D21A0053C84B /* MoviesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MoviesViewController.xib; path = VIews/MoviesViewController.xib; sourceTree = "<group>"; };
+		B39135E81412D5100053C84B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
+		B39135EB1412D57B0053C84B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B39135ED1412D5840053C84B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = Resources/ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,12 +187,12 @@
 		B391357E1412A83D0053C84B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				B39135551412A75A0053C84B /* PopcornuaAppDelegate.h */,
-				B39135561412A75A0053C84B /* PopcornuaAppDelegate.m */,
-				B39135931412B3700053C84B /* CinemasViewController.h */,
-				B39135941412B3700053C84B /* CinemasViewController.m */,
-				B39135981412B38A0053C84B /* MoviesViewController.h */,
-				B39135991412B38A0053C84B /* MoviesViewController.m */,
+				B39135CA1412D20B0053C84B /* CinemasViewController.h */,
+				B39135CB1412D20B0053C84B /* CinemasViewController.m */,
+				B39135CC1412D20B0053C84B /* MoviesViewController.h */,
+				B39135CD1412D20B0053C84B /* MoviesViewController.m */,
+				B39135CE1412D20B0053C84B /* PopcornuaAppDelegate.h */,
+				B39135CF1412D20B0053C84B /* PopcornuaAppDelegate.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -195,9 +200,9 @@
 		B391357F1412A84A0053C84B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B391359A1412B38A0053C84B /* MoviesViewController.xib */,
-				B39135951412B3700053C84B /* CinemasViewController.xib */,
-				B39135581412A75B0053C84B /* MainWindow.xib */,
+				B39135D31412D21A0053C84B /* CinemasViewController.xib */,
+				B39135D41412D21A0053C84B /* MainWindow.xib */,
+				B39135D51412D21A0053C84B /* MoviesViewController.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -205,6 +210,8 @@
 		B39135801412AD7B0053C84B /* Resourses */ = {
 			isa = PBXGroup;
 			children = (
+				B39135EA1412D57B0053C84B /* Localizable.strings */,
+				B39135E61412D5100053C84B /* en.lproj */,
 				B391359D1412B3D80053C84B /* tab_icons */,
 				B39135851412B09A0053C84B /* icons */,
 				B39135891412B09A0053C84B /* splash */,
@@ -240,6 +247,14 @@
 			);
 			name = tab_icons;
 			path = Resources/tab_icons;
+			sourceTree = "<group>";
+		};
+		B39135E61412D5100053C84B /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				B39135E71412D5100053C84B /* InfoPlist.strings */,
+			);
+			path = en.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,12 +301,16 @@
 /* Begin PBXProject section */
 		B39135371412A75A0053C84B /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0410;
+			};
 			buildConfigurationList = B391353A1412A75A0053C84B /* Build configuration list for PBXProject "Popcornua" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ru,
 			);
 			mainGroup = B39135351412A75A0053C84B;
 			productRefGroup = B39135411412A75A0053C84B /* Products */;
@@ -309,15 +328,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B39135511412A75A0053C84B /* InfoPlist.strings in Resources */,
-				B391355A1412A75B0053C84B /* MainWindow.xib in Resources */,
+				B39135E11412D3350053C84B /* InfoPlist.strings in Resources */,
 				B391358C1412B09A0053C84B /* icon-72.png in Resources */,
 				B391358D1412B09A0053C84B /* icon.png in Resources */,
 				B391358E1412B09A0053C84B /* icon@2x.png in Resources */,
 				B391358F1412B09A0053C84B /* Default.png in Resources */,
-				B39135971412B3700053C84B /* CinemasViewController.xib in Resources */,
-				B391359C1412B38A0053C84B /* MoviesViewController.xib in Resources */,
 				B391359F1412B3D80053C84B /* book_icon.png in Resources */,
+				B39135D61412D21A0053C84B /* CinemasViewController.xib in Resources */,
+				B39135D71412D21A0053C84B /* MainWindow.xib in Resources */,
+				B39135D81412D21A0053C84B /* MoviesViewController.xib in Resources */,
+				B39135E91412D5100053C84B /* InfoPlist.strings in Resources */,
+				B39135EC1412D57B0053C84B /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,10 +375,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B39135531412A75A0053C84B /* main.m in Sources */,
-				B39135571412A75A0053C84B /* PopcornuaAppDelegate.m in Sources */,
 				B391355D1412A75B0053C84B /* Popcornua.xcdatamodeld in Sources */,
-				B39135961412B3700053C84B /* CinemasViewController.m in Sources */,
-				B391359B1412B38A0053C84B /* MoviesViewController.m in Sources */,
+				B39135D01412D20B0053C84B /* CinemasViewController.m in Sources */,
+				B39135D11412D20B0053C84B /* MoviesViewController.m in Sources */,
+				B39135D21412D20B0053C84B /* PopcornuaAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,20 +409,29 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		B39135581412A75B0053C84B /* MainWindow.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B39135591412A75B0053C84B /* en */,
-			);
-			name = MainWindow.xib;
-			sourceTree = "<group>";
-		};
 		B391356F1412A75B0053C84B /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B39135701412A75B0053C84B /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B39135E71412D5100053C84B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B39135E81412D5100053C84B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B39135EA1412D57B0053C84B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B39135EB1412D57B0053C84B /* en */,
+				B39135ED1412D5840053C84B /* ru */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -525,6 +555,7 @@
 				B391357A1412A75B0053C84B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B391357B1412A75B0053C84B /* Build configuration list for PBXNativeTarget "PopcornuaTests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +564,7 @@
 				B391357D1412A75B0053C84B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
