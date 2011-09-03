@@ -1,0 +1,460 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B39135451412A75A0053C84B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39135441412A75A0053C84B /* UIKit.framework */; };
+		B39135471412A75A0053C84B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39135461412A75A0053C84B /* Foundation.framework */; };
+		B39135491412A75A0053C84B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39135481412A75A0053C84B /* CoreGraphics.framework */; };
+		B391354B1412A75A0053C84B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B391354A1412A75A0053C84B /* CoreData.framework */; };
+		B39135511412A75A0053C84B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B391354F1412A75A0053C84B /* InfoPlist.strings */; };
+		B39135531412A75A0053C84B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B39135521412A75A0053C84B /* main.m */; };
+		B39135571412A75A0053C84B /* PopcornuaAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B39135561412A75A0053C84B /* PopcornuaAppDelegate.m */; };
+		B391355A1412A75B0053C84B /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B39135581412A75B0053C84B /* MainWindow.xib */; };
+		B391355D1412A75B0053C84B /* Popcornua.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B391355B1412A75B0053C84B /* Popcornua.xcdatamodeld */; };
+		B39135651412A75B0053C84B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39135641412A75B0053C84B /* SenTestingKit.framework */; };
+		B39135661412A75B0053C84B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39135441412A75A0053C84B /* UIKit.framework */; };
+		B39135671412A75B0053C84B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39135461412A75A0053C84B /* Foundation.framework */; };
+		B39135681412A75B0053C84B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39135481412A75A0053C84B /* CoreGraphics.framework */; };
+		B39135691412A75B0053C84B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B391354A1412A75A0053C84B /* CoreData.framework */; };
+		B39135711412A75B0053C84B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B391356F1412A75B0053C84B /* InfoPlist.strings */; };
+		B39135731412A75B0053C84B /* PopcornuaTests.h in Resources */ = {isa = PBXBuildFile; fileRef = B39135721412A75B0053C84B /* PopcornuaTests.h */; };
+		B39135751412A75B0053C84B /* PopcornuaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B39135741412A75B0053C84B /* PopcornuaTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B391356A1412A75B0053C84B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B39135371412A75A0053C84B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B391353F1412A75A0053C84B;
+			remoteInfo = Popcornua;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B39135401412A75A0053C84B /* Popcornua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Popcornua.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B39135441412A75A0053C84B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B39135461412A75A0053C84B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B39135481412A75A0053C84B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B391354A1412A75A0053C84B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B391354E1412A75A0053C84B /* Popcornua-Info.plist */ = {isa = PBXFileReference; path = "Popcornua-Info.plist"; sourceTree = "<group>"; };
+		B39135501412A75A0053C84B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B39135521412A75A0053C84B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B39135541412A75A0053C84B /* Popcornua-Prefix.pch */ = {isa = PBXFileReference; path = "Popcornua-Prefix.pch"; sourceTree = "<group>"; };
+		B39135551412A75A0053C84B /* PopcornuaAppDelegate.h */ = {isa = PBXFileReference; path = PopcornuaAppDelegate.h; sourceTree = "<group>"; };
+		B39135561412A75A0053C84B /* PopcornuaAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopcornuaAppDelegate.m; sourceTree = "<group>"; };
+		B39135591412A75B0053C84B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		B391355C1412A75B0053C84B /* Popcornua.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Popcornua.xcdatamodel; sourceTree = "<group>"; };
+		B39135631412A75B0053C84B /* PopcornuaTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopcornuaTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B39135641412A75B0053C84B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		B391356E1412A75B0053C84B /* PopcornuaTests-Info.plist */ = {isa = PBXFileReference; path = "PopcornuaTests-Info.plist"; sourceTree = "<group>"; };
+		B39135701412A75B0053C84B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B39135721412A75B0053C84B /* PopcornuaTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopcornuaTests.h; sourceTree = "<group>"; };
+		B39135741412A75B0053C84B /* PopcornuaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopcornuaTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B391353D1412A75A0053C84B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B39135451412A75A0053C84B /* UIKit.framework in Frameworks */,
+				B39135471412A75A0053C84B /* Foundation.framework in Frameworks */,
+				B39135491412A75A0053C84B /* CoreGraphics.framework in Frameworks */,
+				B391354B1412A75A0053C84B /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B391355F1412A75B0053C84B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B39135651412A75B0053C84B /* SenTestingKit.framework in Frameworks */,
+				B39135661412A75B0053C84B /* UIKit.framework in Frameworks */,
+				B39135671412A75B0053C84B /* Foundation.framework in Frameworks */,
+				B39135681412A75B0053C84B /* CoreGraphics.framework in Frameworks */,
+				B39135691412A75B0053C84B /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B39135351412A75A0053C84B = {
+			isa = PBXGroup;
+			children = (
+				B391354C1412A75A0053C84B /* Popcornua */,
+				B391356C1412A75B0053C84B /* PopcornuaTests */,
+				B39135431412A75A0053C84B /* Frameworks */,
+				B39135411412A75A0053C84B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B39135411412A75A0053C84B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B39135401412A75A0053C84B /* Popcornua.app */,
+				B39135631412A75B0053C84B /* PopcornuaTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B39135431412A75A0053C84B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B39135441412A75A0053C84B /* UIKit.framework */,
+				B39135461412A75A0053C84B /* Foundation.framework */,
+				B39135481412A75A0053C84B /* CoreGraphics.framework */,
+				B391354A1412A75A0053C84B /* CoreData.framework */,
+				B39135641412A75B0053C84B /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B391354C1412A75A0053C84B /* Popcornua */ = {
+			isa = PBXGroup;
+			children = (
+				B39135551412A75A0053C84B /* PopcornuaAppDelegate.h */,
+				B39135561412A75A0053C84B /* PopcornuaAppDelegate.m */,
+				B39135581412A75B0053C84B /* MainWindow.xib */,
+				B391355B1412A75B0053C84B /* Popcornua.xcdatamodeld */,
+				B391354D1412A75A0053C84B /* Supporting Files */,
+			);
+			path = Popcornua;
+			sourceTree = "<group>";
+		};
+		B391354D1412A75A0053C84B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B391354E1412A75A0053C84B /* Popcornua-Info.plist */,
+				B391354F1412A75A0053C84B /* InfoPlist.strings */,
+				B39135521412A75A0053C84B /* main.m */,
+				B39135541412A75A0053C84B /* Popcornua-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B391356C1412A75B0053C84B /* PopcornuaTests */ = {
+			isa = PBXGroup;
+			children = (
+				B39135721412A75B0053C84B /* PopcornuaTests.h */,
+				B39135741412A75B0053C84B /* PopcornuaTests.m */,
+				B391356D1412A75B0053C84B /* Supporting Files */,
+			);
+			path = PopcornuaTests;
+			sourceTree = "<group>";
+		};
+		B391356D1412A75B0053C84B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B391356E1412A75B0053C84B /* PopcornuaTests-Info.plist */,
+				B391356F1412A75B0053C84B /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B391353F1412A75A0053C84B /* Popcornua */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B39135781412A75B0053C84B /* Build configuration list for PBXNativeTarget "Popcornua" */;
+			buildPhases = (
+				B391353C1412A75A0053C84B /* Sources */,
+				B391353D1412A75A0053C84B /* Frameworks */,
+				B391353E1412A75A0053C84B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Popcornua;
+			productName = Popcornua;
+			productReference = B39135401412A75A0053C84B /* Popcornua.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B39135621412A75B0053C84B /* PopcornuaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B391357B1412A75B0053C84B /* Build configuration list for PBXNativeTarget "PopcornuaTests" */;
+			buildPhases = (
+				B391355E1412A75B0053C84B /* Sources */,
+				B391355F1412A75B0053C84B /* Frameworks */,
+				B39135601412A75B0053C84B /* Resources */,
+				B39135611412A75B0053C84B /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B391356B1412A75B0053C84B /* PBXTargetDependency */,
+			);
+			name = PopcornuaTests;
+			productName = PopcornuaTests;
+			productReference = B39135631412A75B0053C84B /* PopcornuaTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B39135371412A75A0053C84B /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = B391353A1412A75A0053C84B /* Build configuration list for PBXProject "Popcornua" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B39135351412A75A0053C84B;
+			productRefGroup = B39135411412A75A0053C84B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B391353F1412A75A0053C84B /* Popcornua */,
+				B39135621412A75B0053C84B /* PopcornuaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B391353E1412A75A0053C84B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B39135511412A75A0053C84B /* InfoPlist.strings in Resources */,
+				B391355A1412A75B0053C84B /* MainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B39135601412A75B0053C84B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B39135711412A75B0053C84B /* InfoPlist.strings in Resources */,
+				B39135731412A75B0053C84B /* PopcornuaTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B39135611412A75B0053C84B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B391353C1412A75A0053C84B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B39135531412A75A0053C84B /* main.m in Sources */,
+				B39135571412A75A0053C84B /* PopcornuaAppDelegate.m in Sources */,
+				B391355D1412A75B0053C84B /* Popcornua.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B391355E1412A75B0053C84B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B39135751412A75B0053C84B /* PopcornuaTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B391356B1412A75B0053C84B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B391353F1412A75A0053C84B /* Popcornua */;
+			targetProxy = B391356A1412A75B0053C84B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B391354F1412A75A0053C84B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B39135501412A75A0053C84B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B39135581412A75B0053C84B /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B39135591412A75B0053C84B /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		B391356F1412A75B0053C84B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B39135701412A75B0053C84B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B39135761412A75B0053C84B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B39135771412A75B0053C84B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B39135791412A75B0053C84B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Popcornua/Popcornua-Prefix.pch";
+				INFOPLIST_FILE = "Popcornua/Popcornua-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B391357A1412A75B0053C84B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Popcornua/Popcornua-Prefix.pch";
+				INFOPLIST_FILE = "Popcornua/Popcornua-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		B391357C1412A75B0053C84B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Popcornua.app/Popcornua";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Popcornua/Popcornua-Prefix.pch";
+				INFOPLIST_FILE = "PopcornuaTests/PopcornuaTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		B391357D1412A75B0053C84B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Popcornua.app/Popcornua";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Popcornua/Popcornua-Prefix.pch";
+				INFOPLIST_FILE = "PopcornuaTests/PopcornuaTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B391353A1412A75A0053C84B /* Build configuration list for PBXProject "Popcornua" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B39135761412A75B0053C84B /* Debug */,
+				B39135771412A75B0053C84B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B39135781412A75B0053C84B /* Build configuration list for PBXNativeTarget "Popcornua" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B39135791412A75B0053C84B /* Debug */,
+				B391357A1412A75B0053C84B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B391357B1412A75B0053C84B /* Build configuration list for PBXNativeTarget "PopcornuaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B391357C1412A75B0053C84B /* Debug */,
+				B391357D1412A75B0053C84B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B391355B1412A75B0053C84B /* Popcornua.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B391355C1412A75B0053C84B /* Popcornua.xcdatamodel */,
+			);
+			currentVersion = B391355C1412A75B0053C84B /* Popcornua.xcdatamodel */;
+			path = Popcornua.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B39135371412A75A0053C84B /* Project object */;
+}
