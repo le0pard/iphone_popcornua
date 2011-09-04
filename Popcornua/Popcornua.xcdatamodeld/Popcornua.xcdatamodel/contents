@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="562" systemVersion="11B26" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Afisha">
+    <entity name="Afisha" representedClassName="Afisha">
         <attribute name="data_begin" optional="YES" attributeType="Date"/>
         <attribute name="data_end" optional="YES" attributeType="Date"/>
         <attribute name="ext_id" optional="YES" attributeType="Integer 32" defaultValueString="0"/>
@@ -10,7 +10,7 @@
         <relationship name="cinema" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Cinema" inverseName="afishas" inverseEntity="Cinema"/>
         <relationship name="movie" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Movie" inverseName="afishas" inverseEntity="Movie"/>
     </entity>
-    <entity name="Cinema">
+    <entity name="Cinema" representedClassName="Cinema">
         <attribute name="address" optional="YES" attributeType="String"/>
         <attribute name="call_phone" optional="YES" attributeType="String"/>
         <attribute name="ext_id" optional="YES" attributeType="Integer 32" defaultValueString="0"/>
@@ -21,7 +21,7 @@
         <attribute name="title" optional="YES" attributeType="String"/>
         <relationship name="afishas" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Afisha" inverseName="cinema" inverseEntity="Afisha"/>
     </entity>
-    <entity name="Movie">
+    <entity name="Movie" representedClassName="Movie">
         <attribute name="cached_poster" optional="YES" attributeType="Binary"/>
         <attribute name="casts" optional="YES" attributeType="String"/>
         <attribute name="descr" optional="YES" attributeType="String"/>
@@ -33,8 +33,8 @@
         <relationship name="afishas" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Afisha" inverseName="movie" inverseEntity="Afisha"/>
     </entity>
     <elements>
-        <element name="Afisha" positionX="-72" positionY="513" width="128" height="150"/>
-        <element name="Cinema" positionX="160" positionY="192" width="128" height="165"/>
-        <element name="Movie" positionX="-164" positionY="237" width="128" height="165"/>
+        <element name="Afisha" positionX="9" positionY="411" width="128" height="165"/>
+        <element name="Cinema" positionX="160" positionY="192" width="128" height="180"/>
+        <element name="Movie" positionX="-164" positionY="237" width="128" height="180"/>
     </elements>
 </model>

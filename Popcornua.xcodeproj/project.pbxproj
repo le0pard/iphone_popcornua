@@ -36,6 +36,9 @@
 		B39135E91412D5100053C84B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B39135E71412D5100053C84B /* InfoPlist.strings */; };
 		B39135EC1412D57B0053C84B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B39135EA1412D57B0053C84B /* Localizable.strings */; };
 		B3A319D614139879004DCCBE /* MainNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A319D514139879004DCCBE /* MainNavController.m */; };
+		B3A319E71413A450004DCCBE /* Afisha.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A319E61413A450004DCCBE /* Afisha.m */; };
+		B3A319EA1413A46A004DCCBE /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A319E91413A46A004DCCBE /* Movie.m */; };
+		B3A319ED1413A46B004DCCBE /* Cinema.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A319EC1413A46A004DCCBE /* Cinema.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,12 @@
 		B39135ED1412D5840053C84B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = Resources/ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B3A319D414139879004DCCBE /* MainNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainNavController.h; path = Classes/MainNavController.h; sourceTree = "<group>"; };
 		B3A319D514139879004DCCBE /* MainNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainNavController.m; path = Classes/MainNavController.m; sourceTree = "<group>"; };
+		B3A319E51413A450004DCCBE /* Afisha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Afisha.h; path = Classes/Objects/Afisha.h; sourceTree = "<group>"; };
+		B3A319E61413A450004DCCBE /* Afisha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Afisha.m; path = Classes/Objects/Afisha.m; sourceTree = "<group>"; };
+		B3A319E81413A46A004DCCBE /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Movie.h; path = Classes/Objects/Movie.h; sourceTree = "<group>"; };
+		B3A319E91413A46A004DCCBE /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Movie.m; path = Classes/Objects/Movie.m; sourceTree = "<group>"; };
+		B3A319EB1413A46A004DCCBE /* Cinema.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cinema.h; path = Classes/Objects/Cinema.h; sourceTree = "<group>"; };
+		B3A319EC1413A46A004DCCBE /* Cinema.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cinema.m; path = Classes/Objects/Cinema.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +199,7 @@
 		B391357E1412A83D0053C84B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B3A319D71413A09E004DCCBE /* Objects */,
 				B3A319D414139879004DCCBE /* MainNavController.h */,
 				B3A319D514139879004DCCBE /* MainNavController.m */,
 				B39135CA1412D20B0053C84B /* CinemasViewController.h */,
@@ -260,6 +270,19 @@
 				B39135E71412D5100053C84B /* InfoPlist.strings */,
 			);
 			path = en.lproj;
+			sourceTree = "<group>";
+		};
+		B3A319D71413A09E004DCCBE /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				B3A319E51413A450004DCCBE /* Afisha.h */,
+				B3A319E61413A450004DCCBE /* Afisha.m */,
+				B3A319EB1413A46A004DCCBE /* Cinema.h */,
+				B3A319EC1413A46A004DCCBE /* Cinema.m */,
+				B3A319E81413A46A004DCCBE /* Movie.h */,
+				B3A319E91413A46A004DCCBE /* Movie.m */,
+			);
+			name = Objects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,6 +408,9 @@
 				B39135D11412D20B0053C84B /* MoviesViewController.m in Sources */,
 				B39135D21412D20B0053C84B /* PopcornuaAppDelegate.m in Sources */,
 				B3A319D614139879004DCCBE /* MainNavController.m in Sources */,
+				B3A319E71413A450004DCCBE /* Afisha.m in Sources */,
+				B3A319EA1413A46A004DCCBE /* Movie.m in Sources */,
+				B3A319ED1413A46B004DCCBE /* Cinema.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
