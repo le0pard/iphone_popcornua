@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@class MainNavController;
 
 @interface PopcornuaAppDelegate : NSObject <UIApplicationDelegate>
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UITabBarController *rootController;
+@property (nonatomic, retain) IBOutlet MainNavController *navController;
 
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;

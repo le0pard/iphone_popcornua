@@ -7,6 +7,7 @@
 //
 
 #import "PopcornuaAppDelegate.h"
+#import "MainNavController.h"
 
 @implementation PopcornuaAppDelegate
 
@@ -15,6 +16,7 @@
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 @synthesize rootController = _rootController;
+@synthesize navController = _navController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -63,6 +65,7 @@
 
 - (void)dealloc
 {
+    [_navController release];
     [_rootController release];
     [_window release];
     [__managedObjectContext release];

@@ -35,6 +35,7 @@
 		B39135E11412D3350053C84B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B391356F1412A75B0053C84B /* InfoPlist.strings */; };
 		B39135E91412D5100053C84B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B39135E71412D5100053C84B /* InfoPlist.strings */; };
 		B39135EC1412D57B0053C84B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B39135EA1412D57B0053C84B /* Localizable.strings */; };
+		B3A319D214138D7D004DCCBE /* MainNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A319D114138D7D004DCCBE /* MainNavController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,8 @@
 		B39135E81412D5100053C84B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
 		B39135EB1412D57B0053C84B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B39135ED1412D5840053C84B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = Resources/ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B3A319D014138D7D004DCCBE /* MainNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNavController.h; sourceTree = "<group>"; };
+		B3A319D114138D7D004DCCBE /* MainNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +196,8 @@
 				B39135CD1412D20B0053C84B /* MoviesViewController.m */,
 				B39135CE1412D20B0053C84B /* PopcornuaAppDelegate.h */,
 				B39135CF1412D20B0053C84B /* PopcornuaAppDelegate.m */,
+				B3A319D014138D7D004DCCBE /* MainNavController.h */,
+				B3A319D114138D7D004DCCBE /* MainNavController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -379,6 +384,7 @@
 				B39135D01412D20B0053C84B /* CinemasViewController.m in Sources */,
 				B39135D11412D20B0053C84B /* MoviesViewController.m in Sources */,
 				B39135D21412D20B0053C84B /* PopcornuaAppDelegate.m in Sources */,
+				B3A319D214138D7D004DCCBE /* MainNavController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,23 +1,14 @@
 //
-//  CinemasViewController.m
+//  MainNavController.m
 //  Popcornua
 //
-//  Created by Alex on 9/3/11.
+//  Created by Alex on 9/4/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "CinemasViewController.h"
+#import "MainNavController.h"
 
-@implementation CinemasViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@implementation MainNavController
 
 - (void)didReceiveMemoryWarning
 {
@@ -29,11 +20,20 @@
 
 #pragma mark - View lifecycle
 
+/*
+// Implement loadView to create a view hierarchy programmatically, without using a nib.
+- (void)loadView
+{
+}
+*/
+
+/*
+// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = NSLocalizedString(@"Cinemas", @"");
 }
+*/
 
 - (void)viewDidUnload
 {

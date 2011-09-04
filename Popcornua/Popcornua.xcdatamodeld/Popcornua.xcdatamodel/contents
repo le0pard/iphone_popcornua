@@ -3,6 +3,7 @@
     <entity name="Afisha">
         <attribute name="data_begin" optional="YES" attributeType="Date"/>
         <attribute name="data_end" optional="YES" attributeType="Date"/>
+        <attribute name="ext_id" optional="YES" attributeType="Integer 32" defaultValueString="0"/>
         <attribute name="prices" optional="YES" attributeType="String"/>
         <attribute name="times" optional="YES" attributeType="String"/>
         <attribute name="zal_title" optional="YES" attributeType="String"/>
@@ -12,6 +13,7 @@
     <entity name="Cinema">
         <attribute name="address" optional="YES" attributeType="String"/>
         <attribute name="call_phone" optional="YES" attributeType="String"/>
+        <attribute name="ext_id" optional="YES" attributeType="Integer 32" defaultValueString="0"/>
         <attribute name="latitude" optional="YES" attributeType="String"/>
         <attribute name="link" optional="YES" attributeType="String"/>
         <attribute name="longitude" optional="YES" attributeType="String"/>
@@ -23,6 +25,7 @@
         <attribute name="cached_poster" optional="YES" attributeType="Binary"/>
         <attribute name="casts" optional="YES" attributeType="String"/>
         <attribute name="descr" optional="YES" attributeType="String"/>
+        <attribute name="ext_id" optional="YES" attributeType="Integer 32" defaultValueString="0"/>
         <attribute name="orig_title" optional="YES" attributeType="String"/>
         <attribute name="poster" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
@@ -30,8 +33,8 @@
         <relationship name="afishas" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Afisha" inverseName="movie" inverseEntity="Afisha"/>
     </entity>
     <elements>
+        <element name="Afisha" positionX="-72" positionY="513" width="128" height="150"/>
         <element name="Cinema" positionX="160" positionY="192" width="128" height="165"/>
         <element name="Movie" positionX="-164" positionY="237" width="128" height="165"/>
-        <element name="Afisha" positionX="9" positionY="411" width="128" height="150"/>
     </elements>
 </model>
