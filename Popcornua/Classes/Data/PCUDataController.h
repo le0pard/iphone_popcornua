@@ -11,9 +11,13 @@
 #import "Afisha.h"
 #import "Cinema.h"
 #import "Movie.h"
+#import "PopcornuaAppDelegate.h"
+#import "JSON.h"
 
-@interface PCUDataController : NSObject
+@interface PCUDataController : NSObject {
+    ASIHTTPRequest *request;
+}
 
-@property (nonatomic, retain) NSError *error;
+- (void) startSyncData;
 
 @end

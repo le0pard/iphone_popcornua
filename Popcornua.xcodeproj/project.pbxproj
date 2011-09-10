@@ -54,6 +54,9 @@
 		B3B89CF8141C235900CCC495 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B391358B1412B09A0053C84B /* Default@2x.png */; };
 		B3B89CFF141C245100CCC495 /* cinemas_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B89CFD141C245100CCC495 /* cinemas_icon.png */; };
 		B3B89D00141C245100CCC495 /* movies_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B89CFE141C245100CCC495 /* movies_icon.png */; };
+		B3B89D09141C2E5400CCC495 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B89D04141C2E5400CCC495 /* NSObject+SBJSON.m */; };
+		B3B89D0A141C2E5400CCC495 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B89D06141C2E5400CCC495 /* NSString+SBJSON.m */; };
+		B3B89D0B141C2E5400CCC495 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B89D08141C2E5400CCC495 /* SBJSON.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +140,13 @@
 		B3B89CF2141C1C0700CCC495 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		B3B89CFD141C245100CCC495 /* cinemas_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cinemas_icon.png; sourceTree = "<group>"; };
 		B3B89CFE141C245100CCC495 /* movies_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movies_icon.png; sourceTree = "<group>"; };
+		B3B89D02141C2E5400CCC495 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		B3B89D03141C2E5400CCC495 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		B3B89D04141C2E5400CCC495 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		B3B89D05141C2E5400CCC495 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		B3B89D06141C2E5400CCC495 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		B3B89D07141C2E5400CCC495 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		B3B89D08141C2E5400CCC495 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,6 +360,7 @@
 		B3B89CC3141C19A000CCC495 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				B3B89D01141C2E5400CCC495 /* JSON */,
 				B3B89CC4141C19A000CCC495 /* ASIHTTPRequest */,
 			);
 			name = Libs;
@@ -383,6 +394,20 @@
 				B3B89CD8141C19A000CCC495 /* ASIProgressDelegate.h */,
 			);
 			path = ASIHTTPRequest;
+			sourceTree = "<group>";
+		};
+		B3B89D01141C2E5400CCC495 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				B3B89D02141C2E5400CCC495 /* JSON.h */,
+				B3B89D03141C2E5400CCC495 /* NSObject+SBJSON.h */,
+				B3B89D04141C2E5400CCC495 /* NSObject+SBJSON.m */,
+				B3B89D05141C2E5400CCC495 /* NSString+SBJSON.h */,
+				B3B89D06141C2E5400CCC495 /* NSString+SBJSON.m */,
+				B3B89D07141C2E5400CCC495 /* SBJSON.h */,
+				B3B89D08141C2E5400CCC495 /* SBJSON.m */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -522,6 +547,9 @@
 				B3B89CDF141C19A000CCC495 /* ASIInputStream.m in Sources */,
 				B3B89CE0141C19A000CCC495 /* ASINetworkQueue.m in Sources */,
 				B3B89CF3141C1C0700CCC495 /* Reachability.m in Sources */,
+				B3B89D09141C2E5400CCC495 /* NSObject+SBJSON.m in Sources */,
+				B3B89D0A141C2E5400CCC495 /* NSString+SBJSON.m in Sources */,
+				B3B89D0B141C2E5400CCC495 /* SBJSON.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

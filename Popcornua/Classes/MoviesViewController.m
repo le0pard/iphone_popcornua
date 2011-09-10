@@ -7,6 +7,7 @@
 //
 
 #import "MoviesViewController.h"
+#import "PCUDataController.h"
 
 @implementation MoviesViewController
 
@@ -33,6 +34,9 @@
 {
     [super viewDidLoad];
     self.title = NSLocalizedString(@"Movies", @"");
+    PCUDataController *data = [[PCUDataController alloc] init];
+    [data startSyncData];
+    [data release];
 }
 
 - (void)viewDidUnload
