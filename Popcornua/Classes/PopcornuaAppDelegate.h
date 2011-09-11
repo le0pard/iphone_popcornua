@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PCUSharedManager.h"
+
 @class MainNavController;
 
 @interface PopcornuaAppDelegate : NSObject <UIApplicationDelegate>{

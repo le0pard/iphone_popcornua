@@ -20,6 +20,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    PCUSharedManager *myStoreManager = [PCUSharedManager sharedManager];
+    myStoreManager.managedObjectContext = self.managedObjectContext;
+    [myStoreManager release];
+    
     [[self.rootController.viewControllers objectAtIndex:0] setTitle:NSLocalizedString(@"Cinemas", @"")];
     [[self.rootController.viewControllers objectAtIndex:1] setTitle:NSLocalizedString(@"Movies", @"")];
     [self.window addSubview:self.rootController.view];

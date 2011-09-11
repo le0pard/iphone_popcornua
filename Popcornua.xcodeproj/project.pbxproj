@@ -37,6 +37,7 @@
 		B3A319E71413A450004DCCBE /* Afisha.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A319E61413A450004DCCBE /* Afisha.m */; };
 		B3A319EA1413A46A004DCCBE /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A319E91413A46A004DCCBE /* Movie.m */; };
 		B3A319ED1413A46B004DCCBE /* Cinema.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A319EC1413A46A004DCCBE /* Cinema.m */; };
+		B3A9ECDE141D1D39007D94FB /* PCUSharedManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A9ECDD141D1D39007D94FB /* PCUSharedManager.m */; };
 		B3B89CC2141C189C00CCC495 /* PCUDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B89CC1141C189C00CCC495 /* PCUDataController.m */; };
 		B3B89CD9141C19A000CCC495 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B89CC6141C19A000CCC495 /* ASIAuthenticationDialog.m */; };
 		B3B89CDA141C19A000CCC495 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B89CC9141C19A000CCC495 /* ASIDataCompressor.m */; };
@@ -111,6 +112,8 @@
 		B3A319E91413A46A004DCCBE /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Movie.m; path = Classes/Objects/Movie.m; sourceTree = "<group>"; };
 		B3A319EB1413A46A004DCCBE /* Cinema.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cinema.h; path = Classes/Objects/Cinema.h; sourceTree = "<group>"; };
 		B3A319EC1413A46A004DCCBE /* Cinema.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cinema.m; path = Classes/Objects/Cinema.m; sourceTree = "<group>"; };
+		B3A9ECDC141D1D39007D94FB /* PCUSharedManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCUSharedManager.h; path = Classes/Util/PCUSharedManager.h; sourceTree = "<group>"; };
+		B3A9ECDD141D1D39007D94FB /* PCUSharedManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCUSharedManager.m; path = Classes/Util/PCUSharedManager.m; sourceTree = "<group>"; };
 		B3B89CC0141C189C00CCC495 /* PCUDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCUDataController.h; path = Classes/Data/PCUDataController.h; sourceTree = "<group>"; };
 		B3B89CC1141C189C00CCC495 /* PCUDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCUDataController.m; path = Classes/Data/PCUDataController.m; sourceTree = "<group>"; };
 		B3B89CC5141C19A000CCC495 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
@@ -148,7 +151,7 @@
 		B3B89D06141C2E5400CCC495 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
 		B3B89D07141C2E5400CCC495 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
 		B3B89D08141C2E5400CCC495 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
-		B3DC2E5D141CB3F100E1FDB0 /* NSStringUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; name = NSStringUtil.h; path = Classes/Util/NSStringUtil.h; sourceTree = "<group>"; };
+		B3DC2E5D141CB3F100E1FDB0 /* NSStringUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSStringUtil.h; path = Classes/Util/NSStringUtil.h; sourceTree = "<group>"; };
 		B3DC2E5E141CB3F100E1FDB0 /* NSStringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSStringUtil.m; path = Classes/Util/NSStringUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -419,6 +422,8 @@
 			children = (
 				B3DC2E5D141CB3F100E1FDB0 /* NSStringUtil.h */,
 				B3DC2E5E141CB3F100E1FDB0 /* NSStringUtil.m */,
+				B3A9ECDC141D1D39007D94FB /* PCUSharedManager.h */,
+				B3A9ECDD141D1D39007D94FB /* PCUSharedManager.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -564,6 +569,7 @@
 				B3B89D0A141C2E5400CCC495 /* NSString+SBJSON.m in Sources */,
 				B3B89D0B141C2E5400CCC495 /* SBJSON.m in Sources */,
 				B3DC2E5F141CB3F100E1FDB0 /* NSStringUtil.m in Sources */,
+				B3A9ECDE141D1D39007D94FB /* PCUSharedManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -44,7 +44,7 @@
     return cinema;
 }
 
-+ (Cinema *)createOrReplaceFromDictionary:(NSDictionary *)cinemaInfo withContext:(NSManagedObjectContext *)moc {
++ (BOOL)createOrReplaceFromDictionary:(NSDictionary *)cinemaInfo withContext:(NSManagedObjectContext *)moc {
     Cinema *cinema = nil;
     NSNumber *extId = nil;
     if ([[cinemaInfo objectForKey:@"id"] isKindOfClass:[NSString class]]) {
@@ -61,14 +61,32 @@
     }
     
     cinema.title = [cinemaInfo objectForKey:@"title"];
-    cinema.address = [cinemaInfo objectForKey:@"address"];
-    cinema.phone = [cinemaInfo objectForKey:@"phone"];
-    cinema.link = [cinemaInfo objectForKey:@"link"];
-    cinema.latitude = [cinemaInfo objectForKey:@"latitude"];
-    cinema.longitude = [cinemaInfo objectForKey:@"longitude"];
-    cinema.call_phone = [cinemaInfo objectForKey:@"call_phone"];
+    if (![[cinemaInfo objectForKey:@"address"] isKindOfClass:[NSNull class]]){
+        cinema.address = [cinemaInfo objectForKey:@"address"];
+    }
+    if (![[cinemaInfo objectForKey:@"phone"] isKindOfClass:[NSNull class]]){
+        cinema.phone = [cinemaInfo objectForKey:@"phone"];
+    }
+    if (![[cinemaInfo objectForKey:@"link"] isKindOfClass:[NSNull class]]){
+        cinema.link = [cinemaInfo objectForKey:@"link"];
+    }
+    if (![[cinemaInfo objectForKey:@"latitude"] isKindOfClass:[NSNull class]]){
+        cinema.latitude = [cinemaInfo objectForKey:@"latitude"];
+    }
+    if (![[cinemaInfo objectForKey:@"longitude"] isKindOfClass:[NSNull class]]){
+        cinema.longitude = [cinemaInfo objectForKey:@"longitude"];
+    }
+    if (![[cinemaInfo objectForKey:@"call_phone"] isKindOfClass:[NSNull class]]){
+        cinema.call_phone = [cinemaInfo objectForKey:@"call_phone"];
+    }
     
-    return cinema;
+    NSError *error;
+    if (![moc save:&error]) {
+        NSLog(@"Error save to database : %@", [error userInfo]);
+        return false;
+    }
+    
+    return true;
 }
 
 @end

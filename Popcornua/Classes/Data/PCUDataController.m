@@ -33,26 +33,16 @@
     NSError *error = [request error];
     if (!error) {
         NSString *response = [request responseString];
-        NSLog(@"Data: %@", response);
+        //NSLog(@"Data: %@", response);
         NSDictionary *json_data = [response JSONValue];
         NSArray *theaters = [json_data objectForKey:@"theaters"];
+        PCUSharedManager *myStoreManager = [PCUSharedManager sharedManager];
         for (NSDictionary *theater in theaters) {
-            /*
-            if ([[theater objectForKey:@"id"] isKindOfClass:[NSString class]]) {
-                cinema.ext_id = [[theater objectForKey:@"id"] numericValue];
-            } else {
-                cinema.ext_id = [theater objectForKey:@"id"];
+            if ([Cinema createOrReplaceFromDictionary:theater withContext:myStoreManager.managedObjectContext]){
+                //
             }
-            
-            cinema.title = [theater objectForKey:@"title"];
-            cinema.address = [theater objectForKey:@"address"];
-            cinema.phone = [theater objectForKey:@"phone"];
-            cinema.link = [theater objectForKey:@"link"];
-            cinema.latitude = [theater objectForKey:@"latitude"];
-            cinema.longitude = [theater objectForKey:@"longitude"];
-            cinema.call_phone = [theater objectForKey:@"call_phone"];
-            */
         }
+        [myStoreManager release];
     }
 }
 

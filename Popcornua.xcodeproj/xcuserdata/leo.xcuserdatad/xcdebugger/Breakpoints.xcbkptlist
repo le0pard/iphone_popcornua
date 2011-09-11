@@ -14,7 +14,21 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "44"
          endingLineNumber = "44"
-         landmarkName = "+createOrReplaceFromDictionary:withContext:"
+         landmarkName = "+cinemaExistForId:withContext:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "Popcornua/Classes/Data/PCUDataController.m"
+         timestampString = "337454030.471089"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "41"
+         endingLineNumber = "41"
+         landmarkName = "-startSyncData"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

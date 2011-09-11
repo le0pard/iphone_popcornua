@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PCUSharedManager.h"
+#import "Cinema.h"
 
-@interface CinemasViewController : UIViewController
+@interface CinemasViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+    UITableView *rootTableView;
+    NSMutableArray *cinemasArray;
+}
+
+@property (nonatomic, retain) IBOutlet UITableView *rootTableView;
+@property (nonatomic, retain) IBOutlet NSMutableArray *cinemasArray;
+
+-(void)fetchRecords;
 
 @end
