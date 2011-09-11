@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 @class MainNavController;
 
-@interface PopcornuaAppDelegate : NSObject <UIApplicationDelegate>
+@interface PopcornuaAppDelegate : NSObject <UIApplicationDelegate>{
+    NSOperationQueue *operationQueue;
+}
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UITabBarController *rootController;

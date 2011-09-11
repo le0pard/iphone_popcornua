@@ -57,6 +57,7 @@
 		B3B89D09141C2E5400CCC495 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B89D04141C2E5400CCC495 /* NSObject+SBJSON.m */; };
 		B3B89D0A141C2E5400CCC495 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B89D06141C2E5400CCC495 /* NSString+SBJSON.m */; };
 		B3B89D0B141C2E5400CCC495 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B89D08141C2E5400CCC495 /* SBJSON.m */; };
+		B3DC2E5F141CB3F100E1FDB0 /* NSStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DC2E5E141CB3F100E1FDB0 /* NSStringUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +148,8 @@
 		B3B89D06141C2E5400CCC495 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
 		B3B89D07141C2E5400CCC495 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
 		B3B89D08141C2E5400CCC495 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		B3DC2E5D141CB3F100E1FDB0 /* NSStringUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; name = NSStringUtil.h; path = Classes/Util/NSStringUtil.h; sourceTree = "<group>"; };
+		B3DC2E5E141CB3F100E1FDB0 /* NSStringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSStringUtil.m; path = Classes/Util/NSStringUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +264,7 @@
 		B391357E1412A83D0053C84B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B3DC2E5B141CB3D100E1FDB0 /* Util */,
 				B3B89CBB141C178E00CCC495 /* Data */,
 				B3A319D71413A09E004DCCBE /* Objects */,
 				B3A319D414139879004DCCBE /* MainNavController.h */,
@@ -410,6 +414,15 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		B3DC2E5B141CB3D100E1FDB0 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				B3DC2E5D141CB3F100E1FDB0 /* NSStringUtil.h */,
+				B3DC2E5E141CB3F100E1FDB0 /* NSStringUtil.m */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -550,6 +563,7 @@
 				B3B89D09141C2E5400CCC495 /* NSObject+SBJSON.m in Sources */,
 				B3B89D0A141C2E5400CCC495 /* NSString+SBJSON.m in Sources */,
 				B3B89D0B141C2E5400CCC495 /* SBJSON.m in Sources */,
+				B3DC2E5F141CB3F100E1FDB0 /* NSStringUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
