@@ -17,6 +17,7 @@
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 @synthesize rootController = _rootController;
 @synthesize navController = _navController;
+@synthesize moviesTab, cinemasTab;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -24,8 +25,8 @@
     myStoreManager.managedObjectContext = self.managedObjectContext;
     [myStoreManager release];
     
-    [[self.rootController.viewControllers objectAtIndex:0] setTitle:NSLocalizedString(@"Cinemas", @"")];
-    [[self.rootController.viewControllers objectAtIndex:1] setTitle:NSLocalizedString(@"Movies", @"")];
+    [cinemasTab setTitle:NSLocalizedString(@"Cinemas", @"")];
+    [moviesTab setTitle:NSLocalizedString(@"Movies", @"")];
     [self.window addSubview:self.rootController.view];
     [self.window makeKeyAndVisible];
     return YES;

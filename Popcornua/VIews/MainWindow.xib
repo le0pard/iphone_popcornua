@@ -72,12 +72,12 @@
 				</object>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<bool key="IBUIHorizontal">NO</bool>
-				<object class="IBUINavigationController" key="IBUISelectedViewController" id="422597691">
-					<object class="IBUITabBarItem" key="IBUITabBarItem" id="1041495284">
-						<string key="IBUITitle">Cinemas</string>
+				<object class="IBUINavigationController" key="IBUISelectedViewController" id="79635657">
+					<object class="IBUITabBarItem" key="IBUITabBarItem" id="25193306">
+						<string key="IBUITitle">Movies</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">cinemas_icon.png</string>
+							<string key="NSResourceName">movies_icon.png</string>
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
@@ -89,7 +89,7 @@
 					</object>
 					<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					<bool key="IBUIHorizontal">NO</bool>
-					<object class="IBUINavigationBar" key="IBUINavigationBar" id="716219280">
+					<object class="IBUINavigationBar" key="IBUINavigationBar" id="530092652">
 						<nil key="NSNextResponder"/>
 						<int key="NSvFlags">256</int>
 						<string key="NSFrameSize">{0, 0}</string>
@@ -101,13 +101,13 @@
 					</object>
 					<object class="NSMutableArray" key="IBUIViewControllers">
 						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="IBUIViewController" id="356331219">
-							<object class="IBUINavigationItem" key="IBUINavigationItem" id="826206319">
+						<object class="IBUIViewController" id="948252984">
+							<object class="IBUINavigationItem" key="IBUINavigationItem" id="913766972">
 								<string key="IBUITitle">Root View Controller</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
-							<reference key="IBUIParentViewController" ref="422597691"/>
-							<string key="IBUINibName">CinemasViewController</string>
+							<reference key="IBUIParentViewController" ref="79635657"/>
+							<string key="IBUINibName">MoviesViewController</string>
 							<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 								<int key="IBUIInterfaceOrientation">1</int>
 								<int key="interfaceOrientation">1</int>
@@ -119,12 +119,13 @@
 				</object>
 				<object class="NSMutableArray" key="IBUIViewControllers">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<object class="IBUINavigationController" id="79635657">
-						<object class="IBUITabBarItem" key="IBUITabBarItem" id="25193306">
-							<string key="IBUITitle">Movies</string>
+					<reference ref="79635657"/>
+					<object class="IBUINavigationController" id="422597691">
+						<object class="IBUITabBarItem" key="IBUITabBarItem" id="1041495284">
+							<string key="IBUITitle">Cinemas</string>
 							<object class="NSCustomResource" key="IBUIImage">
 								<string key="NSClassName">NSImage</string>
-								<string key="NSResourceName">movies_icon.png</string>
+								<string key="NSResourceName">cinemas_icon.png</string>
 							</object>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
@@ -136,7 +137,7 @@
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<bool key="IBUIHorizontal">NO</bool>
-						<object class="IBUINavigationBar" key="IBUINavigationBar" id="530092652">
+						<object class="IBUINavigationBar" key="IBUINavigationBar" id="716219280">
 							<nil key="NSNextResponder"/>
 							<int key="NSvFlags">256</int>
 							<string key="NSFrameSize">{0, 0}</string>
@@ -148,13 +149,13 @@
 						</object>
 						<object class="NSMutableArray" key="IBUIViewControllers">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBUIViewController" id="948252984">
-								<object class="IBUINavigationItem" key="IBUINavigationItem" id="913766972">
+							<object class="IBUIViewController" id="356331219">
+								<object class="IBUINavigationItem" key="IBUINavigationItem" id="826206319">
 									<string key="IBUITitle">Root View Controller</string>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
-								<reference key="IBUIParentViewController" ref="79635657"/>
-								<string key="IBUINibName">MoviesViewController</string>
+								<reference key="IBUIParentViewController" ref="422597691"/>
+								<string key="IBUINibName">CinemasViewController</string>
 								<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 									<int key="IBUIInterfaceOrientation">1</int>
 									<int key="interfaceOrientation">1</int>
@@ -164,7 +165,6 @@
 							</object>
 						</object>
 					</object>
-					<reference ref="422597691"/>
 				</object>
 				<object class="IBUITabBar" key="IBUITabBar" id="871182178">
 					<reference key="NSNextResponder"/>
@@ -206,6 +206,22 @@
 						<reference key="destination" ref="369976970"/>
 					</object>
 					<int key="connectionID">17</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">moviesTab</string>
+						<reference key="source" ref="664661524"/>
+						<reference key="destination" ref="25193306"/>
+					</object>
+					<int key="connectionID">39</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">cinemasTab</string>
+						<reference key="source" ref="664661524"/>
+						<reference key="destination" ref="1041495284"/>
+					</object>
+					<int key="connectionID">40</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -402,7 +418,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">38</int>
+			<int key="maxID">40</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>

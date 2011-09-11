@@ -22,7 +22,8 @@
 
 
 - (void) startSyncData{
-    //PopcornuaAppDelegate *appDelegate = (PopcornuaAppDelegate *)[[UIApplication sharedApplication] delegate];
+    PCUSharedManager *myStoreManager = [PCUSharedManager sharedManager];
+    NSError *error = nil;
     
     request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:@"http://coocoorooza.com/api/afisha_theaters/1/hcLcT5sWeUZ3Br7YmvhahFLGUw6tv6ERB5GbJT4qm8D.json"]];
 	[request setRequestMethod:@"GET"];
@@ -30,20 +31,44 @@
     [request setTimeOutSeconds:60];
     [request setNumberOfTimesToRetryOnTimeout:3];
 	[request startSynchronous];
-    NSError *error = [request error];
+    error = [request error];
     if (!error) {
         NSString *response = [request responseString];
         //NSLog(@"Data: %@", response);
         NSDictionary *json_data = [response JSONValue];
         NSArray *theaters = [json_data objectForKey:@"theaters"];
-        PCUSharedManager *myStoreManager = [PCUSharedManager sharedManager];
+        
         for (NSDictionary *theater in theaters) {
             if ([Cinema createOrReplaceFromDictionary:theater withContext:myStoreManager.managedObjectContext]){
                 //
             }
         }
-        [myStoreManager release];
+        
     }
+    
+    request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:@"http://coocoorooza.com/api/afisha_cinemas/1/hcLcT5sWeUZ3Br7YmvhahFLGUw6tv6ERB5GbJT4qm8D.json"]];
+	[request setRequestMethod:@"GET"];
+    [request addRequestHeader:@"User-Agent" value:[NSString stringWithFormat:@"iphone-app/%@",@"1.0"]];
+    [request setTimeOutSeconds:60];
+    [request setNumberOfTimesToRetryOnTimeout:3];
+	[request startSynchronous];
+    error = [request error];
+    if (!error) {
+        NSString *response = [request responseString];
+        NSLog(@"Data: %@", response);
+        //NSDictionary *json_data = [response JSONValue];
+        /*
+        NSArray *theaters = [json_data objectForKey:@"theaters"];
+
+        for (NSDictionary *theater in theaters) {
+            if ([Cinema createOrReplaceFromDictionary:theater withContext:myStoreManager.managedObjectContext]){
+                //
+            }
+        }
+        */
+    }
+    
+    [myStoreManager release];
 }
 
 #pragma mark -
