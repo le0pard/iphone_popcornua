@@ -19,6 +19,7 @@
 @dynamic phone;
 @dynamic title;
 @dynamic ext_id;
+@dynamic geolocation;
 @dynamic afishas;
 
 + (Cinema *)newCinemaObject:(NSManagedObjectContext *)moc {
@@ -70,15 +71,21 @@
     if (![[cinemaInfo objectForKey:@"link"] isKindOfClass:[NSNull class]]){
         cinema.link = [cinemaInfo objectForKey:@"link"];
     }
-    if (![[cinemaInfo objectForKey:@"latitude"] isKindOfClass:[NSNull class]]){
-        cinema.latitude = [cinemaInfo objectForKey:@"latitude"];
-    }
-    if (![[cinemaInfo objectForKey:@"longitude"] isKindOfClass:[NSNull class]]){
-        cinema.longitude = [cinemaInfo objectForKey:@"longitude"];
-    }
     if (![[cinemaInfo objectForKey:@"call_phone"] isKindOfClass:[NSNull class]]){
         cinema.call_phone = [cinemaInfo objectForKey:@"call_phone"];
     }
+    
+    if (![[cinemaInfo objectForKey:@"latitude"] isKindOfClass:[NSNull class]] && ![[cinemaInfo objectForKey:@"longitude"] isKindOfClass:[NSNull class]]){
+        cinema.latitude = [cinemaInfo objectForKey:@"latitude"];
+        cinema.longitude = [cinemaInfo objectForKey:@"longitude"];
+        CLLocationCoordinate2D coord;
+        coord.latitude = [cinema.latitude doubleValue];
+        coord.longitude = [cinema.longitude doubleValue];
+        Coordinate *c = [[Coordinate alloc] initWithCoordinate:coord];
+        cinema.geolocation = c;
+        [c release];
+    }
+
     
     NSError *error;
     if (![moc save:&error]) {

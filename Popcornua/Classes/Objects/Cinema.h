@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 #import "NSStringUtil.h"
+#import "Coordinate.h"
 
 @class Afisha;
 
@@ -23,6 +24,7 @@
 @property (nonatomic, retain) NSString * phone;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSNumber * ext_id;
+@property (nonatomic, retain) Coordinate * geolocation;
 @property (nonatomic, retain) NSSet *afishas;
 
 + (Cinema *)cinemaExistForId:(NSNumber *)extId withContext:(NSManagedObjectContext *)moc;

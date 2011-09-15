@@ -9,11 +9,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Popcornua/Classes/Objects/Cinema.m"
-         timestampString = "337425073.550609"
+         timestampString = "337788170.967038"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "44"
-         endingLineNumber = "44"
+         startingLineNumber = "45"
+         endingLineNumber = "45"
          landmarkName = "+cinemaExistForId:withContext:"
          landmarkType = "5">
       </FileBreakpoint>

@@ -14,6 +14,7 @@
         <attribute name="address" optional="YES" attributeType="String"/>
         <attribute name="call_phone" optional="YES" attributeType="String"/>
         <attribute name="ext_id" optional="YES" attributeType="Integer 32" defaultValueString="0"/>
+        <attribute name="geolocation" optional="YES" attributeType="Transformable"/>
         <attribute name="latitude" optional="YES" attributeType="String"/>
         <attribute name="link" optional="YES" attributeType="String"/>
         <attribute name="longitude" optional="YES" attributeType="String"/>

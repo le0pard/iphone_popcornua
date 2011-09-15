@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3817EE014223AB000576C22 /* Coordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3817EDF14223AB000576C22 /* Coordinate.m */; };
+		B3817EE814223B6800576C22 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3817EE714223B6800576C22 /* CoreLocation.framework */; };
 		B39135451412A75A0053C84B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39135441412A75A0053C84B /* UIKit.framework */; };
 		B39135471412A75A0053C84B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39135461412A75A0053C84B /* Foundation.framework */; };
 		B39135491412A75A0053C84B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39135481412A75A0053C84B /* CoreGraphics.framework */; };
@@ -72,6 +74,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B3817EDE14223AB000576C22 /* Coordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Coordinate.h; path = Classes/Objects/Coordinate.h; sourceTree = "<group>"; };
+		B3817EDF14223AB000576C22 /* Coordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Coordinate.m; path = Classes/Objects/Coordinate.m; sourceTree = "<group>"; };
+		B3817EE714223B6800576C22 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B39135401412A75A0053C84B /* Popcornua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Popcornua.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B39135441412A75A0053C84B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B39135461412A75A0053C84B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -160,6 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3817EE814223B6800576C22 /* CoreLocation.framework in Frameworks */,
 				B3B89CF0141C1B1200CCC495 /* libz.1.2.3.dylib in Frameworks */,
 				B3B89CEE141C1AF700CCC495 /* MobileCoreServices.framework in Frameworks */,
 				B3B89CEC141C1AED00CCC495 /* SystemConfiguration.framework in Frameworks */,
@@ -208,6 +214,7 @@
 		B39135431412A75A0053C84B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B3817EE714223B6800576C22 /* CoreLocation.framework */,
 				B3B89CEF141C1B1200CCC495 /* libz.1.2.3.dylib */,
 				B3B89CED141C1AF700CCC495 /* MobileCoreServices.framework */,
 				B3B89CEB141C1AED00CCC495 /* SystemConfiguration.framework */,
@@ -347,6 +354,8 @@
 			children = (
 				B3A319E51413A450004DCCBE /* Afisha.h */,
 				B3A319E61413A450004DCCBE /* Afisha.m */,
+				B3817EDE14223AB000576C22 /* Coordinate.h */,
+				B3817EDF14223AB000576C22 /* Coordinate.m */,
 				B3A319EB1413A46A004DCCBE /* Cinema.h */,
 				B3A319EC1413A46A004DCCBE /* Cinema.m */,
 				B3A319E81413A46A004DCCBE /* Movie.h */,
@@ -570,6 +579,7 @@
 				B3B89D0B141C2E5400CCC495 /* SBJSON.m in Sources */,
 				B3DC2E5F141CB3F100E1FDB0 /* NSStringUtil.m in Sources */,
 				B3A9ECDE141D1D39007D94FB /* PCUSharedManager.m in Sources */,
+				B3817EE014223AB000576C22 /* Coordinate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
