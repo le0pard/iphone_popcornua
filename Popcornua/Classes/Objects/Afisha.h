@@ -23,4 +23,7 @@
 @property (nonatomic, retain) Cinema *cinema;
 @property (nonatomic, retain) Movie *movie;
 
++ (Afisha *)afishaExistForId:(NSNumber *)extId withContext:(NSManagedObjectContext *)moc;
++ (BOOL)createOrReplaceFromDictionary:(NSDictionary *)movieInfo withContext:(NSManagedObjectContext *)moc;
+
 @end

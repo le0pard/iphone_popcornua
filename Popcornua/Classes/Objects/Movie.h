@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "NSStringUtil.h"
 
 @class Afisha;
 
@@ -23,5 +24,8 @@
 @property (nonatomic, retain) NSString * year;
 @property (nonatomic, retain) NSNumber * ext_id;
 @property (nonatomic, retain) NSSet *afishas;
+
++ (Movie *)movieExistForId:(NSNumber *)extId withContext:(NSManagedObjectContext *)moc;
++ (BOOL)createOrReplaceFromDictionary:(NSDictionary *)cinemaInfo withContext:(NSManagedObjectContext *)moc;
 
 @end

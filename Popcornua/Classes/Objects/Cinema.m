@@ -57,7 +57,7 @@
     cinema = [self cinemaExistForId:extId withContext:moc];
     
     if (nil == cinema) {
-        cinema = [[Cinema newCinemaObject:moc] autorelease];
+        cinema = [Cinema newCinemaObject:moc];
         cinema.ext_id = extId;
     }
     

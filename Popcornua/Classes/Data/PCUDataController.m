@@ -55,19 +55,22 @@
     error = [request error];
     if (!error) {
         NSString *response = [request responseString];
-        NSLog(@"Data: %@", response);
-        //NSDictionary *json_data = [response JSONValue];
-        /*
-        NSArray *theaters = [json_data objectForKey:@"theaters"];
-
-        for (NSDictionary *theater in theaters) {
-            if ([Cinema createOrReplaceFromDictionary:theater withContext:myStoreManager.managedObjectContext]){
+        NSDictionary *json_data = [response JSONValue];
+        NSArray *movies = [json_data objectForKey:@"cinemas"];
+        for (NSDictionary *movie in movies) {
+            if ([Movie createOrReplaceFromDictionary:movie withContext:myStoreManager.managedObjectContext]){
                 //
             }
         }
-        */
+        NSArray *afishas = [json_data objectForKey:@"afisha"];
+        for (NSDictionary *afisha in afishas) {
+            if ([Afisha createOrReplaceFromDictionary:afisha withContext:myStoreManager.managedObjectContext]){
+                //
+            }
+        }
     }
     
+    NSLog(@"Data: %@", @"done");
     [myStoreManager release];
 }
 
