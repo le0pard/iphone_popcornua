@@ -33,24 +33,6 @@
 {
     [super viewDidLoad];
     self.title = NSLocalizedString(@"Movies", @"");
-    [self startSyncAllData];
-}
-
-- (void) startSyncAllData{
-    NSOperationQueue *operationQueue = [[NSOperationQueue alloc] init];
-    [operationQueue setMaxConcurrentOperationCount:1];
-    
-    NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(synchronousLoadData) object:nil];
-    [operationQueue addOperation:operation];
-    [operation release];
-    
-    [operationQueue release];
-}
-
-- (void)synchronousLoadData{
-    PCUDataController *data = [[PCUDataController alloc] init];
-    [data startSyncData];
-    [data release];
 }
 
 - (void)viewDidUnload

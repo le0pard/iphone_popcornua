@@ -7,10 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PCUDataController.h"
 
 @interface MoviesViewController : UIViewController
-
-- (void) startSyncAllData;
 
 @end

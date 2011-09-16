@@ -29,7 +29,16 @@
     [moviesTab setTitle:NSLocalizedString(@"Movies", @"")];
     [self.window addSubview:self.rootController.view];
     [self.window makeKeyAndVisible];
+    
+    [self syncDataCore];
+    
     return YES;
+}
+
+- (void)syncDataCore{
+    PCUDataController *data = [[PCUDataController alloc] init];
+    [data startSyncData:self.window];
+    [data release];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

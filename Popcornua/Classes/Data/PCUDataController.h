@@ -7,17 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "ASIHTTPRequest.h"
 #import "Afisha.h"
 #import "Cinema.h"
 #import "Movie.h"
 #import "JSON.h"
-#import "PopcornuaAppDelegate.h"
+#import "PCUSharedManager.h"
+#import "MBProgressHUD.h"
 
-@interface PCUDataController : NSObject {
+@interface PCUDataController : NSObject <MBProgressHUDDelegate> {
     ASIHTTPRequest *request;
+    MBProgressHUD *hudView;
 }
 
-- (void) startSyncData;
+- (void)startSyncData:(UIWindow *)window;
 
 @end

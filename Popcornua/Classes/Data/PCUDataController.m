@@ -7,6 +7,7 @@
 //
 
 #import "PCUDataController.h"
+#import <unistd.h>
 
 @implementation PCUDataController
 
@@ -21,9 +22,11 @@
 }
 
 
-- (void) startSyncData{
+- (void) syncCoreData{
     PCUSharedManager *myStoreManager = [PCUSharedManager sharedManager];
     NSError *error = nil;
+    
+    hudView.labelText = @"Updating cinemas";
     
     request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:@"http://coocoorooza.com/api/afisha_theaters/1/hcLcT5sWeUZ3Br7YmvhahFLGUw6tv6ERB5GbJT4qm8D.json"]];
 	[request setRequestMethod:@"GET"];
@@ -45,6 +48,8 @@
         }
         
     }
+    
+    hudView.labelText = @"Updating movies";
     
     request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:@"http://coocoorooza.com/api/afisha_cinemas/1/hcLcT5sWeUZ3Br7YmvhahFLGUw6tv6ERB5GbJT4qm8D.json"]];
 	[request setRequestMethod:@"GET"];
@@ -70,8 +75,31 @@
         }
     }
     
-    NSLog(@"Data: %@", @"done");
     [myStoreManager release];
+}
+
+
+
+- (void)startSyncData:(UIWindow *)window{
+    hudView = [[MBProgressHUD alloc] initWithWindow:window];
+	[window addSubview:hudView];
+	hudView.dimBackground = YES;	
+	// Regiser for HUD callbacks so we can remove it from the window at the right time
+    hudView.delegate = nil;
+    hudView.labelText = @"Loading";
+    hudView.detailsLabelText = @"updating main data";
+    // Show the HUD while the provided method executes in a new thread
+    [hudView showWhileExecuting:@selector(syncCoreData) onTarget:self withObject:nil animated:YES];
+}
+
+#pragma mark -
+#pragma mark MBProgressHUDDelegate methods
+
+- (void)hudWasHidden:(MBProgressHUD *)hud {
+    // Remove HUD from screen when the HUD was hidded
+    [hudView removeFromSuperview];
+    [hudView release];
+	hudView = nil;
 }
 
 #pragma mark -

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B31823DE1423E662008D62B6 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B31823DD1423E662008D62B6 /* MBProgressHUD.m */; };
 		B3817EE014223AB000576C22 /* Coordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3817EDF14223AB000576C22 /* Coordinate.m */; };
 		B3817EE814223B6800576C22 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3817EE714223B6800576C22 /* CoreLocation.framework */; };
 		B39135451412A75A0053C84B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39135441412A75A0053C84B /* UIKit.framework */; };
@@ -74,6 +75,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B31823DC1423E662008D62B6 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = Classes/Libs/MBProgressHUD/MBProgressHUD.h; sourceTree = "<group>"; };
+		B31823DD1423E662008D62B6 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = Classes/Libs/MBProgressHUD/MBProgressHUD.m; sourceTree = "<group>"; };
 		B3817EDE14223AB000576C22 /* Coordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Coordinate.h; path = Classes/Objects/Coordinate.h; sourceTree = "<group>"; };
 		B3817EDF14223AB000576C22 /* Coordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Coordinate.m; path = Classes/Objects/Coordinate.m; sourceTree = "<group>"; };
 		B3817EE714223B6800576C22 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -192,6 +195,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B31823D51423E582008D62B6 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				B31823DC1423E662008D62B6 /* MBProgressHUD.h */,
+				B31823DD1423E662008D62B6 /* MBProgressHUD.m */,
+			);
+			name = MBProgressHUD;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		B39135351412A75A0053C84B = {
 			isa = PBXGroup;
 			children = (
@@ -376,6 +389,7 @@
 		B3B89CC3141C19A000CCC495 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				B31823D51423E582008D62B6 /* MBProgressHUD */,
 				B3B89D01141C2E5400CCC495 /* JSON */,
 				B3B89CC4141C19A000CCC495 /* ASIHTTPRequest */,
 			);
@@ -580,6 +594,7 @@
 				B3DC2E5F141CB3F100E1FDB0 /* NSStringUtil.m in Sources */,
 				B3A9ECDE141D1D39007D94FB /* PCUSharedManager.m in Sources */,
 				B3817EE014223AB000576C22 /* Coordinate.m in Sources */,
+				B31823DE1423E662008D62B6 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

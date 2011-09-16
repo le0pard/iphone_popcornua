@@ -8,12 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "PCUSharedManager.h"
+#import "PCUDataController.h"
 
 @class MainNavController;
 
-@interface PopcornuaAppDelegate : NSObject <UIApplicationDelegate>{
-    NSOperationQueue *operationQueue;
-}
+@interface PopcornuaAppDelegate : NSObject <UIApplicationDelegate>
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UITabBarController *rootController;
@@ -21,6 +20,9 @@
 
 @property (nonatomic, retain) IBOutlet UITabBarItem *moviesTab;
 @property (nonatomic, retain) IBOutlet UITabBarItem *cinemasTab;
+
+- (void)syncDataCore;
+
 
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
