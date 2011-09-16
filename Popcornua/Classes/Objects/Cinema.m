@@ -96,4 +96,33 @@
     return true;
 }
 
+
++ (NSMutableArray *)getCinemasList:(NSManagedObjectContext *)moc{
+    // Define our table/entity to use
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Cinema" inManagedObjectContext:moc];
+	
+	// Setup the fetch request
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	[request setEntity:entity];
+	
+	// Define how we will sort the records
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES];
+	NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+	
+	[request setSortDescriptors:sortDescriptors];
+	[sortDescriptor release];
+	
+	// Fetch the records and handle an error
+	NSError *error;
+	NSMutableArray *mutableFetchResults = [[moc executeFetchRequest:request error:&error] mutableCopy];
+    [request release];
+    
+    if (!mutableFetchResults){
+        return nil;
+    }
+    
+    [mutableFetchResults autorelease];
+    return mutableFetchResults;
+}
+
 @end

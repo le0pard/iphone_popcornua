@@ -29,6 +29,7 @@
 
 + (Cinema *)cinemaExistForId:(NSNumber *)extId withContext:(NSManagedObjectContext *)moc;
 + (BOOL)createOrReplaceFromDictionary:(NSDictionary *)cinemaInfo withContext:(NSManagedObjectContext *)moc;
++ (NSMutableArray *)getCinemasList:(NSManagedObjectContext *)moc;
 
 
 @end
