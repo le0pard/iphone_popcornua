@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PCUSharedManager.h"
+#import "Movie.h"
 
-@interface MoviesViewController : UIViewController
+@interface MoviesViewController : UIViewController<UITableViewDelegate, UITableViewDataSource> {
+    UITableView *rootTableView;
+    NSMutableArray *moviesArray;
+}
+
+@property (nonatomic, retain) IBOutlet UITableView *rootTableView;
+@property (nonatomic, retain) IBOutlet NSMutableArray *moviesArray;
+
+-(void)fetchMoviesTodayRecords;
+
 
 @end

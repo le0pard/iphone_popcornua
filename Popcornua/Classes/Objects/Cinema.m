@@ -34,7 +34,7 @@
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     [fetchRequest setEntity:[NSEntityDescription entityForName:@"Cinema"
                                         inManagedObjectContext:moc]];
-    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"ext_id = %@", extId]];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"ext_id == %@", extId]];
     [fetchRequest setFetchLimit:1];
     NSError *error = nil;
     NSArray *results = [moc executeFetchRequest:fetchRequest error:&error];

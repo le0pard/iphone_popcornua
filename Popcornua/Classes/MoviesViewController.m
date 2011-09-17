@@ -10,6 +10,8 @@
 
 @implementation MoviesViewController
 
+@synthesize rootTableView, moviesArray;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -29,10 +31,17 @@
 
 #pragma mark - View lifecycle
 
+-(void)fetchMoviesTodayRecords{
+    PCUSharedManager *myStoreManager = [PCUSharedManager sharedManager];
+	self.moviesArray = [Movie getMoviesTodayList:myStoreManager.managedObjectContext];
+    [myStoreManager release];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.title = NSLocalizedString(@"Movies", @"");
+    [self fetchMoviesTodayRecords];
 }
 
 - (void)viewDidUnload
@@ -46,6 +55,45 @@
 {
     // Return YES for supported orientations
     return YES;
+}
+
+#pragma mark -
+#pragma mark Table Data Source Methods
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    // Return the number of sections.
+    return 1;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // NSLog(@"Count: %d", [self.moviesArray count]);
+	return [self.moviesArray count];
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView 
+		 cellForRowAtIndexPath:(NSIndexPath *)indexPath 
+{
+	static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+    }
+    
+    // Set up the cell...
+    Movie *movie = [self.moviesArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = movie.title;
+    cell.detailTextLabel.text = movie.orig_title;
+    return cell;
+}
+#pragma mark -
+#pragma mark Table View Delegate Methods
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	return 66;
+}
+
+
+- (void)dealloc {
+	[moviesArray release];
+    [super dealloc];
 }
 
 @end

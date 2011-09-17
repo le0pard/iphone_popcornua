@@ -29,9 +29,10 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
--(void)fetchRecords{
+-(void)fetchCinemasRecords{
     PCUSharedManager *myStoreManager = [PCUSharedManager sharedManager];
 	self.cinemasArray = [Cinema getCinemasList:myStoreManager.managedObjectContext];
+    [myStoreManager release];
 }
 
 #pragma mark - View lifecycle
@@ -40,7 +41,7 @@
 {
     [super viewDidLoad];
     self.title = NSLocalizedString(@"Cinemas", @"");
-    [self fetchRecords];
+    [self fetchCinemasRecords];
 }
 
 - (void)viewDidUnload

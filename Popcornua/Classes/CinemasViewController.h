@@ -18,6 +18,6 @@
 @property (nonatomic, retain) IBOutlet UITableView *rootTableView;
 @property (nonatomic, retain) IBOutlet NSMutableArray *cinemasArray;
 
--(void)fetchRecords;
+-(void)fetchCinemasRecords;
 
 @end

@@ -27,5 +27,6 @@
 
 + (Movie *)movieExistForId:(NSNumber *)extId withContext:(NSManagedObjectContext *)moc;
 + (BOOL)createOrReplaceFromDictionary:(NSDictionary *)cinemaInfo withContext:(NSManagedObjectContext *)moc;
++ (NSMutableArray *)getMoviesTodayList:(NSManagedObjectContext *)moc;
 
 @end

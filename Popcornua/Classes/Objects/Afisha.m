@@ -31,9 +31,9 @@
 + (Afisha *)afishaExistForId:(NSNumber *)extId withContext:(NSManagedObjectContext *)moc{
     Afisha *afisha = nil;
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    [fetchRequest setEntity:[NSEntityDescription entityForName:@"Movie"
+    [fetchRequest setEntity:[NSEntityDescription entityForName:@"Afisha"
                                         inManagedObjectContext:moc]];
-    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"ext_id = %@", extId]];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"ext_id == %@", extId]];
     [fetchRequest setFetchLimit:1];
     NSError *error = nil;
     NSArray *results = [moc executeFetchRequest:fetchRequest error:&error];
@@ -83,19 +83,6 @@
     
     [dateFormat release];
     
-    if (![[afishaInfo objectForKey:@"theater_id"] isKindOfClass:[NSNull class]]){
-        NSNumber *theater_id = nil;
-        if ([[afishaInfo objectForKey:@"theater_id"] isKindOfClass:[NSString class]]) {
-            theater_id = [[afishaInfo objectForKey:@"theater_id"] numericValue];
-        } else {
-            theater_id = [afishaInfo objectForKey:@"theater_id"];
-        }
-        Movie *movie = [Movie movieExistForId:theater_id withContext:moc];
-        if (nil != movie){
-            afisha.movie = movie;
-        }
-    }
-    
     if (![[afishaInfo objectForKey:@"cinema_id"] isKindOfClass:[NSNull class]]){
         NSNumber *cinema_id = nil;
         if ([[afishaInfo objectForKey:@"cinema_id"] isKindOfClass:[NSString class]]) {
@@ -103,7 +90,20 @@
         } else {
             cinema_id = [afishaInfo objectForKey:@"cinema_id"];
         }
-        Cinema *cinema = [Cinema cinemaExistForId:cinema_id withContext:moc];
+        Movie *movie = [Movie movieExistForId:cinema_id withContext:moc];
+        if (nil != movie){
+            afisha.movie = movie;
+        }
+    }
+    
+    if (![[afishaInfo objectForKey:@"theater_id"] isKindOfClass:[NSNull class]]){
+        NSNumber *theater_id = nil;
+        if ([[afishaInfo objectForKey:@"theater_id"] isKindOfClass:[NSString class]]) {
+            theater_id = [[afishaInfo objectForKey:@"cinema_id"] numericValue];
+        } else {
+            theater_id = [afishaInfo objectForKey:@"theater_id"];
+        }
+        Cinema *cinema = [Cinema cinemaExistForId:theater_id withContext:moc];
         if (nil != cinema){
             afisha.cinema = cinema;
         }
@@ -118,5 +118,44 @@
     
     return true;
 }
+
+
++ (NSMutableArray *)getAfishaTodayList:(NSManagedObjectContext *)moc{
+    // Define our table/entity to use
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Afisha" inManagedObjectContext:moc];
+	
+	// Setup the fetch request
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	[request setEntity:entity];
+    
+    // Define range of dates
+    NSDate *date = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    
+    NSDateFormatter *formatterTemp = [[NSDateFormatter alloc] init];
+    
+    [formatterTemp setDateFormat:@"yyyy-MM-dd 00:00:00"];
+    NSData *dataBegin = (NSData *)[formatter dateFromString:[formatterTemp stringFromDate:date]];
+    
+    [formatterTemp release];
+    [formatter release];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(data_begin <= %@) AND (data_end >= %@)", dataBegin, dataBegin];
+    [request setPredicate:predicate];
+	
+	// Fetch the records and handle an error
+	NSError *error;
+	NSMutableArray *mutableFetchResults = [[moc executeFetchRequest:request error:&error] mutableCopy];
+    [request release];
+    
+    if (!mutableFetchResults){
+        return nil;
+    }
+    
+    [mutableFetchResults autorelease];
+    return mutableFetchResults;
+}
+
 
 @end
