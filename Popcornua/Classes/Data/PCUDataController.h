@@ -19,6 +19,7 @@
 @interface PCUDataController : NSObject <MBProgressHUDDelegate> {
     ASIHTTPRequest *request;
     MBProgressHUD *hudView;
+    UIWindow *mainWindow;
 }
 
 - (void)startSyncData:(UIWindow *)window;

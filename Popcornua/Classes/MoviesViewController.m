@@ -37,10 +37,19 @@
     [myStoreManager release];
 }
 
+-(void)updateTableView:(id)sender{
+    [self fetchMoviesTodayRecords];
+    [self.rootTableView reloadData];
+    [self.rootTableView flashScrollIndicators];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.title = NSLocalizedString(@"Movies", @"");
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTableView:) name:@"updateTableViews" object:nil];
+    
     [self fetchMoviesTodayRecords];
 }
 

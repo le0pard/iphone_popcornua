@@ -35,12 +35,21 @@
     [myStoreManager release];
 }
 
+-(void)updateTableView:(id)sender{
+    [self fetchCinemasRecords];
+    [self.rootTableView reloadData];
+    [self.rootTableView flashScrollIndicators];
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.title = NSLocalizedString(@"Cinemas", @"");
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTableView:) name:@"updateTableViews" object:nil];
+    
     [self fetchCinemasRecords];
 }
 

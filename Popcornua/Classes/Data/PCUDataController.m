@@ -76,13 +76,16 @@
     }
     
     [myStoreManager release];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"updateTableViews" object:self];
 }
 
 
 
 - (void)startSyncData:(UIWindow *)window{
-    hudView = [[MBProgressHUD alloc] initWithWindow:window];
-	[window addSubview:hudView];
+    mainWindow = window;
+    hudView = [[MBProgressHUD alloc] initWithWindow:mainWindow];
+	[mainWindow addSubview:hudView];
 	hudView.dimBackground = YES;	
 	// Regiser for HUD callbacks so we can remove it from the window at the right time
     hudView.delegate = nil;
