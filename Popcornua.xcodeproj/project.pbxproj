@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B31823DE1423E662008D62B6 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B31823DD1423E662008D62B6 /* MBProgressHUD.m */; };
+		B337BE9814252FB9002BAB4B /* map_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B337BE9714252FB9002BAB4B /* map_icon.png */; };
+		B337BE9A14252FEC002BAB4B /* settings_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B337BE9914252FEC002BAB4B /* settings_icon.png */; };
 		B351B2351424DDD900BDA78B /* CinemasMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = B351B2331424DDD800BDA78B /* CinemasMapController.m */; };
 		B351B2391424DE0300BDA78B /* CinemasMapController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B351B2381424DE0300BDA78B /* CinemasMapController.xib */; };
 		B351B2431424E1F600BDA78B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B351B2421424E1F600BDA78B /* MapKit.framework */; };
@@ -81,6 +83,8 @@
 /* Begin PBXFileReference section */
 		B31823DC1423E662008D62B6 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = Classes/Libs/MBProgressHUD/MBProgressHUD.h; sourceTree = "<group>"; };
 		B31823DD1423E662008D62B6 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = Classes/Libs/MBProgressHUD/MBProgressHUD.m; sourceTree = "<group>"; };
+		B337BE9714252FB9002BAB4B /* map_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_icon.png; sourceTree = "<group>"; };
+		B337BE9914252FEC002BAB4B /* settings_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings_icon.png; sourceTree = "<group>"; };
 		B351B2321424DDD800BDA78B /* CinemasMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CinemasMapController.h; path = Classes/CinemasMapController.h; sourceTree = "<group>"; };
 		B351B2331424DDD800BDA78B /* CinemasMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CinemasMapController.m; path = Classes/CinemasMapController.m; sourceTree = "<group>"; };
 		B351B2381424DE0300BDA78B /* CinemasMapController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CinemasMapController.xib; path = VIews/CinemasMapController.xib; sourceTree = "<group>"; };
@@ -364,6 +368,8 @@
 		B391359D1412B3D80053C84B /* tab_icons */ = {
 			isa = PBXGroup;
 			children = (
+				B337BE9914252FEC002BAB4B /* settings_icon.png */,
+				B337BE9714252FB9002BAB4B /* map_icon.png */,
 				B3B89CFD141C245100CCC495 /* cinemas_icon.png */,
 				B3B89CFE141C245100CCC495 /* movies_icon.png */,
 			);
@@ -552,6 +558,8 @@
 				B3B89CFF141C245100CCC495 /* cinemas_icon.png in Resources */,
 				B3B89D00141C245100CCC495 /* movies_icon.png in Resources */,
 				B351B2391424DE0300BDA78B /* CinemasMapController.xib in Resources */,
+				B337BE9814252FB9002BAB4B /* map_icon.png in Resources */,
+				B337BE9A14252FEC002BAB4B /* settings_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
