@@ -91,6 +91,7 @@
     hudView.delegate = nil;
     hudView.labelText = @"Loading";
     hudView.detailsLabelText = @"updating main data";
+    hudView.removeFromSuperViewOnHide = true;
     // Show the HUD while the provided method executes in a new thread
     [hudView showWhileExecuting:@selector(syncCoreData) onTarget:self withObject:nil animated:YES];
 }
@@ -100,7 +101,6 @@
 
 - (void)hudWasHidden:(MBProgressHUD *)hud {
     // Remove HUD from screen when the HUD was hidded
-    [hudView removeFromSuperview];
     [hudView release];
 	hudView = nil;
 }

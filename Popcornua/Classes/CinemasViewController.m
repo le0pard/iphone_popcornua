@@ -51,6 +51,15 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTableView:) name:@"updateTableViews" object:nil];
     
     [self fetchCinemasRecords];
+    
+    PopcornuaAppDelegate *mainDelegate = (PopcornuaAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    UIBarButtonItem *syncButton = [[UIBarButtonItem alloc]
+                                   initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
+                                   target:mainDelegate 
+                                   action:@selector(syncDataCore)];    
+    self.navigationItem.rightBarButtonItem = syncButton;
+    [syncButton release];
 }
 
 - (void)viewDidUnload
