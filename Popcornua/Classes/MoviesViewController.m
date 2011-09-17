@@ -82,29 +82,34 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // NSLog(@"Count: %d", [self.moviesArray count]);
 	return [self.moviesArray count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView 
 		 cellForRowAtIndexPath:(NSIndexPath *)indexPath 
 {
-	static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
-    }
+    static NSString *MovieCellIdentifier = @"MovieCellIdentifier ";
+	
+	MovieCell *cell = (MovieCell *)[tableView dequeueReusableCellWithIdentifier: MovieCellIdentifier];
+	if (cell == nil)  
+	{
+		NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MovieCell" 
+                                                     owner:self options:nil];
+		cell = (MovieCell *)[nib objectAtIndex:0];
+		
+	}
     
-    // Set up the cell...
+    // set cell
     Movie *movie = [self.moviesArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = movie.title;
-    cell.detailTextLabel.text = movie.orig_title;
+    [cell setCellByMovie:movie];
+    //return cell
+    
     return cell;
 }
 #pragma mark -
 #pragma mark Table View Delegate Methods
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	return 66;
+	return 120;
 }
 
 
