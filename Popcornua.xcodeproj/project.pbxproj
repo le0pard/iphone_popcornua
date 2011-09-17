@@ -8,8 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		B31823DE1423E662008D62B6 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B31823DD1423E662008D62B6 /* MBProgressHUD.m */; };
+		B351B2351424DDD900BDA78B /* CinemasMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = B351B2331424DDD800BDA78B /* CinemasMapController.m */; };
+		B351B2391424DE0300BDA78B /* CinemasMapController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B351B2381424DE0300BDA78B /* CinemasMapController.xib */; };
+		B351B2431424E1F600BDA78B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B351B2421424E1F600BDA78B /* MapKit.framework */; };
+		B351B2491424E41400BDA78B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B351B2481424E3FB00BDA78B /* CoreLocation.framework */; };
+		B351B24C1424EB9D00BDA78B /* CinemaMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = B351B24B1424EB9C00BDA78B /* CinemaMapAnnotation.m */; };
 		B3817EE014223AB000576C22 /* Coordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3817EDF14223AB000576C22 /* Coordinate.m */; };
-		B3817EE814223B6800576C22 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3817EE714223B6800576C22 /* CoreLocation.framework */; };
 		B39135451412A75A0053C84B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39135441412A75A0053C84B /* UIKit.framework */; };
 		B39135471412A75A0053C84B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39135461412A75A0053C84B /* Foundation.framework */; };
 		B39135491412A75A0053C84B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39135481412A75A0053C84B /* CoreGraphics.framework */; };
@@ -77,9 +81,15 @@
 /* Begin PBXFileReference section */
 		B31823DC1423E662008D62B6 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = Classes/Libs/MBProgressHUD/MBProgressHUD.h; sourceTree = "<group>"; };
 		B31823DD1423E662008D62B6 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = Classes/Libs/MBProgressHUD/MBProgressHUD.m; sourceTree = "<group>"; };
+		B351B2321424DDD800BDA78B /* CinemasMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CinemasMapController.h; path = Classes/CinemasMapController.h; sourceTree = "<group>"; };
+		B351B2331424DDD800BDA78B /* CinemasMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CinemasMapController.m; path = Classes/CinemasMapController.m; sourceTree = "<group>"; };
+		B351B2381424DE0300BDA78B /* CinemasMapController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CinemasMapController.xib; path = VIews/CinemasMapController.xib; sourceTree = "<group>"; };
+		B351B2421424E1F600BDA78B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B351B2481424E3FB00BDA78B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B351B24A1424EB9B00BDA78B /* CinemaMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinemaMapAnnotation.h; sourceTree = "<group>"; };
+		B351B24B1424EB9C00BDA78B /* CinemaMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CinemaMapAnnotation.m; sourceTree = "<group>"; };
 		B3817EDE14223AB000576C22 /* Coordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Coordinate.h; path = Classes/Objects/Coordinate.h; sourceTree = "<group>"; };
 		B3817EDF14223AB000576C22 /* Coordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Coordinate.m; path = Classes/Objects/Coordinate.m; sourceTree = "<group>"; };
-		B3817EE714223B6800576C22 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B39135401412A75A0053C84B /* Popcornua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Popcornua.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B39135441412A75A0053C84B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B39135461412A75A0053C84B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -168,10 +178,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3817EE814223B6800576C22 /* CoreLocation.framework in Frameworks */,
+				B351B2431424E1F600BDA78B /* MapKit.framework in Frameworks */,
 				B3B89CF0141C1B1200CCC495 /* libz.1.2.3.dylib in Frameworks */,
 				B3B89CEE141C1AF700CCC495 /* MobileCoreServices.framework in Frameworks */,
 				B3B89CEC141C1AED00CCC495 /* SystemConfiguration.framework in Frameworks */,
+				B351B2491424E41400BDA78B /* CoreLocation.framework in Frameworks */,
 				B3B89CEA141C1ADF00CCC495 /* CFNetwork.framework in Frameworks */,
 				B39135451412A75A0053C84B /* UIKit.framework in Frameworks */,
 				B39135471412A75A0053C84B /* Foundation.framework in Frameworks */,
@@ -227,7 +238,8 @@
 		B39135431412A75A0053C84B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B3817EE714223B6800576C22 /* CoreLocation.framework */,
+				B351B2481424E3FB00BDA78B /* CoreLocation.framework */,
+				B351B2421424E1F600BDA78B /* MapKit.framework */,
 				B3B89CEF141C1B1200CCC495 /* libz.1.2.3.dylib */,
 				B3B89CED141C1AF700CCC495 /* MobileCoreServices.framework */,
 				B3B89CEB141C1AED00CCC495 /* SystemConfiguration.framework */,
@@ -292,12 +304,16 @@
 				B3A319D71413A09E004DCCBE /* Objects */,
 				B3A319D414139879004DCCBE /* MainNavController.h */,
 				B3A319D514139879004DCCBE /* MainNavController.m */,
+				B351B2321424DDD800BDA78B /* CinemasMapController.h */,
+				B351B2331424DDD800BDA78B /* CinemasMapController.m */,
 				B39135CA1412D20B0053C84B /* CinemasViewController.h */,
 				B39135CB1412D20B0053C84B /* CinemasViewController.m */,
 				B39135CC1412D20B0053C84B /* MoviesViewController.h */,
 				B39135CD1412D20B0053C84B /* MoviesViewController.m */,
 				B39135CE1412D20B0053C84B /* PopcornuaAppDelegate.h */,
 				B39135CF1412D20B0053C84B /* PopcornuaAppDelegate.m */,
+				B351B24A1424EB9B00BDA78B /* CinemaMapAnnotation.h */,
+				B351B24B1424EB9C00BDA78B /* CinemaMapAnnotation.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -305,6 +321,7 @@
 		B391357F1412A84A0053C84B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B351B2381424DE0300BDA78B /* CinemasMapController.xib */,
 				B39135D31412D21A0053C84B /* CinemasViewController.xib */,
 				B39135D41412D21A0053C84B /* MainWindow.xib */,
 				B39135D51412D21A0053C84B /* MoviesViewController.xib */,
@@ -534,6 +551,7 @@
 				B3B89CF8141C235900CCC495 /* Default@2x.png in Resources */,
 				B3B89CFF141C245100CCC495 /* cinemas_icon.png in Resources */,
 				B3B89D00141C245100CCC495 /* movies_icon.png in Resources */,
+				B351B2391424DE0300BDA78B /* CinemasMapController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,6 +613,8 @@
 				B3A9ECDE141D1D39007D94FB /* PCUSharedManager.m in Sources */,
 				B3817EE014223AB000576C22 /* Coordinate.m in Sources */,
 				B31823DE1423E662008D62B6 /* MBProgressHUD.m in Sources */,
+				B351B2351424DDD900BDA78B /* CinemasMapController.m in Sources */,
+				B351B24C1424EB9D00BDA78B /* CinemaMapAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

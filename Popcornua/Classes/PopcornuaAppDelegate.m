@@ -17,16 +17,17 @@
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 @synthesize rootController = _rootController;
 @synthesize navController = _navController;
-@synthesize moviesTab, cinemasTab;
+@synthesize moviesTab, cinemasTab, mapTab;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     PCUSharedManager *myStoreManager = [PCUSharedManager sharedManager];
     myStoreManager.managedObjectContext = self.managedObjectContext;
-    [myStoreManager release];
     
     [cinemasTab setTitle:NSLocalizedString(@"Cinemas", @"")];
     [moviesTab setTitle:NSLocalizedString(@"Movies", @"")];
+    [mapTab setTitle:NSLocalizedString(@"Map", @"")];
+
     [self.window addSubview:self.rootController.view];
     [self.window makeKeyAndVisible];
     
@@ -79,6 +80,10 @@
 
 - (void)dealloc
 {
+    [moviesTab release];
+    [cinemasTab release];
+    [mapTab release];
+    
     [_navController release];
     [_rootController release];
     [_window release];

@@ -34,7 +34,6 @@
 -(void)fetchMoviesTodayRecords{
     PCUSharedManager *myStoreManager = [PCUSharedManager sharedManager];
 	self.moviesArray = [Movie getMoviesTodayList:myStoreManager.managedObjectContext];
-    [myStoreManager release];
 }
 
 -(void)updateTableView:(id)sender{
@@ -111,6 +110,7 @@
 
 - (void)dealloc {
 	[moviesArray release];
+    [rootTableView release];
     [super dealloc];
 }
 

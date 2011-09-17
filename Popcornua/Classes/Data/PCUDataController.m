@@ -26,7 +26,7 @@
     PCUSharedManager *myStoreManager = [PCUSharedManager sharedManager];
     NSError *error = nil;
     
-    hudView.labelText = @"Updating cinemas";
+    hudView.labelText = NSLocalizedString(@"Updating cinemas", @"");
     
     request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:@"http://coocoorooza.com/api/afisha_theaters/1/hcLcT5sWeUZ3Br7YmvhahFLGUw6tv6ERB5GbJT4qm8D.json"]];
 	[request setRequestMethod:@"GET"];
@@ -49,7 +49,7 @@
         
     }
     
-    hudView.labelText = @"Updating movies";
+    hudView.labelText = NSLocalizedString(@"Updating movies", @"");
     
     request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:@"http://coocoorooza.com/api/afisha_cinemas/1/hcLcT5sWeUZ3Br7YmvhahFLGUw6tv6ERB5GbJT4qm8D.json"]];
 	[request setRequestMethod:@"GET"];
@@ -89,8 +89,8 @@
 	hudView.dimBackground = YES;	
 	// Regiser for HUD callbacks so we can remove it from the window at the right time
     hudView.delegate = nil;
-    hudView.labelText = @"Loading";
-    hudView.detailsLabelText = @"updating main data";
+    hudView.labelText = NSLocalizedString(@"Loading", @"");
+    hudView.detailsLabelText = NSLocalizedString(@"updating program data", @"");
     hudView.removeFromSuperViewOnHide = true;
     // Show the HUD while the provided method executes in a new thread
     [hudView showWhileExecuting:@selector(syncCoreData) onTarget:self withObject:nil animated:YES];

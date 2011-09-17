@@ -32,7 +32,6 @@
 -(void)fetchCinemasRecords{
     PCUSharedManager *myStoreManager = [PCUSharedManager sharedManager];
 	self.cinemasArray = [Cinema getCinemasList:myStoreManager.managedObjectContext];
-    [myStoreManager release];
 }
 
 -(void)updateTableView:(id)sender{
@@ -111,7 +110,7 @@
 
 - (void)dealloc {
 	[cinemasArray release];
-	
+	[rootTableView release];
     [super dealloc];
 }
 

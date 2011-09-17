@@ -20,6 +20,7 @@
 
 @property (nonatomic, retain) IBOutlet UITabBarItem *moviesTab;
 @property (nonatomic, retain) IBOutlet UITabBarItem *cinemasTab;
+@property (nonatomic, retain) IBOutlet UITabBarItem *mapTab;
 
 - (void)syncDataCore;
 
