@@ -2,7 +2,11 @@
 "Cinemas"                       = "Кинотеатры";
 "Movies"                        = "Фильмы";
 "Map"                           = "Карта";
+
 "Loading"                       = "Загрузка";
 "updating program data"         = "обновление данных программы";
 "Updating cinemas"              = "Обновление кинотеатров";
 "Updating movies"               = "Обновление фильмов";
+
+"SatellitView"                  = "Спутник";
+"MapView"                       = "Карта";

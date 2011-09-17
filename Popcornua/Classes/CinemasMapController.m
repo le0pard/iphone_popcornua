@@ -62,6 +62,17 @@
     [mapView setRegion:cityRegion animated:TRUE];
 }
 
+- (void)changeMapView:(id)sender{
+    UIBarButtonItem *mapViewButton = (UIBarButtonItem *)sender;
+    if (NSLocalizedString(@"SatellitView", @"") == [mapViewButton title]){
+        mapView.mapType = MKMapTypeSatellite;
+        mapViewButton.title = NSLocalizedString(@"MapView", @"");
+    } else {
+        mapView.mapType = MKMapTypeStandard;
+        mapViewButton.title = NSLocalizedString(@"SatellitView", @"");
+    }
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -70,7 +81,14 @@
     
     self.title = NSLocalizedString(@"Map", @"");
     
-	[self fetchCinemasAndMapIts];    
+	[self fetchCinemasAndMapIts];
+    
+    UIBarButtonItem *mapViewButton = [[UIBarButtonItem alloc]
+                                   initWithTitle:NSLocalizedString(@"SatellitView", @"") 
+                                   style:UIBarButtonItemStylePlain 
+                                   target:self action:@selector(changeMapView:)];    
+    self.navigationItem.rightBarButtonItem = mapViewButton;
+    [mapViewButton release];
 }
 
 - (void)viewDidUnload

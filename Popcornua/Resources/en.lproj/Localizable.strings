@@ -2,8 +2,11 @@
 "Cinemas"                       = "Cinemas";
 "Movies"                        = "Movies";
 "Map"                           = "Map";
+
 "Loading"                       = "Loading";
 "updating program data"         = "updating program data";
 "Updating cinemas"              = "Updating cinemas";
 "Updating movies"               = "Updating movies";
 
+"SatellitView"                  = "Satellit";
+"MapView"                  = "Map";
