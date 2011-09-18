@@ -59,7 +59,8 @@
     cityRegion.center.latitude = cityRegion.center.latitude / iteratorTaps;
     cityRegion.center.longitude = cityRegion.center.longitude / iteratorTaps;
     
-    [mapView setRegion:cityRegion animated:TRUE];
+    [mapView setRegion:cityRegion animated:NO];
+    [mapView setCenterCoordinate:mapView.region.center animated:NO];
 }
 
 - (void)changeMapView:(id)sender{
@@ -73,6 +74,15 @@
     }
 }
 
+-(void)updateMapAnotations:(id)sender{
+    for (id annotation in mapView.annotations) {
+        if ([annotation isKindOfClass:[CinemaMapAnnotation class]]){
+            [mapView removeAnnotation:annotation];
+        }
+    }
+    [self fetchCinemasAndMapIts];
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -82,6 +92,8 @@
     self.title = NSLocalizedString(@"Map", @"");
     
 	[self fetchCinemasAndMapIts];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateMapAnotations:) name:@"updateTableViews" object:nil];
     
     UIBarButtonItem *mapViewButton = [[UIBarButtonItem alloc]
                                    initWithTitle:NSLocalizedString(@"SatellitView", @"") 
