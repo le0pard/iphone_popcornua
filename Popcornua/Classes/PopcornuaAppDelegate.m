@@ -17,7 +17,7 @@
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 @synthesize rootController = _rootController;
 @synthesize navController = _navController;
-@synthesize moviesTab, cinemasTab, mapTab;
+@synthesize moviesTab, cinemasTab, mapTab, settingsTab;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -27,6 +27,7 @@
     [cinemasTab setTitle:NSLocalizedString(@"Cinemas", @"")];
     [moviesTab setTitle:NSLocalizedString(@"Movies", @"")];
     [mapTab setTitle:NSLocalizedString(@"Map", @"")];
+    [settingsTab setTitle:NSLocalizedString(@"Settings", @"")];
 
     [self.window addSubview:self.rootController.view];
     [self.window makeKeyAndVisible];
