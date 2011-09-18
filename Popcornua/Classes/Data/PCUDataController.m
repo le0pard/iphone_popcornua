@@ -28,7 +28,7 @@
     
     hudView.labelText = NSLocalizedString(@"Updating cinemas", @"");
     
-    request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:@"http://coocoorooza.com/api/afisha_theaters/1/hcLcT5sWeUZ3Br7YmvhahFLGUw6tv6ERB5GbJT4qm8D.json"]];
+    request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:POPCORN_CINEMAS_URL, 1, POPCORN_SECRET]]];
 	[request setRequestMethod:@"GET"];
     [request addRequestHeader:@"User-Agent" value:[NSString stringWithFormat:@"iphone-app/%@",@"1.0"]];
     [request setTimeOutSeconds:60];
@@ -51,7 +51,7 @@
     
     hudView.labelText = NSLocalizedString(@"Updating movies", @"");
     
-    request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:@"http://coocoorooza.com/api/afisha_cinemas/1/hcLcT5sWeUZ3Br7YmvhahFLGUw6tv6ERB5GbJT4qm8D.json"]];
+    request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:POPCORN_MOVIES_URL, 1, POPCORN_SECRET]]];
 	[request setRequestMethod:@"GET"];
     [request addRequestHeader:@"User-Agent" value:[NSString stringWithFormat:@"iphone-app/%@",@"1.0"]];
     [request setTimeOutSeconds:60];

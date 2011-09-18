@@ -16,6 +16,11 @@
 #import "PCUSharedManager.h"
 #import "MBProgressHUD.h"
 
+#define POPCORN_SECRET @"hcLcT5sWeUZ3Br7YmvhahFLGUw6tv6ERB5GbJT4qm8D"
+#define POPCORN_CINEMAS_URL @"http://coocoorooza.com/api/afisha_theaters/%d/%@.json"
+#define POPCORN_MOVIES_URL @"http://coocoorooza.com/api/afisha_cinemas/%d/%@.json"
+
+
 @interface PCUDataController : NSObject <MBProgressHUDDelegate> {
     ASIHTTPRequest *request;
     MBProgressHUD *hudView;
