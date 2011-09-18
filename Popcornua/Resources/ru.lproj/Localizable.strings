@@ -11,3 +11,6 @@
 
 "SatellitView"                  = "Спутник";
 "MapView"                       = "Карта";
+
+"Year"                          = "Год";
+"Not set"                       = "Не указано";

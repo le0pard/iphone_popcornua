@@ -10,4 +10,7 @@
 "Updating movies"               = "Updating movies";
 
 "SatellitView"                  = "Satellit";
-"MapView"                  = "Map";
+"MapView"                       = "Map";
+
+"Year"                          = "Year";
+"Not set"                       = "Not set";
