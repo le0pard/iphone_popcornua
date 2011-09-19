@@ -8,6 +8,7 @@
 
 #import "Movie.h"
 #import "Afisha.h"
+#import "Cinema.h"
 
 
 @implementation Movie
@@ -110,9 +111,53 @@
     [formatterTemp release];
     [formatter release];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(afishas.data_begin <= %@) AND (afishas.data_end >= %@)", dataBegin, dataBegin];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(afishas.@count > 0) && ((ANY afishas.data_begin <= %@) && (ANY afishas.data_end >= %@))", dataBegin, dataBegin];
     [request setPredicate:predicate];
      
+	// Define how we will sort the records
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES];
+	NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+	[request setSortDescriptors:sortDescriptors];
+	[sortDescriptor release];
+	
+	// Fetch the records and handle an error
+	NSError *error;
+	NSMutableArray *mutableFetchResults = [[moc executeFetchRequest:request error:&error] mutableCopy];
+    [request release];
+    
+    if (!mutableFetchResults){
+        return nil;
+    }
+    
+    [mutableFetchResults autorelease];
+    return mutableFetchResults;
+}
+
++ (NSMutableArray *)getMoviesTodayListByCinema:(Cinema *)cinema withContext:(NSManagedObjectContext *)moc{
+    // Define our table/entity to use
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Movie" inManagedObjectContext:moc];
+	
+	// Setup the fetch request
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	[request setEntity:entity];
+    
+    // find by afisha
+    // Define range of dates
+    NSDate *date = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    
+    NSDateFormatter *formatterTemp = [[NSDateFormatter alloc] init];
+    
+    [formatterTemp setDateFormat:@"yyyy-MM-dd 00:00:00"];
+    NSData *dataBegin = (NSData *)[formatter dateFromString:[formatterTemp stringFromDate:date]];
+    
+    [formatterTemp release];
+    [formatter release];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(afishas.@count > 0) && ((ANY afishas.data_begin <= %@) && (ANY afishas.data_end >= %@) && (ANY afishas.cinema == %@))", dataBegin, dataBegin, cinema];
+    [request setPredicate:predicate];
+    
 	// Define how we will sort the records
 	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES];
 	NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];

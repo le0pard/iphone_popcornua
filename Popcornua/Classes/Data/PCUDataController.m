@@ -31,7 +31,7 @@
     request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:POPCORN_CINEMAS_URL, 1, POPCORN_SECRET]]];
 	[request setRequestMethod:@"GET"];
     [request addRequestHeader:@"User-Agent" value:[NSString stringWithFormat:@"iphone-app/%@",@"1.0"]];
-    [request setTimeOutSeconds:60];
+    [request setTimeOutSeconds:30];
     [request setNumberOfTimesToRetryOnTimeout:3];
 	[request startSynchronous];
     error = [request error];
@@ -54,7 +54,7 @@
     request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:POPCORN_MOVIES_URL, 1, POPCORN_SECRET]]];
 	[request setRequestMethod:@"GET"];
     [request addRequestHeader:@"User-Agent" value:[NSString stringWithFormat:@"iphone-app/%@",@"1.0"]];
-    [request setTimeOutSeconds:60];
+    [request setTimeOutSeconds:30];
     [request setNumberOfTimesToRetryOnTimeout:3];
 	[request startSynchronous];
     error = [request error];

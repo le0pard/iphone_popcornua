@@ -37,11 +37,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Popcornua/Classes/Objects/Afisha.m"
-         timestampString = "337947380.43472"
+         timestampString = "338147810.944368"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "96"
-         endingLineNumber = "96"
+         startingLineNumber = "98"
+         endingLineNumber = "98"
          landmarkName = "+createOrReplaceFromDictionary:withContext:"
          landmarkType = "5">
       </FileBreakpoint>

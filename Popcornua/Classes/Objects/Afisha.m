@@ -93,19 +93,23 @@
         Movie *movie = [Movie movieExistForId:cinema_id withContext:moc];
         if (nil != movie){
             afisha.movie = movie;
+        } else {
+            NSLog(@"Not found movie: %@", cinema_id);
         }
     }
     
     if (![[afishaInfo objectForKey:@"theater_id"] isKindOfClass:[NSNull class]]){
         NSNumber *theater_id = nil;
         if ([[afishaInfo objectForKey:@"theater_id"] isKindOfClass:[NSString class]]) {
-            theater_id = [[afishaInfo objectForKey:@"cinema_id"] numericValue];
+            theater_id = [[afishaInfo objectForKey:@"theater_id"] numericValue];
         } else {
             theater_id = [afishaInfo objectForKey:@"theater_id"];
         }
         Cinema *cinema = [Cinema cinemaExistForId:theater_id withContext:moc];
         if (nil != cinema){
             afisha.cinema = cinema;
+        } else {
+            NSLog(@"Not found cinema: %@", theater_id);
         }
     }
 
@@ -141,7 +145,7 @@
     [formatterTemp release];
     [formatter release];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(data_begin <= %@) AND (data_end >= %@)", dataBegin, dataBegin];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(data_begin <= %@) && (data_end >= %@)", dataBegin, dataBegin];
     [request setPredicate:predicate];
 	
 	// Fetch the records and handle an error

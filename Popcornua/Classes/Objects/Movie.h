@@ -11,6 +11,7 @@
 #import "NSStringUtil.h"
 
 @class Afisha;
+@class Cinema;
 
 @interface Movie : NSManagedObject {
 @private
@@ -28,5 +29,6 @@
 + (Movie *)movieExistForId:(NSNumber *)extId withContext:(NSManagedObjectContext *)moc;
 + (BOOL)createOrReplaceFromDictionary:(NSDictionary *)cinemaInfo withContext:(NSManagedObjectContext *)moc;
 + (NSMutableArray *)getMoviesTodayList:(NSManagedObjectContext *)moc;
++ (NSMutableArray *)getMoviesTodayListByCinema:(Cinema *)cinema withContext:(NSManagedObjectContext *)moc;
 
 @end
