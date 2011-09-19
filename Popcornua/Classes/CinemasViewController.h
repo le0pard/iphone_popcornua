@@ -10,6 +10,7 @@
 #import "PCUSharedManager.h"
 #import "Cinema.h"
 #import "PopcornuaAppDelegate.h"
+#import "CinemaViewController.h"
 
 @interface CinemasViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     UITableView *rootTableView;

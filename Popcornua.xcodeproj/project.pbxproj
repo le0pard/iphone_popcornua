@@ -18,6 +18,8 @@
 		B351B2491424E41400BDA78B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B351B2481424E3FB00BDA78B /* CoreLocation.framework */; };
 		B351B24C1424EB9D00BDA78B /* CinemaMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = B351B24B1424EB9C00BDA78B /* CinemaMapAnnotation.m */; };
 		B3817EE014223AB000576C22 /* Coordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3817EDF14223AB000576C22 /* Coordinate.m */; };
+		B382A8B61427984600FCE8AB /* CinemaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B382A8B41427984600FCE8AB /* CinemaViewController.m */; };
+		B382A8BA1427987200FCE8AB /* CinemaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B382A8B91427987200FCE8AB /* CinemaViewController.xib */; };
 		B39135451412A75A0053C84B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39135441412A75A0053C84B /* UIKit.framework */; };
 		B39135471412A75A0053C84B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39135461412A75A0053C84B /* Foundation.framework */; };
 		B39135491412A75A0053C84B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39135481412A75A0053C84B /* CoreGraphics.framework */; };
@@ -100,6 +102,9 @@
 		B351B24B1424EB9C00BDA78B /* CinemaMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CinemaMapAnnotation.m; sourceTree = "<group>"; };
 		B3817EDE14223AB000576C22 /* Coordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Coordinate.h; path = Classes/Objects/Coordinate.h; sourceTree = "<group>"; };
 		B3817EDF14223AB000576C22 /* Coordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Coordinate.m; path = Classes/Objects/Coordinate.m; sourceTree = "<group>"; };
+		B382A8B31427984600FCE8AB /* CinemaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CinemaViewController.h; path = Classes/CinemaViewController.h; sourceTree = "<group>"; };
+		B382A8B41427984600FCE8AB /* CinemaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CinemaViewController.m; path = Classes/CinemaViewController.m; sourceTree = "<group>"; };
+		B382A8B91427987200FCE8AB /* CinemaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CinemaViewController.xib; path = VIews/CinemaViewController.xib; sourceTree = "<group>"; };
 		B39135401412A75A0053C84B /* Popcornua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Popcornua.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B39135441412A75A0053C84B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B39135461412A75A0053C84B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -329,6 +334,8 @@
 				B3A319D514139879004DCCBE /* MainNavController.m */,
 				B351B24A1424EB9B00BDA78B /* CinemaMapAnnotation.h */,
 				B351B24B1424EB9C00BDA78B /* CinemaMapAnnotation.m */,
+				B382A8B31427984600FCE8AB /* CinemaViewController.h */,
+				B382A8B41427984600FCE8AB /* CinemaViewController.m */,
 				B351B2321424DDD800BDA78B /* CinemasMapController.h */,
 				B351B2331424DDD800BDA78B /* CinemasMapController.m */,
 				B39135CA1412D20B0053C84B /* CinemasViewController.h */,
@@ -344,6 +351,7 @@
 		B391357F1412A84A0053C84B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B382A8B91427987200FCE8AB /* CinemaViewController.xib */,
 				B351B2381424DE0300BDA78B /* CinemasMapController.xib */,
 				B39135D31412D21A0053C84B /* CinemasViewController.xib */,
 				B39135D41412D21A0053C84B /* MainWindow.xib */,
@@ -582,6 +590,7 @@
 				B337BE9814252FB9002BAB4B /* map_icon.png in Resources */,
 				B337BE9A14252FEC002BAB4B /* settings_icon.png in Resources */,
 				B337BEA5142540E6002BAB4B /* MovieCell.xib in Resources */,
+				B382A8BA1427987200FCE8AB /* CinemaViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,6 +656,7 @@
 				B351B24C1424EB9D00BDA78B /* CinemaMapAnnotation.m in Sources */,
 				B337BEA4142540E6002BAB4B /* MovieCell.m in Sources */,
 				B3E4E457142690CD000CD12A /* ImageLoadingOperation.m in Sources */,
+				B382A8B61427984600FCE8AB /* CinemaViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -100,11 +100,21 @@
     cell.detailTextLabel.text = cinema.address;
     return cell;
 }
+
 #pragma mark -
 #pragma mark Table View Delegate Methods
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	return 66;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    CinemaViewController *cinemaController = [[CinemaViewController alloc] initWithNibName:@"CinemaViewController" bundle:nil];
+	Cinema *cinema = [self.cinemasArray objectAtIndex:indexPath.row];
+	cinemaController.cinemaMain = cinema;
+	[self.navigationController pushViewController:cinemaController animated:YES];
+    [cinemaController release];
 }
 
 
