@@ -87,6 +87,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView 
 		 cellForRowAtIndexPath:(NSIndexPath *)indexPath 
 {
+    /*
     static NSString *MovieCellIdentifier = @"MovieCellIdentifier ";
 	
 	MovieCell *cell = (MovieCell *)[tableView dequeueReusableCellWithIdentifier: MovieCellIdentifier];
@@ -102,14 +103,25 @@
     Movie *movie = [self.moviesArray objectAtIndex:indexPath.row];
     [cell setCellByMovie:movie];
     //return cell
+    */
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+    }
     
+    // Set up the cell...
+    Movie *movie = [self.moviesArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = movie.title;
+    cell.detailTextLabel.text = movie.orig_title;
+
     return cell;
 }
 #pragma mark -
 #pragma mark Table View Delegate Methods
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	return 140;
+	return 66;
 }
 
 

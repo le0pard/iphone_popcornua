@@ -53,6 +53,12 @@
 	// Configure the view for the selected state
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
+    return YES;
+}
+
 
 - (void)dealloc {
 	[super dealloc];
