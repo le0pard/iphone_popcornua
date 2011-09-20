@@ -13,4 +13,7 @@
 "MapView"                       = "Map";
 
 "Year"                          = "Year";
+"Hall"                          = "Hall";
+"Price"                         = "Price";
+"Times"                         = "Times";
 "Not set"                       = "Not set";

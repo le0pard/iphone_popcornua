@@ -10,7 +10,7 @@
 
 @implementation CinemaViewController
 
-@synthesize cinemaMain, rootTableView, moviesArray;
+@synthesize cinemaMain, rootTableView, afishasArray;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,7 +33,7 @@
 
 -(void)fetchMoviesTodayRecords{
     PCUSharedManager *myStoreManager = [PCUSharedManager sharedManager];
-	self.moviesArray = [Movie getMoviesTodayListByCinema:cinemaMain withContext:myStoreManager.managedObjectContext];
+	self.afishasArray = [Afisha getAfishaTodayListByCinema:cinemaMain withContext:myStoreManager.managedObjectContext];
 }
 
 - (void)viewDidLoad
@@ -65,7 +65,7 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return [self.moviesArray count];
+	return [self.afishasArray count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView 
 		 cellForRowAtIndexPath:(NSIndexPath *)indexPath 
@@ -80,8 +80,8 @@
      }
      
      // set cell
-     Movie *movie = [self.moviesArray objectAtIndex:indexPath.row];
-     [cell setCellByMovie:movie];
+     Afisha *afisha = [self.afishasArray objectAtIndex:indexPath.row];
+     [cell setCellByAfisha:afisha];
      //return cell
     
     return cell;
@@ -95,7 +95,7 @@
 
 
 - (void)dealloc {
-	[moviesArray release];
+	[afishasArray release];
     [rootTableView release];
     [cinemaMain release];
     [super dealloc];

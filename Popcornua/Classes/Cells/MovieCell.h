@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 #import "Movie.h"
+#import "Afisha.h"
 #import "NSStringUtil.h"
 #import "ImageLoadingOperation.h"
 
@@ -19,6 +20,10 @@
     UILabel *originalTitle;
     UILabel *yearLabel;
     UILabel *year;
+    UILabel *zalLabel;
+    UILabel *zal;
+    UILabel *priceLabel;
+    UILabel *price;
     UIImageView *poster;
 }
 
@@ -26,8 +31,12 @@
 @property (nonatomic, retain) IBOutlet UILabel *originalTitle;
 @property (nonatomic, retain) IBOutlet UILabel *yearLabel;
 @property (nonatomic, retain) IBOutlet UILabel *year;
+@property (nonatomic, retain) IBOutlet UILabel *zalLabel;
+@property (nonatomic, retain) IBOutlet UILabel *zal;
+@property (nonatomic, retain) IBOutlet UILabel *priceLabel;
+@property (nonatomic, retain) IBOutlet UILabel *price;
 @property (nonatomic, retain) IBOutlet UIImageView *poster;
 
-- (void)setCellByMovie:(Movie *)movie;
+- (void)setCellByAfisha:(Afisha *)afisha;
 
 @end

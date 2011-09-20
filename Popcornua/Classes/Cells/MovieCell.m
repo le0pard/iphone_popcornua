@@ -10,7 +10,7 @@
 
 @implementation MovieCell
 
-@synthesize title, originalTitle, poster, yearLabel, year;
+@synthesize title, originalTitle, poster, yearLabel, year, zalLabel, zal, priceLabel, price;
 
 #pragma mark -
 #pragma mark Cached Image Loading
@@ -21,22 +21,43 @@
     return [UIImage imageWithData:imageData];
 }
 
-- (void)setCellByMovie:(Movie *)movie{
-    self.title.text = movie.title;
-    self.originalTitle.text = movie.orig_title;
+- (void)setCellByAfisha:(Afisha *)afisha{
+    self.title.text = afisha.movie.title;
+    self.originalTitle.text = afisha.movie.orig_title;
     self.yearLabel.text = [NSString stringWithFormat:@"%@:", NSLocalizedString(@"Year", @"")];
-    if (movie.year != nil && ![movie.year isEqualToString:@"0"]){
-        self.year.text = movie.year;
+    if (afisha.movie.year != nil && ![afisha.movie.year isEqualToString:@"0"]){
+        self.year.text = afisha.movie.year;
     } else {
         self.year.text = NSLocalizedString(@"Not set", @"");
     }
     
     self.poster.layer.borderColor = [[UIColor blackColor] CGColor];
     self.poster.layer.borderWidth = 1.0;
-    if (movie.poster != nil){
-        self.poster.image = [self cachedImageForURL:movie.poster];
+    if (afisha.movie.poster != nil){
+        self.poster.image = [self cachedImageForURL:afisha.movie.poster];
     }
     
+    self.zalLabel.text = [NSString stringWithFormat:@"%@:", NSLocalizedString(@"Hall", @"")];
+    if (afisha.zal_title != nil && ![afisha.zal_title isEqualToString:@""]){
+        self.zal.text = afisha.zal_title;
+    } else {
+        self.zal.text = NSLocalizedString(@"Not set", @"");
+    }
+    
+    self.priceLabel.text = [NSString stringWithFormat:@"%@:", NSLocalizedString(@"Price", @"")];
+    if (afisha.prices != nil && ![afisha.prices isEqualToString:@""]){
+        self.price.text = afisha.prices;
+    } else {
+        self.price.text = NSLocalizedString(@"Not set", @"");
+    }
+    /*
+    self.timesLabel.text = [NSString stringWithFormat:@"%@:", NSLocalizedString(@"Times", @"")];
+    if (afisha.times != nil && ![afisha.times isEqualToString:@""]){
+        self.times.text = afisha.times;
+    } else {
+        self.times.text = NSLocalizedString(@"Not set", @"");
+    }
+    */
 }
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{ 

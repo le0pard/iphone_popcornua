@@ -26,5 +26,6 @@
 + (Afisha *)afishaExistForId:(NSNumber *)extId withContext:(NSManagedObjectContext *)moc;
 + (BOOL)createOrReplaceFromDictionary:(NSDictionary *)movieInfo withContext:(NSManagedObjectContext *)moc;
 + (NSMutableArray *)getAfishaTodayList:(NSManagedObjectContext *)moc;
++ (NSMutableArray *)getAfishaTodayListByCinema:(Cinema *)cinema withContext:(NSManagedObjectContext *)moc;
 
 @end
