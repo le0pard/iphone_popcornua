@@ -118,6 +118,7 @@
     [request release];
     
     if (!mutableFetchResults){
+        [mutableFetchResults release];
         return nil;
     }
     

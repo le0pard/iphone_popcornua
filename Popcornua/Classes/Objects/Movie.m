@@ -126,6 +126,7 @@
     [request release];
     
     if (!mutableFetchResults){
+        [mutableFetchResults release];
         return nil;
     }
     
@@ -170,6 +171,7 @@
     [request release];
     
     if (!mutableFetchResults){
+        [mutableFetchResults release];
         return nil;
     }
     
