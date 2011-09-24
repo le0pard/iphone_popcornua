@@ -14,6 +14,8 @@
 #import "NSStringUtil.h"
 #import "PCUSharedManager.h"
 
+#define AFISHA_SELL 3
+
 @interface MovieViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
     Movie *movieMain;
     UITableView *rootTableView;

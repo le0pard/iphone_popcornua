@@ -100,7 +100,7 @@
 - (NSInteger)tableView:(UITableView *)tv numberOfRowsInSection:(NSInteger)section {
     int result = 1;
     switch (section) {
-        case 3:
+        case AFISHA_SELL:
             result = [self.afishasArray count];
             break;
 		default:
@@ -121,7 +121,7 @@
         case 2:
 			headerText = NSLocalizedString(@"Movie Casts", @"");
 			break;
-        case 3:
+        case AFISHA_SELL:
             headerText = NSLocalizedString(@"Movie Afisha", @"");
             break;
         case 4:
@@ -173,7 +173,7 @@
             }
             cell.detailTextLabel.text = nil;
             break;
-        case 3:
+        case AFISHA_SELL:
             /* afisha */
             afishaObj = [self.afishasArray objectAtIndex:indexPath.row];
             cell.textLabel.text = afishaObj.cinema.title;
