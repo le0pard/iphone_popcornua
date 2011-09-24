@@ -53,14 +53,13 @@
 #pragma mark -
 #pragma mark Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tv {
     return 2;
 }
 
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	int result = 0;
-	switch (section) {
+- (NSInteger)tableView:(UITableView *)tv numberOfRowsInSection:(NSInteger)section {
+    int result = 0;
+    switch (section) {
 		case 0:
 			result = 2;
 			break;
@@ -70,13 +69,28 @@
 		default:
 			break;
 	}
-	return result;
+    return result;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
+    NSString *footerText = @"";
+    switch (section) {
+		case 0:
+			footerText = @"test";
+			break;
+		case 1:
+			footerText = @"";
+			break;
+		default:
+			break;
+	}
+    return footerText;
+}
+/*
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
 	CGRect footerFrame = CGRectMake(0, 0, 320, 50);
 	UIView *footerView = [[[UIView alloc] initWithFrame:footerFrame] autorelease];
-    /*
+    
 	if(section == 0) {
 		CGRect footerSpinnerFrame = CGRectMake(80, 0, 20, 20);
 		CGRect footerTextFrame = CGRectMake(110, 0, 200, 20);
@@ -107,25 +121,10 @@
 			[footerText release];
 		}
 	}
-    */
+
 	return footerView;
 }
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-	int result = 100;
-	switch (section) {
-		case 0:
-			result = 200;
-			break;
-		case 1:
-			result = 100;
-			break;
-		default:
-			break;
-	}
-	return result;
-}
-
+*/
 - (UITableViewCell *)tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     
@@ -136,7 +135,16 @@
 	
 	switch (indexPath.section) {
 		case 0:
-			cell.textLabel.text = @"test";
+            switch (indexPath.row) {
+                case 0:
+                    cell.textLabel.text = @"test";
+                    break;
+                case 1:
+                    cell.textLabel.text = @"test3";
+                    break;
+                default:
+                    break;
+            }
 			break;
 		case 1:
 			cell.textLabel.text = @"test2";
@@ -152,6 +160,7 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tv didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tv deselectRowAtIndexPath:indexPath animated:YES];
     /*
 	if(indexPath.section == 0) {
 		
@@ -186,7 +195,6 @@
 	
 	[self checkAddSelectedButtonStatus];
     */
-	[tv deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 
