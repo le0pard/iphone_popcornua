@@ -124,6 +124,15 @@
 	return 66;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    MovieViewController *movieController = [[MovieViewController alloc] initWithNibName:@"MovieViewController" bundle:nil];
+	Movie *movie = [self.moviesArray objectAtIndex:indexPath.row];
+	movieController.movieMain = movie;
+	[self.navigationController pushViewController:movieController animated:YES];
+    [movieController release];
+}
+
 
 - (void)dealloc {
 	[moviesArray release];
