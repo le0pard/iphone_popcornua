@@ -13,8 +13,6 @@
 #import "NSStringUtil.h"
 #import "ImageLoadingOperation.h"
 
-#define POPCORN_MOVIES_POSTER_URL @"http://coocoorooza.com/uploads/afisha_films/%@"
-
 @interface MovieCell : UITableViewCell {
     UILabel *title;
     UILabel *originalTitle;

@@ -46,6 +46,18 @@
     return movie;
 }
 
++ (NSData *)getPosterFromLink:(NSString *)posterName{
+    return [NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:POPCORN_MOVIES_POSTER_URL, posterName]]];
+}
+
+- (UIImage *)getPosterImage {
+    if (self.cached_poster){
+        return [UIImage imageWithData:self.cached_poster];   
+    } else{
+        return nil;
+    }
+}
+
 + (BOOL)createOrReplaceFromDictionary:(NSDictionary *)movieInfo withContext:(NSManagedObjectContext *)moc {
     Movie *movie = nil;
     NSNumber *extId = nil;
@@ -77,6 +89,10 @@
     }
     if (![[movieInfo objectForKey:@"poster"] isKindOfClass:[NSNull class]]){
         movie.poster = [movieInfo objectForKey:@"poster"];
+        NSData *posterData = [self getPosterFromLink:movie.poster];
+        if (posterData){
+            movie.cached_poster = posterData;
+        }
     }
     
     

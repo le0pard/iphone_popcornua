@@ -34,7 +34,11 @@
     self.poster.layer.borderColor = [[UIColor blackColor] CGColor];
     self.poster.layer.borderWidth = 1.0;
     if (afisha.movie.poster != nil){
-        self.poster.image = [self cachedImageForURL:afisha.movie.poster];
+        if (afisha.movie.cached_poster){
+            self.poster.image = [afisha.movie getPosterImage];
+        } else {
+            self.poster.image = [self cachedImageForURL:afisha.movie.poster];
+        }
     }
     
     self.zalLabel.text = [NSString stringWithFormat:@"%@:", NSLocalizedString(@"Hall", @"")];

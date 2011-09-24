@@ -10,6 +10,8 @@
 #import <CoreData/CoreData.h>
 #import "NSStringUtil.h"
 
+#define POPCORN_MOVIES_POSTER_URL @"http://coocoorooza.com/uploads/afisha_films/%@"
+
 @class Afisha;
 @class Cinema;
 
@@ -27,6 +29,7 @@
 @property (nonatomic, retain) NSSet *afishas;
 
 + (Movie *)movieExistForId:(NSNumber *)extId withContext:(NSManagedObjectContext *)moc;
+- (UIImage *)getPosterImage;
 + (BOOL)createOrReplaceFromDictionary:(NSDictionary *)cinemaInfo withContext:(NSManagedObjectContext *)moc;
 + (NSMutableArray *)getMoviesTodayList:(NSManagedObjectContext *)moc;
 + (NSMutableArray *)getMoviesTodayListByCinema:(Cinema *)cinema withContext:(NSManagedObjectContext *)moc;
