@@ -200,5 +200,43 @@
     return mutableFetchResults;
 }
 
++ (NSMutableArray *)getAfishaTodayListByMovie:(Movie *)movie withContext:(NSManagedObjectContext *)moc{
+    // Define our table/entity to use
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Afisha" inManagedObjectContext:moc];
+	
+	// Setup the fetch request
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	[request setEntity:entity];
+    
+    // Define range of dates
+    NSDate *date = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    
+    NSDateFormatter *formatterTemp = [[NSDateFormatter alloc] init];
+    
+    [formatterTemp setDateFormat:@"yyyy-MM-dd 00:00:00"];
+    NSData *dataBegin = (NSData *)[formatter dateFromString:[formatterTemp stringFromDate:date]];
+    
+    [formatterTemp release];
+    [formatter release];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(data_begin <= %@) && (data_end >= %@) && (movie == %@)", dataBegin, dataBegin, movie];
+    [request setPredicate:predicate];
+	
+	// Fetch the records and handle an error
+	NSError *error;
+	NSMutableArray *mutableFetchResults = [[moc executeFetchRequest:request error:&error] mutableCopy];
+    [request release];
+    
+    if (!mutableFetchResults){
+        [mutableFetchResults release];
+        return nil;
+    }
+    
+    [mutableFetchResults autorelease];
+    return mutableFetchResults;
+}
+
 
 @end

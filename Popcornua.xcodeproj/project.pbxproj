@@ -72,6 +72,8 @@
 		B3B89D0A141C2E5400CCC495 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B89D06141C2E5400CCC495 /* NSString+SBJSON.m */; };
 		B3B89D0B141C2E5400CCC495 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B89D08141C2E5400CCC495 /* SBJSON.m */; };
 		B3DC2E5F141CB3F100E1FDB0 /* NSStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DC2E5E141CB3F100E1FDB0 /* NSStringUtil.m */; };
+		B3E4074D142E0A5100E0050E /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E4074B142E0A5100E0050E /* MovieViewController.m */; };
+		B3E40751142E0A8000E0050E /* MovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3E40750142E0A8000E0050E /* MovieViewController.xib */; };
 		B3E4E457142690CD000CD12A /* ImageLoadingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E4E456142690CD000CD12A /* ImageLoadingOperation.m */; };
 /* End PBXBuildFile section */
 
@@ -186,6 +188,9 @@
 		B3B89D08141C2E5400CCC495 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
 		B3DC2E5D141CB3F100E1FDB0 /* NSStringUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSStringUtil.h; path = Classes/Util/NSStringUtil.h; sourceTree = "<group>"; };
 		B3DC2E5E141CB3F100E1FDB0 /* NSStringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSStringUtil.m; path = Classes/Util/NSStringUtil.m; sourceTree = "<group>"; };
+		B3E4074A142E0A5100E0050E /* MovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MovieViewController.h; path = Classes/MovieViewController.h; sourceTree = "<group>"; };
+		B3E4074B142E0A5100E0050E /* MovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MovieViewController.m; path = Classes/MovieViewController.m; sourceTree = "<group>"; };
+		B3E40750142E0A8000E0050E /* MovieViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MovieViewController.xib; path = VIews/MovieViewController.xib; sourceTree = "<group>"; };
 		B3E4E455142690CD000CD12A /* ImageLoadingOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageLoadingOperation.h; path = Classes/Util/ImageLoadingOperation.h; sourceTree = "<group>"; };
 		B3E4E456142690CD000CD12A /* ImageLoadingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageLoadingOperation.m; path = Classes/Util/ImageLoadingOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -340,6 +345,8 @@
 				B351B2331424DDD800BDA78B /* CinemasMapController.m */,
 				B39135CA1412D20B0053C84B /* CinemasViewController.h */,
 				B39135CB1412D20B0053C84B /* CinemasViewController.m */,
+				B3E4074A142E0A5100E0050E /* MovieViewController.h */,
+				B3E4074B142E0A5100E0050E /* MovieViewController.m */,
 				B39135CC1412D20B0053C84B /* MoviesViewController.h */,
 				B39135CD1412D20B0053C84B /* MoviesViewController.m */,
 				B39135CE1412D20B0053C84B /* PopcornuaAppDelegate.h */,
@@ -355,6 +362,7 @@
 				B351B2381424DE0300BDA78B /* CinemasMapController.xib */,
 				B39135D31412D21A0053C84B /* CinemasViewController.xib */,
 				B39135D41412D21A0053C84B /* MainWindow.xib */,
+				B3E40750142E0A8000E0050E /* MovieViewController.xib */,
 				B39135D51412D21A0053C84B /* MoviesViewController.xib */,
 			);
 			name = Views;
@@ -591,6 +599,7 @@
 				B337BE9A14252FEC002BAB4B /* settings_icon.png in Resources */,
 				B337BEA5142540E6002BAB4B /* MovieCell.xib in Resources */,
 				B382A8BA1427987200FCE8AB /* CinemaViewController.xib in Resources */,
+				B3E40751142E0A8000E0050E /* MovieViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,6 +666,7 @@
 				B337BEA4142540E6002BAB4B /* MovieCell.m in Sources */,
 				B3E4E457142690CD000CD12A /* ImageLoadingOperation.m in Sources */,
 				B382A8B61427984600FCE8AB /* CinemaViewController.m in Sources */,
+				B3E4074D142E0A5100E0050E /* MovieViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
