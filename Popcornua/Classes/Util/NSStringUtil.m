@@ -23,6 +23,22 @@
     return [NSNumber numberWithInt:[self intValue]];
 }
 
+- (NSString *)htmlEntityDecode
+{
+    self = [self stringByReplacingOccurrencesOfString:@"&quot;" withString:@"\""];
+    self = [self stringByReplacingOccurrencesOfString:@"&apos;" withString:@"'"];
+    self = [self stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
+    self = [self stringByReplacingOccurrencesOfString:@"&lt;" withString:@"<"];
+    self = [self stringByReplacingOccurrencesOfString:@"&gt;" withString:@">"];
+    self = [self stringByReplacingOccurrencesOfString:@"&laquo;" withString:@"\""];
+    self = [self stringByReplacingOccurrencesOfString:@"&raquo;" withString:@"\""];
+    self = [self stringByReplacingOccurrencesOfString:@"&nbsp;" withString:@" "];
+    self = [self stringByReplacingOccurrencesOfString:@"&ndash;" withString:@" - "];
+    self = [self stringByReplacingOccurrencesOfString:@"&mdash;" withString:@" - "];
+    
+    return self;
+}
+
 @end
 
 @implementation NSNumber (NumericValueHack)

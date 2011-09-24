@@ -94,6 +94,9 @@
         case 2:
 			headerText = NSLocalizedString(@"Movie Casts", @"");
 			break;
+        case 3:
+            headerText = NSLocalizedString(@"Movie Description", @"");
+            break;
 		default:
 			break;
 	}
@@ -104,45 +107,7 @@
     NSString *footerText = @"";
     return footerText;
 }
-/*
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-	CGRect footerFrame = CGRectMake(0, 0, 320, 50);
-	UIView *footerView = [[[UIView alloc] initWithFrame:footerFrame] autorelease];
-    
-	if(section == 0) {
-		CGRect footerSpinnerFrame = CGRectMake(80, 0, 20, 20);
-		CGRect footerTextFrame = CGRectMake(110, 0, 200, 20);
-		if(DeviceIsPad() == YES) {
-			footerSpinnerFrame = CGRectMake(190, 0, 20, 20);
-			footerTextFrame = CGRectMake(220, 0, 200, 20);
-		}
-		if((usersBlogs.count == 0) && (!hasCompletedGetUsersBlogs)) {
-			UIActivityIndicatorView *footerSpinner = [[UIActivityIndicatorView alloc] initWithFrame:footerSpinnerFrame];
-			footerSpinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
-			[footerSpinner startAnimating];
-			[footerView addSubview:footerSpinner];
-			[footerSpinner release];
-			
-			UILabel *footerText = [[UILabel alloc] initWithFrame:footerTextFrame];
-			footerText.backgroundColor = [UIColor clearColor];
-			footerText.textColor = [UIColor darkGrayColor];
-			footerText.text = NSLocalizedString(@"Loading blogs...", @"");
-			[footerView addSubview:footerText];
-			[footerText release];
-		}
-		else if((usersBlogs.count == 0) && (hasCompletedGetUsersBlogs)) {
-			UILabel *footerText = [[UILabel alloc] initWithFrame:CGRectMake(110, 0, 200, 20)];
-			footerText.backgroundColor = [UIColor clearColor];
-			footerText.textColor = [UIColor darkGrayColor];
-			footerText.text = NSLocalizedString(@"No blogs found.", @"");
-			[footerView addSubview:footerText];
-			[footerText release];
-		}
-	}
 
-	return footerView;
-}
-*/
 - (UITableViewCell *)tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     
@@ -164,16 +129,29 @@
             } else {
                 cell.textLabel.text = NSLocalizedString(@"Not set", @"");
             }
+            cell.detailTextLabel.text = nil;
             break;
         case 2:
             if (movieMain.casts){
                 cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15.0];
                 cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
                 cell.textLabel.numberOfLines = 0;
-                cell.textLabel.text = movieMain.casts;
+                cell.textLabel.text = [movieMain.casts htmlEntityDecode];
             } else {
                 cell.textLabel.text = NSLocalizedString(@"Not set", @"");
             }
+            cell.detailTextLabel.text = nil;
+            break;
+        case 3:
+            if (movieMain.descr){
+                cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15.0];
+                cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+                cell.textLabel.numberOfLines = 0;
+                cell.textLabel.text = [movieMain.descr htmlEntityDecode];
+            } else {
+                cell.textLabel.text = NSLocalizedString(@"Not set", @"");
+            }
+            cell.detailTextLabel.text = nil;
             break;
 		default:
 			break;
@@ -249,48 +227,26 @@
                 height = 45;
             }
             break;
+        case 3:
+            if (movieMain.descr.length > 0){
+                switch (self.interfaceOrientation) {
+                    case UIInterfaceOrientationPortrait:
+                    case UIInterfaceOrientationPortraitUpsideDown:
+                        height = ([[movieMain.descr htmlEntityDecode] length] / 1.5);
+                        break;
+                    default:
+                        height = ([[movieMain.descr htmlEntityDecode] length] / 2.2);
+                        break;
+                }
+            } else {
+                height = 45;
+            }
+            break;
 		default:
 			break;
 	}
     return height;
 }
-
-
-/*
-#pragma mark -
-#pragma mark Table Data Source Methods
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-	return [self.afishasArray count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView 
-		 cellForRowAtIndexPath:(NSIndexPath *)indexPath 
-{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
-    }
-    
-    // Set up the cell...
-    Cinema *cinema = [self.afishasArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = cinema.title;
-    cell.detailTextLabel.text = cinema.address;
-    return cell;
-}
-#pragma mark -
-#pragma mark Table View Delegate Methods
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	return 140;
-}
-*/
 
 - (void)dealloc {
 	[afishasArray release];

@@ -13,6 +13,7 @@
 - (bool)isEmpty;
 - (NSString *)trim;
 - (NSNumber *)numericValue;
+- (NSString *)htmlEntityDecode;
 
 @end
 

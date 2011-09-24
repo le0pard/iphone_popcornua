@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "Movie.h"
 #import "Cinema.h"
+#import "NSStringUtil.h"
 
 @interface MovieViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
     Movie *movieMain;
