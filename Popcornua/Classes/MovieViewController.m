@@ -31,11 +31,38 @@
 
 #pragma mark - View lifecycle
 
+- (NSMutableArray *)groupByCinemas:(NSMutableArray *)ary{
+    NSMutableArray *mutableAr = [[NSMutableArray alloc] init];
+    BOOL is_uniq = YES;
+    for (Afisha *afisha in ary){
+        is_uniq = YES;
+        for (Afisha *tempAf in mutableAr){
+            if (tempAf.cinema == afisha.cinema){
+                is_uniq = NO;
+                tempAf.times = [NSString stringWithFormat:@"%@ %@", tempAf.times, afisha.times];
+            }
+        }
+        if (is_uniq){
+            [mutableAr addObject:afisha];
+        }
+    }
+    [mutableAr autorelease];
+    return mutableAr;
+}
+
+-(void)fetchCinemasTodayRecords{
+    PCUSharedManager *myStoreManager = [PCUSharedManager sharedManager];
+	self.afishasArray = [self groupByCinemas:[Afisha getAfishaTodayListByMovie:movieMain withContext:myStoreManager.managedObjectContext]];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    [self fetchCinemasTodayRecords];
+    
     self.title = movieMain.title;
+    
     UIImageView *posterView = nil;
     if (movieMain.getPosterImage){
         posterView = [[UIImageView alloc] initWithImage:movieMain.getPosterImage];
@@ -67,14 +94,14 @@
 #pragma mark Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tv {
-    return 4;
+    return 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tv numberOfRowsInSection:(NSInteger)section {
     int result = 1;
     switch (section) {
-        case 10:
-            result = 2;
+        case 3:
+            result = [self.afishasArray count];
             break;
 		default:
 			break;
@@ -95,6 +122,9 @@
 			headerText = NSLocalizedString(@"Movie Casts", @"");
 			break;
         case 3:
+            headerText = NSLocalizedString(@"Movie Afisha", @"");
+            break;
+        case 4:
             headerText = NSLocalizedString(@"Movie Description", @"");
             break;
 		default:
@@ -110,6 +140,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
+    Afisha *afishaObj = nil;
     
     UITableViewCell *cell = [tv dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -143,6 +174,12 @@
             cell.detailTextLabel.text = nil;
             break;
         case 3:
+            /* afisha */
+            afishaObj = [self.afishasArray objectAtIndex:indexPath.row];
+            cell.textLabel.text = afishaObj.cinema.title;
+            cell.detailTextLabel.text = afishaObj.times;
+            break;
+        case 4:
             if (movieMain.descr){
                 cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15.0];
                 cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
@@ -227,7 +264,7 @@
                 height = 45;
             }
             break;
-        case 3:
+        case 4:
             if (movieMain.descr.length > 0){
                 switch (self.interfaceOrientation) {
                     case UIInterfaceOrientationPortrait:

@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import "Afisha.h"
 #import "Movie.h"
 #import "Cinema.h"
 #import "NSStringUtil.h"
+#import "PCUSharedManager.h"
 
 @interface MovieViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
     Movie *movieMain;
