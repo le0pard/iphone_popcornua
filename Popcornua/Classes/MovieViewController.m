@@ -34,7 +34,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    self.title = movieMain.title;
+    UIImageView *posterView = nil;
+    if (movieMain.getPosterImage){
+        posterView = [[UIImageView alloc] initWithImage:movieMain.getPosterImage];
+    } else {
+        posterView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon.png"]];
+    }
+    posterView.frame = CGRectMake(0, 0, 320, 260);
+    posterView.contentMode = UIViewContentModeCenter;
+    posterView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    rootTableView.tableHeaderView = posterView;
+    [posterView release];
+    
 }
 
 - (void)viewDidUnload
@@ -61,15 +74,30 @@
     int result = 0;
     switch (section) {
 		case 0:
-			result = 2;
+			result = 1;
 			break;
 		case 1:
-			result = 1;
+			result = 2;
 			break;
 		default:
 			break;
 	}
     return result;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    NSString *headerText = @"";
+    switch (section) {
+		case 0:
+			headerText = @"test";
+			break;
+		case 1:
+			headerText = @"";
+			break;
+		default:
+			break;
+	}
+    return headerText;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
@@ -130,14 +158,17 @@
     
     UITableViewCell *cell = [tv dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
 	
 	switch (indexPath.section) {
 		case 0:
             switch (indexPath.row) {
                 case 0:
-                    cell.textLabel.text = @"test";
+                    cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+                    cell.textLabel.numberOfLines = 0;
+                    cell.textLabel.text = movieMain.title;
+                    cell.detailTextLabel.text = movieMain.orig_title;
                     break;
                 case 1:
                     cell.textLabel.text = @"test3";
@@ -145,9 +176,6 @@
                 default:
                     break;
             }
-			break;
-		case 1:
-			cell.textLabel.text = @"test2";
 			break;
 		default:
 			break;
@@ -195,6 +223,36 @@
 	
 	[self checkAddSelectedButtonStatus];
     */
+}
+
+#pragma mark -
+#pragma mark Table View Delegate Methods
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    int height = 45;
+	switch (indexPath.section) {
+		case 0:
+            switch (indexPath.row) {
+                case 0:
+                    if ([movieMain.title length] > 50){
+                        height = 90;
+                    } else if ([movieMain.title length] > 20) {
+                        height = 65;
+                    } else {
+                        height = 45;
+                    }
+                    break;
+                case 1:
+                    height = 45;
+                    break;
+                default:
+                    break;
+            }
+			break;
+		default:
+			break;
+	}
+    return height;
 }
 
 
