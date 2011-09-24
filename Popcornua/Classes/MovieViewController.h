@@ -13,6 +13,7 @@
 #import "Cinema.h"
 #import "NSStringUtil.h"
 #import "PCUSharedManager.h"
+#import "AfishaViewController.h"
 
 #define AFISHA_SELL 3
 

@@ -12,6 +12,7 @@
 #import "Afisha.h"
 #import "MovieCell.h"
 #import "PCUSharedManager.h"
+#import "AfishaViewController.h"
 
 
 @interface CinemaViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{

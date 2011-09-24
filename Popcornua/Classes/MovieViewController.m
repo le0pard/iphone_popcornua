@@ -202,40 +202,15 @@
 
 - (void)tableView:(UITableView *)tv didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tv deselectRowAtIndexPath:indexPath animated:YES];
-    /*
-	if(indexPath.section == 0) {
-		
-		NSDictionary *selectedBlog = [usersBlogs objectAtIndex:indexPath.row];
-		
-		if(![selectedBlogs containsObject:[selectedBlog valueForKey:@"blogid"]]) {
-			[selectedBlogs addObject:[selectedBlog valueForKey:@"blogid"]];
-		}
-		else {
-			int indexToRemove = -1;
-			int count = 0;
-			for (NSString *blogID in selectedBlogs) {
-				if([blogID isEqual:[selectedBlog valueForKey:@"blogid"]]) {
-					indexToRemove = count;
-					break;
-				}
-				count++;
-			}
-			if(indexToRemove > -1)
-				[selectedBlogs removeObjectAtIndex:indexToRemove];
-		}
-		[tv reloadData];
-		
-		if(selectedBlogs.count == usersBlogs.count)
-			[self selectAllBlogs:self];
-		else if(selectedBlogs.count == 0)
-			[self deselectAllBlogs:self];
-	}
-	else if(indexPath.section == 1) {
-		[self signOut];
-	}
-	
-	[self checkAddSelectedButtonStatus];
-    */
+    
+    if (AFISHA_SELL == indexPath.section){
+        AfishaViewController *afishaController = [[AfishaViewController alloc] initWithNibName:@"AfishaViewController" bundle:nil];
+        Afisha *afisha = [self.afishasArray objectAtIndex:indexPath.row];
+        afishaController.movieMain = afisha.movie;
+        afishaController.cinemaMain = afisha.cinema;
+        [self.navigationController pushViewController:afishaController animated:YES];
+        [afishaController release];
+    }
 }
 
 #pragma mark -

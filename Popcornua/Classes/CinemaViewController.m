@@ -93,6 +93,16 @@
 	return 140;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    AfishaViewController *afishaController = [[AfishaViewController alloc] initWithNibName:@"AfishaViewController" bundle:nil];
+	Afisha *afisha = [self.afishasArray objectAtIndex:indexPath.row];
+	afishaController.movieMain = afisha.movie;
+    afishaController.cinemaMain = afisha.cinema;
+	[self.navigationController pushViewController:afishaController animated:YES];
+    [afishaController release];
+}
+
 
 - (void)dealloc {
 	[afishasArray release];
