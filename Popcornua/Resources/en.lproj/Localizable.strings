@@ -17,3 +17,7 @@
 "Price"                         = "Price";
 "Times"                         = "Times";
 "Not set"                       = "Not set";
+
+"Movie Name"                    = "Movie Name";
+"Movie Year"                    = "Year";
+"Movie Casts"                   = "Casts";

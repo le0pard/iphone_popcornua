@@ -67,18 +67,15 @@
 #pragma mark Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tv {
-    return 2;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tv numberOfRowsInSection:(NSInteger)section {
-    int result = 0;
+    int result = 1;
     switch (section) {
-		case 0:
-			result = 1;
-			break;
-		case 1:
-			result = 2;
-			break;
+        case 10:
+            result = 2;
+            break;
 		default:
 			break;
 	}
@@ -89,10 +86,13 @@
     NSString *headerText = @"";
     switch (section) {
 		case 0:
-			headerText = @"test";
+			headerText =  NSLocalizedString(@"Movie Name", @"");
 			break;
 		case 1:
-			headerText = @"";
+			headerText = NSLocalizedString(@"Movie Year", @"");
+			break;
+        case 2:
+			headerText = NSLocalizedString(@"Movie Casts", @"");
 			break;
 		default:
 			break;
@@ -102,16 +102,6 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
     NSString *footerText = @"";
-    switch (section) {
-		case 0:
-			footerText = @"test";
-			break;
-		case 1:
-			footerText = @"";
-			break;
-		default:
-			break;
-	}
     return footerText;
 }
 /*
@@ -163,20 +153,28 @@
 	
 	switch (indexPath.section) {
 		case 0:
-            switch (indexPath.row) {
-                case 0:
-                    cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
-                    cell.textLabel.numberOfLines = 0;
-                    cell.textLabel.text = movieMain.title;
-                    cell.detailTextLabel.text = movieMain.orig_title;
-                    break;
-                case 1:
-                    cell.textLabel.text = @"test3";
-                    break;
-                default:
-                    break;
-            }
+            cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+            cell.textLabel.numberOfLines = 0;
+            cell.textLabel.text = movieMain.title;
+            cell.detailTextLabel.text = movieMain.orig_title;
 			break;
+        case 1:
+            if (movieMain.year){
+                cell.textLabel.text = movieMain.year;
+            } else {
+                cell.textLabel.text = NSLocalizedString(@"Not set", @"");
+            }
+            break;
+        case 2:
+            if (movieMain.casts){
+                cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15.0];
+                cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+                cell.textLabel.numberOfLines = 0;
+                cell.textLabel.text = movieMain.casts;
+            } else {
+                cell.textLabel.text = NSLocalizedString(@"Not set", @"");
+            }
+            break;
 		default:
 			break;
 	}
@@ -232,23 +230,25 @@
     int height = 45;
 	switch (indexPath.section) {
 		case 0:
-            switch (indexPath.row) {
-                case 0:
-                    if ([movieMain.title length] > 50){
-                        height = 90;
-                    } else if ([movieMain.title length] > 20) {
-                        height = 65;
-                    } else {
-                        height = 45;
-                    }
-                    break;
-                case 1:
-                    height = 45;
-                    break;
-                default:
-                    break;
+            if ([movieMain.title length] > 50){
+                height = 90;
+            } else if ([movieMain.title length] > 20) {
+                height = 65;
+            } else {
+                height = 45;
             }
-			break;
+            break;
+        case 2:
+            if ([movieMain.casts length] > 100){
+                height = 110;
+            } else if ([movieMain.casts length] > 50) {
+                height = 70;
+            } else if ([movieMain.casts length] > 20) {
+                height = 65;
+            } else {
+                height = 45;
+            }
+            break;
 		default:
 			break;
 	}
