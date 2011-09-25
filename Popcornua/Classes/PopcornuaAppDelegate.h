@@ -23,6 +23,7 @@
 @property (nonatomic, retain) IBOutlet UITabBarItem *mapTab;
 @property (nonatomic, retain) IBOutlet UITabBarItem *settingsTab;
 
+- (void)settingChanged:(NSNotification *)notification;
 - (void)syncDataCore;
 
 

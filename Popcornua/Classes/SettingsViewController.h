@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PopcornuaAppDelegate.h"
 #import "IASKAppSettingsViewController.h"
 #import "IASKSpecifier.h"
 #import "IASKSettingsReader.h"
 
-@interface SettingsViewController : IASKAppSettingsViewController <IASKSettingsDelegate>
+@interface SettingsViewController : IASKAppSettingsViewController
 
 @end

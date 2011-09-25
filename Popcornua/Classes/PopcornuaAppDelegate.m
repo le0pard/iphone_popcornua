@@ -8,6 +8,7 @@
 
 #import "PopcornuaAppDelegate.h"
 #import "MainNavController.h"
+#import "IASKSettingsReader.h"
 
 @implementation PopcornuaAppDelegate
 
@@ -36,7 +37,19 @@
     if ([defaults boolForKey:@"updateOnStartup"]){
         [self syncDataCore];
     }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(settingChanged:) name:kIASKAppSettingChanged object:nil];
+    
     return YES;
+}
+
+- (void)settingChanged:(NSNotification *)notification{
+    if ([[notification object] isEqualToString:@"selectCity"]){
+        PCUDataController *data = [[PCUDataController alloc] init];
+        [data cleanupData];
+        [data release];
+        [self syncDataCore];
+    }
 }
 
 - (void)syncDataCore{

@@ -28,5 +28,6 @@
 }
 
 - (void)startSyncData:(UIWindow *)window;
+- (void)cleanupData;
 
 @end

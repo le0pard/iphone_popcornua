@@ -10,13 +10,8 @@
 
 @implementation SettingsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    return [super initWithNibName:@"SettingsViewController" bundle:nibBundleOrNil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -34,7 +29,7 @@
     [super viewDidLoad];
     
     self.title = NSLocalizedString(@"Settings", @"");
-    self.delegate = self;
+
     [self setShowCreditsFooter:NO];
 }
 
@@ -43,21 +38,6 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
-}
-
-#pragma mark -
-
-- (void)settingsViewController:(IASKAppSettingsViewController*)sender buttonTappedForKey:(NSString*)key {
-    NSLog(@"Key: %@", key);
-    /*
-	if ([key isEqualToString:@"ButtonDemoAction1"]) {
-		UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Demo Action 1 called" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease];
-		[alert show];
-	} else {
-		UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Demo Action 2 called" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease];
-		[alert show];
-	}
-     */
 }
 
 #pragma mark -
@@ -70,7 +50,7 @@
     return YES;
 }
 
-- (void)dealloc {	
+- (void)dealloc {
     [super dealloc];
 }
 

@@ -21,8 +21,10 @@
     return self;
 }
 
-- (void) cleanupData:(NSManagedObjectContext *)moc{
-    hudView.labelText = NSLocalizedString(@"Cleanup data", @"");
+- (void)cleanupData{
+    //hudView.labelText = NSLocalizedString(@"Cleanup data", @"");
+    PCUSharedManager *myStoreManager = [PCUSharedManager sharedManager];
+    NSManagedObjectContext *moc = myStoreManager.managedObjectContext;
     
     NSError * clear_error = nil;
     
@@ -70,8 +72,6 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *cityId = [defaults stringForKey:@"selectCity"];
-    
-    [self cleanupData:myStoreManager.managedObjectContext];
     
     hudView.labelText = NSLocalizedString(@"Updating cinemas", @"");
     
