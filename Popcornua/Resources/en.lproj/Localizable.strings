@@ -12,6 +12,9 @@
 "SatellitView"                  = "Satellit";
 "MapView"                       = "Map";
 
+"Movie"                         = "Movie";
+"Cinema"                        = "Cinema";
+
 "Year"                          = "Year";
 "Hall"                          = "Hall";
 "Price"                         = "Price";
@@ -23,3 +26,15 @@
 "Movie Casts"                   = "Casts";
 "Movie Description"             = "Description";
 "Movie Afisha"                  = "Afisha";
+
+"Cinema Name"                   = "Cinema";
+"Afisha Time"                   = "Time";
+"Afisha Price"                  = "Price";
+"Cinema Phone"                  = "Phone";
+"Cinema Site"                   = "Web site";
+
+"Call Title"                    = "Call";
+"Call Descr"                    = "Do you wat call %@?";
+"Yes"                           = "Yes";
+"No"                            = "No";
+"Back"                          = "Back";

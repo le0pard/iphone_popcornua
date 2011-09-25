@@ -12,6 +12,9 @@
 "SatellitView"                  = "Спутник";
 "MapView"                       = "Карта";
 
+"Movie"                         = "Фильм";
+"Cinema"                        = "Кинотеатр";
+
 "Year"                          = "Год";
 "Hall"                          = "Зал";
 "Price"                         = "Цены";
@@ -23,3 +26,15 @@
 "Movie Casts"                   = "В ролях";
 "Movie Description"             = "Описание";
 "Movie Afisha"                  = "Афиша";
+
+"Cinema Name"                   = "Кинотеатр";
+"Afisha Time"                   = "Время";
+"Afisha Price"                  = "Цена";
+"Cinema Phone"                  = "Телефон";
+"Cinema Site"                   = "Web сайт";
+
+"Call Title"                    = "Звонок";
+"Call Descr"                    = "Произвести вызов номера %@?";
+"Yes"                           = "Да";
+"No"                            = "Нет";
+"Back"                          = "Назад";

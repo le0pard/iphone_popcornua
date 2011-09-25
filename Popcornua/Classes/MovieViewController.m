@@ -8,6 +8,8 @@
 
 #import "MovieViewController.h"
 
+#define AFISHA_SELL 1
+
 @implementation MovieViewController
 
 @synthesize movieMain, rootTableView, afishasArray;
@@ -61,6 +63,11 @@
     
     [self fetchCinemasTodayRecords];
     
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Movie", @"") 
+                                                                   style:UIBarButtonItemStyleBordered target:nil action:nil];
+    self.navigationItem.backBarButtonItem = backButton;
+    [backButton release];
+    
     self.title = movieMain.title;
     
     UIImageView *posterView = nil;
@@ -113,12 +120,12 @@
     NSString *headerText = @"";
     switch (section) {
 		case 0:
-			headerText =  NSLocalizedString(@"Movie Name", @"");
+			headerText = NSLocalizedString(@"Movie Name", @"");
 			break;
-		case 1:
+		case 2:
 			headerText = NSLocalizedString(@"Movie Year", @"");
 			break;
-        case 2:
+        case 3:
 			headerText = NSLocalizedString(@"Movie Casts", @"");
 			break;
         case AFISHA_SELL:
@@ -154,7 +161,7 @@
             cell.textLabel.text = movieMain.title;
             cell.detailTextLabel.text = movieMain.orig_title;
 			break;
-        case 1:
+        case 2:
             if (movieMain.year){
                 cell.textLabel.text = movieMain.year;
             } else {
@@ -162,7 +169,7 @@
             }
             cell.detailTextLabel.text = nil;
             break;
-        case 2:
+        case 3:
             if (movieMain.casts){
                 cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15.0];
                 cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
@@ -206,8 +213,7 @@
     if (AFISHA_SELL == indexPath.section){
         AfishaViewController *afishaController = [[AfishaViewController alloc] initWithNibName:@"AfishaViewController" bundle:nil];
         Afisha *afisha = [self.afishasArray objectAtIndex:indexPath.row];
-        afishaController.movieMain = afisha.movie;
-        afishaController.cinemaMain = afisha.cinema;
+        afishaController.afishaMain = afisha;
         [self.navigationController pushViewController:afishaController animated:YES];
         [afishaController release];
     }
@@ -228,7 +234,7 @@
                 height = 45;
             }
             break;
-        case 2:
+        case 3:
             if ([movieMain.casts length] > 100){
                 height = 110;
             } else if ([movieMain.casts length] > 50) {

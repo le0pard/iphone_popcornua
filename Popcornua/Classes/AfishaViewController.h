@@ -11,15 +11,15 @@
 #import "Movie.h"
 #import "Afisha.h"
 #import "PCUSharedManager.h"
+#import "MovieViewController.h"
+#import "CinemaViewController.h"
 
 @interface AfishaViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
-    Cinema *cinemaMain;
-    Movie *movieMain;
+    Afisha *afishaMain;
     UITableView *rootTableView;
 }
 
-@property (nonatomic, retain) IBOutlet Cinema *cinemaMain;
-@property (nonatomic, retain) IBOutlet Movie *movieMain;
+@property (nonatomic, retain) IBOutlet Afisha *afishaMain;
 @property (nonatomic, retain) IBOutlet UITableView *rootTableView;
 
 @end

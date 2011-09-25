@@ -39,8 +39,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Cinema", @"") 
+                                                                   style:UIBarButtonItemStyleBordered target:nil action:nil];
+    self.navigationItem.backBarButtonItem = backButton;
+    [backButton release];
 
     self.title = cinemaMain.title;
+    
     [self fetchMoviesTodayRecords];
 }
 
@@ -97,8 +103,7 @@
     
     AfishaViewController *afishaController = [[AfishaViewController alloc] initWithNibName:@"AfishaViewController" bundle:nil];
 	Afisha *afisha = [self.afishasArray objectAtIndex:indexPath.row];
-	afishaController.movieMain = afisha.movie;
-    afishaController.cinemaMain = afisha.cinema;
+	afishaController.afishaMain = afisha;
 	[self.navigationController pushViewController:afishaController animated:YES];
     [afishaController release];
 }
