@@ -45,15 +45,19 @@
 
 - (void)settingChanged:(NSNotification *)notification{
     if ([[notification object] isEqualToString:@"selectCity"]){
-        PCUDataController *data = [[PCUDataController alloc] init];
-        [data cleanupData];
-        [data release];
-        [self syncDataCore];
+        [self syncDataCore:YES];
     }
 }
 
 - (void)syncDataCore{
+    [self syncDataCore:NO];
+}
+
+- (void)syncDataCore:(BOOL)withCleanup{
     PCUDataController *data = [[PCUDataController alloc] init];
+    if (withCleanup){
+        [data cleanupData];
+    }
     [data startSyncData:self.window];
     [data release];
 }
