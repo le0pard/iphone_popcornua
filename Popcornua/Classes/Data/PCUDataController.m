@@ -21,14 +21,61 @@
     return self;
 }
 
+- (void) cleanupData:(NSManagedObjectContext *)moc{
+    hudView.labelText = NSLocalizedString(@"Cleanup data", @"");
+    
+    NSError * clear_error = nil;
+    
+    /* cleanup data */
+    NSFetchRequest * allAfisha = [[NSFetchRequest alloc] init];
+    [allAfisha setEntity:[NSEntityDescription entityForName:@"Afisha" inManagedObjectContext:moc]];
+    [allAfisha setIncludesPropertyValues:NO]; //only fetch the managedObjectID
+    
+    NSArray * afishas = [moc executeFetchRequest:allAfisha error:&clear_error];
+    [allAfisha release];
+    //error handling goes here
+    for (Afisha *afisha in afishas) {
+        [moc deleteObject:afisha];
+    }
+    
+    /* cleanup data */
+    NSFetchRequest * allCinema = [[NSFetchRequest alloc] init];
+    [allCinema setEntity:[NSEntityDescription entityForName:@"Cinema" inManagedObjectContext:moc]];
+    [allCinema setIncludesPropertyValues:NO]; //only fetch the managedObjectID
+    
+    NSArray * cinemas = [moc executeFetchRequest:allCinema error:&clear_error];
+    [allCinema release];
+    //error handling goes here
+    for (Cinema *cinema in cinemas) {
+        [moc deleteObject:cinema];
+    }
+    
+    /* cleanup data */
+    NSFetchRequest * allMovies = [[NSFetchRequest alloc] init];
+    [allMovies setEntity:[NSEntityDescription entityForName:@"Movie" inManagedObjectContext:moc]];
+    [allMovies setIncludesPropertyValues:NO]; //only fetch the managedObjectID
+    
+    NSArray * movies = [moc executeFetchRequest:allMovies error:&clear_error];
+    [allMovies release];
+    //error handling goes here
+    for (Movie *movie in movies) {
+        [moc deleteObject:movie];
+    }
+}
+
 
 - (void) syncCoreData{
     PCUSharedManager *myStoreManager = [PCUSharedManager sharedManager];
     NSError *error = nil;
     
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *cityId = [defaults stringForKey:@"selectCity"];
+    
+    [self cleanupData:myStoreManager.managedObjectContext];
+    
     hudView.labelText = NSLocalizedString(@"Updating cinemas", @"");
     
-    request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:POPCORN_CINEMAS_URL, 1, POPCORN_SECRET]]];
+    request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:POPCORN_CINEMAS_URL, cityId, POPCORN_SECRET]]];
 	[request setRequestMethod:@"GET"];
     [request addRequestHeader:@"User-Agent" value:[NSString stringWithFormat:@"iphone-app/%@",@"1.0"]];
     [request setTimeOutSeconds:30];
@@ -51,7 +98,7 @@
     
     hudView.labelText = NSLocalizedString(@"Updating movies", @"");
     
-    request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:POPCORN_MOVIES_URL, 1, POPCORN_SECRET]]];
+    request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:POPCORN_MOVIES_URL, cityId, POPCORN_SECRET]]];
 	[request setRequestMethod:@"GET"];
     [request addRequestHeader:@"User-Agent" value:[NSString stringWithFormat:@"iphone-app/%@",@"1.0"]];
     [request setTimeOutSeconds:30];

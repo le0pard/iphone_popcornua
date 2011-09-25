@@ -8,6 +8,7 @@
 "updating program data"         = "обновление данных программы";
 "Updating cinemas"              = "Обновление кинотеатров";
 "Updating movies"               = "Обновление фильмов";
+"Cleanup data"                  = "Очистка данных";
 
 "SatellitView"                  = "Спутник";
 "MapView"                       = "Карта";

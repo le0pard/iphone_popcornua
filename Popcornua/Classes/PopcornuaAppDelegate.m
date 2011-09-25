@@ -32,8 +32,10 @@
     [self.window addSubview:self.rootController.view];
     [self.window makeKeyAndVisible];
     
-    [self syncDataCore];
-    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults boolForKey:@"updateOnStartup"]){
+        [self syncDataCore];
+    }
     return YES;
 }
 

@@ -7,8 +7,8 @@
         <attribute name="prices" optional="YES" attributeType="String"/>
         <attribute name="times" optional="YES" attributeType="String"/>
         <attribute name="zal_title" optional="YES" attributeType="String"/>
-        <relationship name="cinema" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Cinema" inverseName="afishas" inverseEntity="Cinema"/>
-        <relationship name="movie" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Movie" inverseName="afishas" inverseEntity="Movie"/>
+        <relationship name="cinema" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Cinema" inverseName="afishas" inverseEntity="Cinema"/>
+        <relationship name="movie" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Movie" inverseName="afishas" inverseEntity="Movie"/>
     </entity>
     <entity name="Cinema" representedClassName="Cinema">
         <attribute name="address" optional="YES" attributeType="String"/>
