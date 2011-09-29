@@ -74,7 +74,7 @@
     if (movieMain.getPosterImage){
         posterView = [[UIImageView alloc] initWithImage:movieMain.getPosterImage];
     } else {
-        posterView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon.png"]];
+        posterView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"noimage.png"]];
     }
     posterView.frame = CGRectMake(0, 0, 320, 260);
     posterView.contentMode = UIViewContentModeCenter;

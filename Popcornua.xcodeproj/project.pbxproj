@@ -100,6 +100,7 @@
 		B3DC0BC7142F940100E0E8E0 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B3DC0BC5142F940100E0E8E0 /* Settings.bundle */; };
 		B3DC0BCC142F946800E0E8E0 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B3DC0BCB142F946800E0E8E0 /* Settings.bundle */; };
 		B3DC2E5F141CB3F100E1FDB0 /* NSStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DC2E5E141CB3F100E1FDB0 /* NSStringUtil.m */; };
+		B3DFD6761434829B00BE123A /* noimage.png in Resources */ = {isa = PBXBuildFile; fileRef = B3DFD6751434829B00BE123A /* noimage.png */; };
 		B3E4074D142E0A5100E0050E /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E4074B142E0A5100E0050E /* MovieViewController.m */; };
 		B3E40751142E0A8000E0050E /* MovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3E40750142E0A8000E0050E /* MovieViewController.xib */; };
 		B3E4E457142690CD000CD12A /* ImageLoadingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E4E456142690CD000CD12A /* ImageLoadingOperation.m */; };
@@ -261,6 +262,7 @@
 		B3DC0BCB142F946800E0E8E0 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Resources/Settings.bundle; sourceTree = "<group>"; };
 		B3DC2E5D141CB3F100E1FDB0 /* NSStringUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSStringUtil.h; path = Classes/Util/NSStringUtil.h; sourceTree = "<group>"; };
 		B3DC2E5E141CB3F100E1FDB0 /* NSStringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSStringUtil.m; path = Classes/Util/NSStringUtil.m; sourceTree = "<group>"; };
+		B3DFD6751434829B00BE123A /* noimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noimage.png; sourceTree = "<group>"; };
 		B3E4074A142E0A5100E0050E /* MovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MovieViewController.h; path = Classes/MovieViewController.h; sourceTree = "<group>"; };
 		B3E4074B142E0A5100E0050E /* MovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MovieViewController.m; path = Classes/MovieViewController.m; sourceTree = "<group>"; };
 		B3E40750142E0A8000E0050E /* MovieViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MovieViewController.xib; path = VIews/MovieViewController.xib; sourceTree = "<group>"; };
@@ -452,6 +454,7 @@
 		B39135801412AD7B0053C84B /* Resourses */ = {
 			isa = PBXGroup;
 			children = (
+				B3DFD6741434829B00BE123A /* images */,
 				B3DC0BCB142F946800E0E8E0 /* Settings.bundle */,
 				B39135EA1412D57B0053C84B /* Localizable.strings */,
 				B39135E61412D5100053C84B /* en.lproj */,
@@ -673,6 +676,15 @@
 			name = Util;
 			sourceTree = "<group>";
 		};
+		B3DFD6741434829B00BE123A /* images */ = {
+			isa = PBXGroup;
+			children = (
+				B3DFD6751434829B00BE123A /* noimage.png */,
+			);
+			name = images;
+			path = Resources/images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -773,6 +785,7 @@
 				B3DC0BC7142F940100E0E8E0 /* Settings.bundle in Resources */,
 				B3DC0BCC142F946800E0E8E0 /* Settings.bundle in Resources */,
 				B3EFCEB4142F96BD00D1260F /* Root.strings in Resources */,
+				B3DFD6761434829B00BE123A /* noimage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
