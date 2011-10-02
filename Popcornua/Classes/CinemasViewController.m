@@ -40,6 +40,12 @@
     [self.rootTableView flashScrollIndicators];
 }
 
+- (void)viewChanged:(NSNotification *)notification{
+    if ([[notification object] isEqualToString:@"selectCity"]){
+        [[self navigationController] popToRootViewControllerAnimated:NO];
+    }
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -59,6 +65,8 @@
                                    action:@selector(syncDataCore)];    
     self.navigationItem.rightBarButtonItem = syncButton;
     [syncButton release];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(viewChanged:) name:kIASKAppSettingChanged object:nil];
 }
 
 - (void)viewDidUnload

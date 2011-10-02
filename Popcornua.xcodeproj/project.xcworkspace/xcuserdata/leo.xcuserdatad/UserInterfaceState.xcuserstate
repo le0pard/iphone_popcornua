@@ -208,7 +208,7 @@
 		<string>IDEWorkspaceTabControllerDesignAreaSplitView</string>
 		<string>IDEShowUtilities</string>
 		<string>AssistantEditorsLayout</string>
-		<string>CinemaViewController.m</string>
+		<string>CinemasViewController.m</string>
 		<true/>
 		<dict>
 			<key>$class</key>
@@ -537,7 +537,7 @@
 				<integer>56</integer>
 			</dict>
 		</dict>
-		<string>CinemaViewController.m</string>
+		<string>CinemasViewController.m</string>
 		<dict>
 			<key>$classes</key>
 			<array>
@@ -620,7 +620,7 @@
 				<integer>68</integer>
 			</dict>
 			<key>NS.string</key>
-			<string>file://localhost/Users/leo/programs/iphone_projects/Popcornua/Popcornua/Classes/CinemaViewController.m</string>
+			<string>file://localhost/Users/leo/programs/iphone_projects/Popcornua/Popcornua/Classes/CinemasViewController.m</string>
 		</dict>
 		<dict>
 			<key>$classes</key>
@@ -699,9 +699,9 @@
 		<string>PrimaryDocumentVisibleCharacterRange</string>
 		<string>HideAllIssues</string>
 		<string>PrimaryDocumentSelectedCharacterRange</string>
-		<real>339281000.28730798</real>
-		<string>{214, 1998}</string>
-		<string>{1734, 0}</string>
+		<real>339281150.37537003</real>
+		<string>{484, 1991}</string>
+		<string>{2155, 0}</string>
 		<dict>
 			<key>$classes</key>
 			<array>
@@ -730,7 +730,7 @@
 				<integer>83</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/leo/programs/iphone_projects/Popcornua/Popcornua/Classes/CinemaViewController.m</string>
+		<string>file://localhost/Users/leo/programs/iphone_projects/Popcornua/Popcornua/Classes/CinemasViewController.m</string>
 		<dict>
 			<key>$classes</key>
 			<array>
@@ -9127,9 +9127,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>339281000.28654701</real>
-		<string>{214, 1998}</string>
-		<string>{1734, 0}</string>
+		<real>339281093.608437</real>
+		<string>{214, 1984}</string>
+		<string>{1606, 128}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -9839,9 +9839,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>339280912.41156298</real>
-		<string>{486, 1939}</string>
-		<string>{1820, 0}</string>
+		<real>339281150.37473702</real>
+		<string>{484, 1991}</string>
+		<string>{2155, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -11336,19 +11336,19 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>646</integer>
+					<integer>72</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>647</integer>
+					<integer>73</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>648</integer>
+					<integer>74</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>649</integer>
+					<integer>75</integer>
 				</dict>
 			</array>
 			<key>NS.objects</key>
@@ -11371,7 +11371,7 @@
 				</dict>
 			</array>
 		</dict>
-		<real>338584006.35456902</real>
+		<real>339281079.45784599</real>
 		<string>{0, 620}</string>
 		<string>{384, 61}</string>
 		<dict>
@@ -12179,8 +12179,8 @@
 				</dict>
 			</array>
 		</dict>
-		<real>339280898.55985302</real>
-		<string>{616, 2115}</string>
+		<real>339281067.73631603</real>
+		<string>{611, 2154}</string>
 		<string>{1065, 197}</string>
 		<dict>
 			<key>$class</key>
@@ -17308,7 +17308,7 @@
 				<integer>1297</integer>
 			</dict>
 			<key>NS.time</key>
-			<real>339280940.97095102</real>
+			<real>339281102.49330997</real>
 		</dict>
 		<dict>
 			<key>$classes</key>
@@ -17319,7 +17319,7 @@
 			<key>$classname</key>
 			<string>NSDate</string>
 		</dict>
-		<string>Today at 11:42 PM</string>
+		<string>Today at 11:45 PM</string>
 		<integer>234</integer>
 		<dict>
 			<key>$class</key>
@@ -17758,7 +17758,7 @@
 				<integer>1335</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/leo/programs/iphone_projects/Popcornua/Popcornua/Classes/CinemaViewController.m</string>
+		<string>file://localhost/Users/leo/programs/iphone_projects/Popcornua/Popcornua/Classes/CinemasViewController.m</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -17776,7 +17776,7 @@
 				<integer>1337</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/leo/programs/iphone_projects/Popcornua/Popcornua/Classes/MovieViewController.m</string>
+		<string>file://localhost/Users/leo/programs/iphone_projects/Popcornua/Popcornua/Classes/CinemaViewController.m</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -17794,7 +17794,7 @@
 				<integer>1339</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/leo/programs/iphone_projects/Popcornua/Popcornua/Classes/CinemasViewController.m</string>
+		<string>file://localhost/Users/leo/programs/iphone_projects/Popcornua/Popcornua/Classes/CinemasViewController.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -17812,7 +17812,7 @@
 				<integer>1341</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/leo/programs/iphone_projects/Popcornua/Popcornua/Classes/AfishaViewController.m</string>
+		<string>file://localhost/Users/leo/programs/iphone_projects/Popcornua/Popcornua/Classes/MoviesViewController.m</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -17830,7 +17830,7 @@
 				<integer>1343</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/leo/programs/iphone_projects/Popcornua/Popcornua/Classes/MoviesViewController.m</string>
+		<string>file://localhost/Users/leo/programs/iphone_projects/Popcornua/Popcornua/Classes/MovieViewController.m</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -17848,7 +17848,7 @@
 				<integer>1345</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/leo/programs/iphone_projects/Popcornua/Popcornua/Classes/MoviesViewController.h</string>
+		<string>file://localhost/Users/leo/programs/iphone_projects/Popcornua/Popcornua/Classes/AfishaViewController.m</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -17866,7 +17866,7 @@
 				<integer>1347</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/leo/programs/iphone_projects/Popcornua/Popcornua/Classes/MovieViewController.h</string>
+		<string>file://localhost/Users/leo/programs/iphone_projects/Popcornua/Popcornua/Classes/MoviesViewController.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -17884,7 +17884,7 @@
 				<integer>1349</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/leo/programs/iphone_projects/Popcornua/Popcornua/Classes/AfishaViewController.h</string>
+		<string>file://localhost/Users/leo/programs/iphone_projects/Popcornua/Popcornua/Classes/MovieViewController.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -17902,7 +17902,7 @@
 				<integer>1351</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/leo/programs/iphone_projects/Popcornua/Popcornua/Classes/PopcornuaAppDelegate.m</string>
+		<string>file://localhost/Users/leo/programs/iphone_projects/Popcornua/Popcornua/Classes/AfishaViewController.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -17920,7 +17920,7 @@
 				<integer>1353</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/leo/programs/iphone_projects/Popcornua/Popcornua/Classes/Data/PCUDataController.m</string>
+		<string>file://localhost/Users/leo/programs/iphone_projects/Popcornua/Popcornua/Classes/PopcornuaAppDelegate.m</string>
 	</array>
 	<key>$top</key>
 	<dict>
