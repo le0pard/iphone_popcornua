@@ -13,6 +13,7 @@
 #import "PCUSharedManager.h"
 #import "MovieViewController.h"
 #import "CinemaViewController.h"
+#import "IASKSettingsReader.h"
 
 @interface AfishaViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
     Afisha *afishaMain;

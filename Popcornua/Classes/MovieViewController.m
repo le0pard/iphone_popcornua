@@ -57,6 +57,12 @@
 	self.afishasArray = [self groupByCinemas:[Afisha getAfishaTodayListByMovie:movieMain withContext:myStoreManager.managedObjectContext]];
 }
 
+- (void)viewChanged:(NSNotification *)notification{
+    if ([[notification object] isEqualToString:@"selectCity"]){
+        [[self navigationController] popToRootViewControllerAnimated:NO];
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -81,6 +87,8 @@
     posterView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     rootTableView.tableHeaderView = posterView;
     [posterView release];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(viewChanged:) name:kIASKAppSettingChanged object:nil];
     
 }
 

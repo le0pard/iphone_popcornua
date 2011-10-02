@@ -42,6 +42,12 @@
     [self.rootTableView flashScrollIndicators];
 }
 
+- (void)viewChanged:(NSNotification *)notification{
+    if ([[notification object] isEqualToString:@"selectCity"]){
+        [[self navigationController] popToRootViewControllerAnimated:NO];
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -59,6 +65,8 @@
                                    action:@selector(syncDataCore)];
     self.navigationItem.rightBarButtonItem = syncButton;
     [syncButton release];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(viewChanged:) name:kIASKAppSettingChanged object:nil];
 }
 
 - (void)viewDidUnload
@@ -87,23 +95,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView 
 		 cellForRowAtIndexPath:(NSIndexPath *)indexPath 
 {
-    /*
-    static NSString *MovieCellIdentifier = @"MovieCellIdentifier ";
-	
-	MovieCell *cell = (MovieCell *)[tableView dequeueReusableCellWithIdentifier: MovieCellIdentifier];
-	if (cell == nil)  
-	{
-		NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MovieCell" 
-                                                     owner:self options:nil];
-		cell = (MovieCell *)[nib objectAtIndex:0];
-		
-	}
-    
-    // set cell
-    Movie *movie = [self.moviesArray objectAtIndex:indexPath.row];
-    [cell setCellByMovie:movie];
-    //return cell
-    */
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {

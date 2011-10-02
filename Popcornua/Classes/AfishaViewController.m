@@ -39,6 +39,12 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+- (void)viewChanged:(NSNotification *)notification{
+    if ([[notification object] isEqualToString:@"selectCity"]){
+        [[self navigationController] popToRootViewControllerAnimated:NO];
+    }
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -56,13 +62,15 @@
     if (afishaMain.movie.getPosterImage){
         posterView = [[UIImageView alloc] initWithImage:afishaMain.movie.getPosterImage];
     } else {
-        posterView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon.png"]];
+        posterView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"noimage.png"]];
     }
     posterView.frame = CGRectMake(0, 0, 320, 260);
     posterView.contentMode = UIViewContentModeCenter;
     posterView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     rootTableView.tableHeaderView = posterView;
     [posterView release];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(viewChanged:) name:kIASKAppSettingChanged object:nil];
 }
 
 - (void)viewDidUnload

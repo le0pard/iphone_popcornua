@@ -36,6 +36,12 @@
 	self.afishasArray = [Afisha getAfishaTodayListByCinema:cinemaMain withContext:myStoreManager.managedObjectContext];
 }
 
+- (void)viewChanged:(NSNotification *)notification{
+    if ([[notification object] isEqualToString:@"selectCity"]){
+        [[self navigationController] popToRootViewControllerAnimated:NO];
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -48,6 +54,8 @@
     self.title = cinemaMain.title;
     
     [self fetchMoviesTodayRecords];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(viewChanged:) name:kIASKAppSettingChanged object:nil];
 }
 
 - (void)viewDidUnload

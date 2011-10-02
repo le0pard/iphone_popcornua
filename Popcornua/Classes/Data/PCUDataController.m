@@ -122,6 +122,30 @@
         }
     }
     
+    hudView.labelText = NSLocalizedString(@"Delete trash", @"");
+    
+    NSFetchRequest * allMovies = [[NSFetchRequest alloc] init];
+    [allMovies setEntity:[NSEntityDescription entityForName:@"Movie" inManagedObjectContext:myStoreManager.managedObjectContext]];
+    [allMovies setIncludesPropertyValues:NO]; //only fetch the managedObjectID
+    NSError * clear_error = nil;
+    NSArray * movies = [myStoreManager.managedObjectContext executeFetchRequest:allMovies error:&clear_error];
+    [allMovies release];
+    //error handling goes here
+    for (Movie *movie in movies) {
+        
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        [fetchRequest setEntity:[NSEntityDescription entityForName:@"Afisha"
+                                            inManagedObjectContext:myStoreManager.managedObjectContext]];
+        [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"movie == %@", movie]];
+        NSError *error = nil;
+        NSArray *results = [myStoreManager.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+        [fetchRequest release]; 
+        fetchRequest = nil;
+        if (results && [results count] == 0) {
+            [myStoreManager.managedObjectContext deleteObject:movie];
+        }
+    }
+    
     [myStoreManager release];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"updateTableViews" object:self];
