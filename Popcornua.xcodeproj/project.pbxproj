@@ -19,6 +19,9 @@
 		B3817EE014223AB000576C22 /* Coordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3817EDF14223AB000576C22 /* Coordinate.m */; };
 		B382A8B61427984600FCE8AB /* CinemaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B382A8B41427984600FCE8AB /* CinemaViewController.m */; };
 		B382A8BA1427987200FCE8AB /* CinemaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B382A8B91427987200FCE8AB /* CinemaViewController.xib */; };
+		B3868382143B8320000340D7 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3868380143B8320000340D7 /* libGoogleAnalytics.a */; };
+		B3868383143B8320000340D7 /* libGoogleAnalytics_NoThumb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3868381143B8320000340D7 /* libGoogleAnalytics_NoThumb.a */; };
+		B3868386143B8422000340D7 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B3868385143B8422000340D7 /* libsqlite3.0.dylib */; };
 		B39135451412A75A0053C84B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39135441412A75A0053C84B /* UIKit.framework */; };
 		B39135471412A75A0053C84B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39135461412A75A0053C84B /* Foundation.framework */; };
 		B39135491412A75A0053C84B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39135481412A75A0053C84B /* CoreGraphics.framework */; };
@@ -135,6 +138,10 @@
 		B382A8B31427984600FCE8AB /* CinemaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CinemaViewController.h; path = Classes/CinemaViewController.h; sourceTree = "<group>"; };
 		B382A8B41427984600FCE8AB /* CinemaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CinemaViewController.m; path = Classes/CinemaViewController.m; sourceTree = "<group>"; };
 		B382A8B91427987200FCE8AB /* CinemaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CinemaViewController.xib; path = VIews/CinemaViewController.xib; sourceTree = "<group>"; };
+		B386837F143B8320000340D7 /* GANTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GANTracker.h; sourceTree = "<group>"; };
+		B3868380143B8320000340D7 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
+		B3868381143B8320000340D7 /* libGoogleAnalytics_NoThumb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics_NoThumb.a; sourceTree = "<group>"; };
+		B3868385143B8422000340D7 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		B39135401412A75A0053C84B /* Popcornua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Popcornua.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B39135441412A75A0053C84B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B39135461412A75A0053C84B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -275,6 +282,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3868386143B8422000340D7 /* libsqlite3.0.dylib in Frameworks */,
 				B3DC0BB1142F82E300E0E8E0 /* MessageUI.framework in Frameworks */,
 				B351B2431424E1F600BDA78B /* MapKit.framework in Frameworks */,
 				B3B89CF0141C1B1200CCC495 /* libz.1.2.3.dylib in Frameworks */,
@@ -286,6 +294,8 @@
 				B39135471412A75A0053C84B /* Foundation.framework in Frameworks */,
 				B39135491412A75A0053C84B /* CoreGraphics.framework in Frameworks */,
 				B391354B1412A75A0053C84B /* CoreData.framework in Frameworks */,
+				B3868382143B8320000340D7 /* libGoogleAnalytics.a in Frameworks */,
+				B3868383143B8320000340D7 /* libGoogleAnalytics_NoThumb.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +334,16 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		B386837E143B8320000340D7 /* GA */ = {
+			isa = PBXGroup;
+			children = (
+				B386837F143B8320000340D7 /* GANTracker.h */,
+				B3868380143B8320000340D7 /* libGoogleAnalytics.a */,
+				B3868381143B8320000340D7 /* libGoogleAnalytics_NoThumb.a */,
+			);
+			path = GA;
+			sourceTree = "<group>";
+		};
 		B39135351412A75A0053C84B = {
 			isa = PBXGroup;
 			children = (
@@ -350,6 +370,7 @@
 				B351B2481424E3FB00BDA78B /* CoreLocation.framework */,
 				B351B2421424E1F600BDA78B /* MapKit.framework */,
 				B3B89CEF141C1B1200CCC495 /* libz.1.2.3.dylib */,
+				B3868385143B8422000340D7 /* libsqlite3.0.dylib */,
 				B3B89CED141C1AF700CCC495 /* MobileCoreServices.framework */,
 				B3B89CEB141C1AED00CCC495 /* SystemConfiguration.framework */,
 				B3B89CE9141C1ADF00CCC495 /* CFNetwork.framework */,
@@ -532,6 +553,7 @@
 		B3B89CC3141C19A000CCC495 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				B386837E143B8320000340D7 /* GA */,
 				B3DC0B6B142F7C9000E0E8E0 /* InAppSettingsKit */,
 				B31823D51423E582008D62B6 /* MBProgressHUD */,
 				B3B89D01141C2E5400CCC495 /* JSON */,
@@ -994,6 +1016,10 @@
 				GCC_PREFIX_HEADER = "Popcornua/Popcornua-Prefix.pch";
 				INFOPLIST_FILE = "Popcornua/Popcornua-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Popcornua/Classes/Libs/GA\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1006,6 +1032,10 @@
 				GCC_PREFIX_HEADER = "Popcornua/Popcornua-Prefix.pch";
 				INFOPLIST_FILE = "Popcornua/Popcornua-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Popcornua/Classes/Libs/GA\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

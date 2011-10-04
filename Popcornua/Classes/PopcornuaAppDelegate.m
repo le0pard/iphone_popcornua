@@ -10,6 +10,8 @@
 #import "MainNavController.h"
 #import "IASKSettingsReader.h"
 
+static const NSInteger kGANDispatchPeriodSec = 10;
+
 @implementation PopcornuaAppDelegate
 
 @synthesize window = _window;
@@ -29,7 +31,21 @@
     [moviesTab setTitle:NSLocalizedString(@"Movies", @"")];
     [mapTab setTitle:NSLocalizedString(@"Map", @"")];
     [settingsTab setTitle:NSLocalizedString(@"Settings", @"")];
-
+    
+    
+    [[GANTracker sharedTracker] startTrackerWithAccountID:@"UA-7068020-10"
+                                           dispatchPeriod:kGANDispatchPeriodSec
+                                                 delegate:nil];
+    [[GANTracker sharedTracker] setSampleRate:95];
+    NSError *error;
+    if (![[GANTracker sharedTracker] trackPageview:@"/"
+                                         withError:&error]) {
+        NSLog(@"Error: %@", "Error load GA!");
+    }
+    [[GANTracker sharedTracker] dispatch];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(settingChanged:) name:kIASKAppSettingChanged object:nil];
+    
     [self.window addSubview:self.rootController.view];
     [self.window makeKeyAndVisible];
     
@@ -37,8 +53,6 @@
     if ([defaults boolForKey:@"updateOnStartup"]){
         [self syncDataCore];
     }
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(settingChanged:) name:kIASKAppSettingChanged object:nil];
     
     return YES;
 }
@@ -110,6 +124,8 @@
     [__managedObjectContext release];
     [__managedObjectModel release];
     [__persistentStoreCoordinator release];
+    
+    [[GANTracker sharedTracker] stopTracker];
     [super dealloc];
 }
 

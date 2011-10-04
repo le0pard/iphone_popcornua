@@ -116,7 +116,15 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // GA
+    NSError *error;
+    if (![[GANTracker sharedTracker] trackPageview:@"/movie_selected"
+                                         withError:&error]) {
+        NSLog(@"Error: %@", "Error load GA!");
+    }
+    [[GANTracker sharedTracker] dispatch];
     
+    // select movie
     MovieViewController *movieController = [[MovieViewController alloc] initWithNibName:@"MovieViewController" bundle:nil];
 	Movie *movie = [self.moviesArray objectAtIndex:indexPath.row];
 	movieController.movieMain = movie;
