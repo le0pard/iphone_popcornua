@@ -13,6 +13,7 @@
 #import "MovieCell.h"
 #import "PCUSharedManager.h"
 #import "AfishaViewController.h"
+#import "PopcornuaAppDelegate.h"
 
 
 @interface CinemaViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{

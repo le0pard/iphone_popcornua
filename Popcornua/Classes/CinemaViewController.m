@@ -112,6 +112,22 @@
     AfishaViewController *afishaController = [[AfishaViewController alloc] initWithNibName:@"AfishaViewController" bundle:nil];
 	Afisha *afisha = [self.afishasArray objectAtIndex:indexPath.row];
 	afishaController.afishaMain = afisha;
+    
+    // GA begin
+    NSError *error;
+    if (![[GANTracker sharedTracker] trackPageview:@"/afisha_selected"
+                                         withError:&error]) {
+        NSLog(@"Error: %@", "Error load GA!");
+    }
+    if (![[GANTracker sharedTracker] setCustomVariableAtIndex:1
+                                                         name:@"Afisha Selected"
+                                                        value:[NSString stringWithFormat:@"%@ : %@", afisha.cinema.title, afisha.movie.title]
+                                                    withError:&error]) {
+        NSLog(@"Error: %@", "Error load GA!");
+    }
+    [[GANTracker sharedTracker] dispatch];
+    // GA end
+    
 	[self.navigationController pushViewController:afishaController animated:YES];
     [afishaController release];
 }
