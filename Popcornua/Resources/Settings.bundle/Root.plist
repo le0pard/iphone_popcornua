@@ -5,6 +5,12 @@
 	<key>PreferenceSpecifiers</key>
 	<array>
 		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>MAIN_GROUP_SETTINGS</string>
+		</dict>
+		<dict>
 			<key>DefaultValue</key>
 			<true/>
 			<key>Key</key>
@@ -93,6 +99,32 @@
 			<string>selectCity</string>
 			<key>DefaultValue</key>
 			<string>1</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>ABOUT_GROUP_SETTINGS</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>VERSION</string>
+			<key>Key</key>
+			<string></string>
+			<key>DefaultValue</key>
+			<string>1.0</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>COPYRIGHT</string>
+			<key>Key</key>
+			<string></string>
+			<key>DefaultValue</key>
+			<string>Alexey Vasyliev, Timur Prokopiev</string>
 		</dict>
 	</array>
 	<key>StringsTable</key>

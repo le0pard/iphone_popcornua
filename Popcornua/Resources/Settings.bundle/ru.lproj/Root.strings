@@ -1,2 +1,8 @@
+"MAIN_GROUP_SETTINGS"               = "Основные настройки";
+"ABOUT_GROUP_SETTINGS"              = "Сведения о приложении";
+
 "AUTOUPDATE_SWITCH_TITLE"           = "Обновлять при загрузке";
 "SELECT_CITY"                       = "Город";
+
+"VERSION"                           = "Версия";
+"COPYRIGHT"                         = "Авторское право";

@@ -1,2 +1,8 @@
+"MAIN_GROUP_SETTINGS"               = "Main settings";
+"ABOUT_GROUP_SETTINGS"              = "Application information";
+
 "AUTOUPDATE_SWITCH_TITLE"           = "Update data on startup";
 "SELECT_CITY"                       = "City";
+
+"VERSION"                           = "Version";
+"COPYRIGHT"                         = "Copyright";
