@@ -72,6 +72,9 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *cityId = [defaults stringForKey:@"selectCity"];
+    if (!cityId){
+        cityId = @"1";
+    }
     
     hudView.labelText = NSLocalizedString(@"Updating cinemas", @"");
     

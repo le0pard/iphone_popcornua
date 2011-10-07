@@ -108,6 +108,22 @@
 		</dict>
 		<dict>
 			<key>Type</key>
+			<string>IASKMailComposeSpecifier</string>
+			<key>Title</key>
+			<string>MAIL_US</string>
+			<key>DefaultValue</key>
+			<string>Bugs or suggestions</string>
+			<key>IASKMailComposeToRecipents</key>
+			<array>
+				<string>popcornua.by.leo@gmail.com</string>
+			</array>
+			<key>IASKMailComposeBodyIsHTML</key>
+			<false/>
+			<key>IASKMailComposeSubject</key>
+			<string>PopCornUA for iOS</string>
+		</dict>
+		<dict>
+			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
 			<key>Title</key>
 			<string>VERSION</string>

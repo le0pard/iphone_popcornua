@@ -56,11 +56,13 @@
         }
     }
     
-    cityRegion.center.latitude = cityRegion.center.latitude / iteratorTaps;
-    cityRegion.center.longitude = cityRegion.center.longitude / iteratorTaps;
+    if (iteratorTaps){
+        cityRegion.center.latitude = cityRegion.center.latitude / iteratorTaps;
+        cityRegion.center.longitude = cityRegion.center.longitude / iteratorTaps;
     
-    [mapView setRegion:cityRegion animated:NO];
-    [mapView setCenterCoordinate:mapView.region.center animated:NO];
+        [mapView setRegion:cityRegion animated:NO];
+        [mapView setCenterCoordinate:mapView.region.center animated:NO];
+    }
 }
 
 - (void)changeMapView:(id)sender{

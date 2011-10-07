@@ -22,6 +22,17 @@ static const NSInteger kGANDispatchPeriodSec = 10;
 @synthesize navController = _navController;
 @synthesize moviesTab, cinemasTab, mapTab, settingsTab;
 
+- (void)checkSettings{
+    id updateOnStartup = [[NSUserDefaults standardUserDefaults] objectForKey:@"updateOnStartup"];
+    if (NULL == updateOnStartup) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"updateOnStartup"];
+    }
+    id selectCity = [[NSUserDefaults standardUserDefaults] objectForKey:@"selectCity"];
+    if (NULL == selectCity) {
+        [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:@"selectCity"];
+    }
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     PCUSharedManager *myStoreManager = [PCUSharedManager sharedManager];
@@ -32,7 +43,9 @@ static const NSInteger kGANDispatchPeriodSec = 10;
     [mapTab setTitle:NSLocalizedString(@"Map", @"")];
     [settingsTab setTitle:NSLocalizedString(@"Settings", @"")];
     
+    [self checkSettings];
     
+    // GA begin
     [[GANTracker sharedTracker] startTrackerWithAccountID:@"UA-7068020-10"
                                            dispatchPeriod:kGANDispatchPeriodSec
                                                  delegate:nil];
@@ -43,6 +56,7 @@ static const NSInteger kGANDispatchPeriodSec = 10;
         NSLog(@"Error: %@", "Error load GA!");
     }
     [[GANTracker sharedTracker] dispatch];
+    // GA end
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(settingChanged:) name:kIASKAppSettingChanged object:nil];
     
