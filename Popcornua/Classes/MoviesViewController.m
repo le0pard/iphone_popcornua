@@ -124,14 +124,14 @@
     
     // GA begin
     NSError *error;
-    if (![[GANTracker sharedTracker] trackPageview:@"/movie_selected"
-                                         withError:&error]) {
-        NSLog(@"Error: %@", "Error load GA!");
-    }
     if (![[GANTracker sharedTracker] setCustomVariableAtIndex:1
                                                          name:@"Movie Selected"
                                                         value:movie.title
                                                     withError:&error]) {
+        NSLog(@"Error: %@", "Error load GA!");
+    }
+    if (![[GANTracker sharedTracker] trackPageview:@"/movie_selected"
+                                         withError:&error]) {
         NSLog(@"Error: %@", "Error load GA!");
     }
     [[GANTracker sharedTracker] dispatch];

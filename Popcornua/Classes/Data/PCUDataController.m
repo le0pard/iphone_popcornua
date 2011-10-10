@@ -127,10 +127,33 @@
     
     hudView.labelText = NSLocalizedString(@"Delete trash", @"");
     
+    // Define range of dates
+    NSError * clear_error = nil;
+    
+    NSDate *date = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];    
+    NSDateFormatter *formatterTemp = [[NSDateFormatter alloc] init];
+    [formatterTemp setDateFormat:@"yyyy-MM-dd 00:00:00"];
+    NSData *dataBegin = (NSData *)[formatter dateFromString:[formatterTemp stringFromDate:date]];
+    [formatterTemp release];
+    [formatter release];
+    
+    NSFetchRequest * allAfisha = [[NSFetchRequest alloc] init];
+    [allAfisha setEntity:[NSEntityDescription entityForName:@"Afisha" inManagedObjectContext:myStoreManager.managedObjectContext]];
+    [allAfisha setIncludesPropertyValues:NO]; //only fetch the managedObjectID
+    [allAfisha setPredicate:[NSPredicate predicateWithFormat:@"data_end < %@", dataBegin]];
+    NSArray * afishas = [myStoreManager.managedObjectContext executeFetchRequest:allAfisha error:&clear_error];
+    [allAfisha release];
+    //error handling goes here
+    for (Afisha *afisha in afishas) {
+        [myStoreManager.managedObjectContext deleteObject:afisha];
+    }
+
+    
     NSFetchRequest * allMovies = [[NSFetchRequest alloc] init];
     [allMovies setEntity:[NSEntityDescription entityForName:@"Movie" inManagedObjectContext:myStoreManager.managedObjectContext]];
     [allMovies setIncludesPropertyValues:NO]; //only fetch the managedObjectID
-    NSError * clear_error = nil;
     NSArray * movies = [myStoreManager.managedObjectContext executeFetchRequest:allMovies error:&clear_error];
     [allMovies release];
     //error handling goes here
