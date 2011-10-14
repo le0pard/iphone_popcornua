@@ -95,8 +95,6 @@
         }
     }
     
-    NSLog(@"Descr: %@", [movieInfo objectForKey:@"description"]);
-    
     NSError *error;
     if (![moc save:&error]) {
         NSLog(@"Error save to database : %@", [error userInfo]);
