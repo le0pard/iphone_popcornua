@@ -85,7 +85,6 @@
         cinema.geolocation = c;
         [c release];
     }
-
     
     NSError *error;
     if (![moc save:&error]) {

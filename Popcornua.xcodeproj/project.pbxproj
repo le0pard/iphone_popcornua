@@ -21,7 +21,6 @@
 		B382A8BA1427987200FCE8AB /* CinemaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B382A8B91427987200FCE8AB /* CinemaViewController.xib */; };
 		B3868382143B8320000340D7 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3868380143B8320000340D7 /* libGoogleAnalytics.a */; };
 		B3868383143B8320000340D7 /* libGoogleAnalytics_NoThumb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3868381143B8320000340D7 /* libGoogleAnalytics_NoThumb.a */; };
-		B3868386143B8422000340D7 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B3868385143B8422000340D7 /* libsqlite3.0.dylib */; };
 		B39135451412A75A0053C84B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39135441412A75A0053C84B /* UIKit.framework */; };
 		B39135471412A75A0053C84B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39135461412A75A0053C84B /* Foundation.framework */; };
 		B39135491412A75A0053C84B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39135481412A75A0053C84B /* CoreGraphics.framework */; };
@@ -67,7 +66,6 @@
 		B3B89CEA141C1ADF00CCC495 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B89CE9141C1ADF00CCC495 /* CFNetwork.framework */; };
 		B3B89CEC141C1AED00CCC495 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B89CEB141C1AED00CCC495 /* SystemConfiguration.framework */; };
 		B3B89CEE141C1AF700CCC495 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B89CED141C1AF700CCC495 /* MobileCoreServices.framework */; };
-		B3B89CF0141C1B1200CCC495 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B89CEF141C1B1200CCC495 /* libz.1.2.3.dylib */; };
 		B3B89CF3141C1C0700CCC495 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B89CF2141C1C0700CCC495 /* Reachability.m */; };
 		B3B89CF8141C235900CCC495 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B391358B1412B09A0053C84B /* Default@2x.png */; };
 		B3B89CFF141C245100CCC495 /* cinemas_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B89CFD141C245100CCC495 /* cinemas_icon.png */; };
@@ -108,6 +106,8 @@
 		B3E40751142E0A8000E0050E /* MovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3E40750142E0A8000E0050E /* MovieViewController.xib */; };
 		B3E4E457142690CD000CD12A /* ImageLoadingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E4E456142690CD000CD12A /* ImageLoadingOperation.m */; };
 		B3EFCEB4142F96BD00D1260F /* Root.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3EFCEB2142F96BD00D1260F /* Root.strings */; };
+		B3FB21351449B1A3005E7470 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FB21341449B1A3005E7470 /* libz.dylib */; };
+		B3FB21371449B53E005E7470 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FB21361449B53E005E7470 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,7 +141,6 @@
 		B386837F143B8320000340D7 /* GANTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GANTracker.h; sourceTree = "<group>"; };
 		B3868380143B8320000340D7 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
 		B3868381143B8320000340D7 /* libGoogleAnalytics_NoThumb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics_NoThumb.a; sourceTree = "<group>"; };
-		B3868385143B8422000340D7 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		B39135401412A75A0053C84B /* Popcornua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Popcornua.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B39135441412A75A0053C84B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B39135461412A75A0053C84B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -212,7 +211,6 @@
 		B3B89CE9141C1ADF00CCC495 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B3B89CEB141C1AED00CCC495 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B3B89CED141C1AF700CCC495 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		B3B89CEF141C1B1200CCC495 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
 		B3B89CF1141C1C0700CCC495 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		B3B89CF2141C1C0700CCC495 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		B3B89CFD141C245100CCC495 /* cinemas_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cinemas_icon.png; sourceTree = "<group>"; };
@@ -275,6 +273,8 @@
 		B3E40750142E0A8000E0050E /* MovieViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MovieViewController.xib; path = VIews/MovieViewController.xib; sourceTree = "<group>"; };
 		B3E4E455142690CD000CD12A /* ImageLoadingOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageLoadingOperation.h; path = Classes/Util/ImageLoadingOperation.h; sourceTree = "<group>"; };
 		B3E4E456142690CD000CD12A /* ImageLoadingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageLoadingOperation.m; path = Classes/Util/ImageLoadingOperation.m; sourceTree = "<group>"; };
+		B3FB21341449B1A3005E7470 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		B3FB21361449B53E005E7470 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,10 +282,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3868386143B8422000340D7 /* libsqlite3.0.dylib in Frameworks */,
+				B3FB21371449B53E005E7470 /* libsqlite3.dylib in Frameworks */,
+				B3FB21351449B1A3005E7470 /* libz.dylib in Frameworks */,
 				B3DC0BB1142F82E300E0E8E0 /* MessageUI.framework in Frameworks */,
 				B351B2431424E1F600BDA78B /* MapKit.framework in Frameworks */,
-				B3B89CF0141C1B1200CCC495 /* libz.1.2.3.dylib in Frameworks */,
 				B3B89CEE141C1AF700CCC495 /* MobileCoreServices.framework in Frameworks */,
 				B3B89CEC141C1AED00CCC495 /* SystemConfiguration.framework in Frameworks */,
 				B351B2491424E41400BDA78B /* CoreLocation.framework in Frameworks */,
@@ -369,8 +369,8 @@
 				B3DC0BB0142F82E300E0E8E0 /* MessageUI.framework */,
 				B351B2481424E3FB00BDA78B /* CoreLocation.framework */,
 				B351B2421424E1F600BDA78B /* MapKit.framework */,
-				B3B89CEF141C1B1200CCC495 /* libz.1.2.3.dylib */,
-				B3868385143B8422000340D7 /* libsqlite3.0.dylib */,
+				B3FB21341449B1A3005E7470 /* libz.dylib */,
+				B3FB21361449B53E005E7470 /* libsqlite3.dylib */,
 				B3B89CED141C1AF700CCC495 /* MobileCoreServices.framework */,
 				B3B89CEB141C1AED00CCC495 /* SystemConfiguration.framework */,
 				B3B89CE9141C1ADF00CCC495 /* CFNetwork.framework */,
@@ -752,7 +752,7 @@
 		B39135371412A75A0053C84B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0410;
+				LastUpgradeCheck = 0420;
 			};
 			buildConfigurationList = B391353A1412A75A0053C84B /* Build configuration list for PBXProject "Popcornua" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1012,8 +1012,11 @@
 		B39135791412A75B0053C84B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Oleksii Vasyliev (9PWQFTSNZA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Oleksii Vasyliev (9PWQFTSNZA)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Popcornua/Popcornua-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Popcornua/Popcornua-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
@@ -1021,6 +1024,8 @@
 					"\"$(SRCROOT)/Popcornua/Classes/Libs/GA\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "D90F99B4-3701-400E-8517-53B2CA53D720";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D90F99B4-3701-400E-8517-53B2CA53D720";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1030,6 +1035,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Popcornua/Popcornua-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Popcornua/Popcornua-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
@@ -1051,6 +1057,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Popcornua/Popcornua-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "PopcornuaTests/PopcornuaTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -1068,6 +1075,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Popcornua/Popcornua-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "PopcornuaTests/PopcornuaTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";

@@ -49,7 +49,7 @@ static const NSInteger kGANDispatchPeriodSec = 10;
     [[GANTracker sharedTracker] startTrackerWithAccountID:@"UA-7068020-10"
                                            dispatchPeriod:kGANDispatchPeriodSec
                                                  delegate:nil];
-    [[GANTracker sharedTracker] setSampleRate:95];
+    [[GANTracker sharedTracker] setSampleRate:98];
     NSError *error;
     if (![[GANTracker sharedTracker] trackPageview:@"/"
                                          withError:&error]) {
@@ -224,7 +224,10 @@ static const NSInteger kGANDispatchPeriodSec = 10;
     __persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     if (![__persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error])
     {
+        [[NSFileManager defaultManager] removeItemAtURL:storeURL error:nil];
+        /*
         [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption, [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
+         */
         /*
          Replace this implementation with code to handle the error appropriately.
          
