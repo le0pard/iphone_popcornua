@@ -29,13 +29,14 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
--(void)fetchCinemasRecords{
-    PCUSharedManager *myStoreManager = [PCUSharedManager sharedManager];
-	self.cinemasArray = [Cinema getCinemasList:myStoreManager.managedObjectContext];
+-(void)fetchCinemasRecords:(NSManagedObjectContext *)moc{
+    [moc lock];
+	self.cinemasArray = [Cinema getCinemasList:moc];
+    [moc unlock];
 }
 
 -(void)updateTableView:(id)sender{
-    [self fetchCinemasRecords];
+    [self fetchCinemasRecords:mainDelegate.managedObjectContext];
     [self.rootTableView reloadData];
     [self.rootTableView flashScrollIndicators];
 }
@@ -53,11 +54,11 @@
     [super viewDidLoad];
     self.title = NSLocalizedString(@"Cinemas", @"");
     
+    mainDelegate = (PopcornuaAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTableView:) name:@"updateTableViews" object:nil];
     
-    [self fetchCinemasRecords];
-    
-    PopcornuaAppDelegate *mainDelegate = (PopcornuaAppDelegate *)[[UIApplication sharedApplication] delegate];
+    [self fetchCinemasRecords:mainDelegate.managedObjectContext];
     
     UIBarButtonItem *syncButton = [[UIBarButtonItem alloc]
                                    initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 

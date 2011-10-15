@@ -34,10 +34,7 @@ static const NSInteger kGANDispatchPeriodSec = 10;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    PCUSharedManager *myStoreManager = [PCUSharedManager sharedManager];
-    myStoreManager.managedObjectContext = self.managedObjectContext;
-    
+{    
     [cinemasTab setTitle:NSLocalizedString(@"Cinemas", @"")];
     [moviesTab setTitle:NSLocalizedString(@"Movies", @"")];
     [mapTab setTitle:NSLocalizedString(@"Map", @"")];
@@ -224,10 +221,7 @@ static const NSInteger kGANDispatchPeriodSec = 10;
     __persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     if (![__persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error])
     {
-        [[NSFileManager defaultManager] removeItemAtURL:storeURL error:nil];
-        /*
         [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption, [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
-         */
         /*
          Replace this implementation with code to handle the error appropriately.
          
@@ -252,7 +246,7 @@ static const NSInteger kGANDispatchPeriodSec = 10;
          
          */
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
+        //abort();
     }    
     
     return __persistentStoreCoordinator;

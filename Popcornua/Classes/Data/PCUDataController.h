@@ -13,7 +13,6 @@
 #import "Cinema.h"
 #import "Movie.h"
 #import "JSON.h"
-#import "PCUSharedManager.h"
 #import "MBProgressHUD.h"
 
 #define POPCORN_SECRET @"hcLcT5sWeUZ3Br7YmvhahFLGUw6tv6ERB5GbJT4qm8D"

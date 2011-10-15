@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PCUSharedManager.h"
 #import "Movie.h"
 #import "MovieViewController.h"
 #import "PopcornuaAppDelegate.h"
@@ -15,12 +14,13 @@
 @interface MoviesViewController : UIViewController<UITableViewDelegate, UITableViewDataSource> {
     UITableView *rootTableView;
     NSMutableArray *moviesArray;
+    PopcornuaAppDelegate *mainDelegate;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *rootTableView;
 @property (nonatomic, retain) IBOutlet NSMutableArray *moviesArray;
 
--(void)fetchMoviesTodayRecords;
+-(void)fetchMoviesTodayRecords:(NSManagedObjectContext *)moc;
 
 
 @end

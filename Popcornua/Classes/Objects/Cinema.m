@@ -38,7 +38,8 @@
     [fetchRequest setFetchLimit:1];
     NSError *error = nil;
     NSArray *results = [moc executeFetchRequest:fetchRequest error:&error];
-    [fetchRequest release]; fetchRequest = nil;
+    [fetchRequest release]; 
+    fetchRequest = nil;
     if (results && ([results count] > 0)) {
         cinema = [results objectAtIndex:0];
     }

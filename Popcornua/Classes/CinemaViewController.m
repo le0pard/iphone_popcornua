@@ -31,9 +31,8 @@
 
 #pragma mark - View lifecycle
 
--(void)fetchMoviesTodayRecords{
-    PCUSharedManager *myStoreManager = [PCUSharedManager sharedManager];
-	self.afishasArray = [Afisha getAfishaTodayListByCinema:cinemaMain withContext:myStoreManager.managedObjectContext];
+-(void)fetchMoviesTodayRecords:(NSManagedObjectContext *)moc{
+	self.afishasArray = [Afisha getAfishaTodayListByCinema:cinemaMain withContext:moc];
 }
 
 - (void)viewChanged:(NSNotification *)notification{
@@ -46,6 +45,8 @@
 {
     [super viewDidLoad];
     
+    mainDelegate = (PopcornuaAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Cinema", @"") 
                                                                    style:UIBarButtonItemStyleBordered target:nil action:nil];
     self.navigationItem.backBarButtonItem = backButton;
@@ -53,7 +54,7 @@
 
     self.title = cinemaMain.title;
     
-    [self fetchMoviesTodayRecords];
+    [self fetchMoviesTodayRecords:mainDelegate.managedObjectContext];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(viewChanged:) name:kIASKAppSettingChanged object:nil];
 }

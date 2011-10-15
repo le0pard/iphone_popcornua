@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PCUSharedManager.h"
 #import "PCUDataController.h"
 #import "GANTracker.h"
 

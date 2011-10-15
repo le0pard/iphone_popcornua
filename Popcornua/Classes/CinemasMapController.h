@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-#import "PCUSharedManager.h"
 #import "Cinema.h"
 #import "CinemaMapAnnotation.h"
+#import "PopcornuaAppDelegate.h"
 
 @interface CinemasMapController : UIViewController <MKMapViewDelegate, MKReverseGeocoderDelegate> {
     MKMapView *mapView;

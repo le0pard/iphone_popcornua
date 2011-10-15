@@ -8,6 +8,7 @@
 
 #import "PCUDataController.h"
 #import <unistd.h>
+#import "PopcornuaAppDelegate.h"
 
 @implementation PCUDataController
 
@@ -23,8 +24,8 @@
 
 - (void)cleanupData{
     //hudView.labelText = NSLocalizedString(@"Cleanup data", @"");
-    PCUSharedManager *myStoreManager = [PCUSharedManager sharedManager];
-    NSManagedObjectContext *moc = myStoreManager.managedObjectContext;
+    PopcornuaAppDelegate *mainDelegate = (PopcornuaAppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *moc = mainDelegate.managedObjectContext;
     
     NSError * clear_error = nil;
     
@@ -67,7 +68,8 @@
 
 
 - (void) syncCoreData{
-    PCUSharedManager *myStoreManager = [PCUSharedManager sharedManager];
+    PopcornuaAppDelegate *mainDelegate = (PopcornuaAppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *moc = mainDelegate.managedObjectContext;
     NSError *error = nil;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -92,7 +94,7 @@
         NSArray *theaters = [json_data objectForKey:@"theaters"];
         
         for (NSDictionary *theater in theaters) {
-            if ([Cinema createOrReplaceFromDictionary:theater withContext:myStoreManager.managedObjectContext]){
+            if ([Cinema createOrReplaceFromDictionary:theater withContext:moc]){
                 //
             }
         }
@@ -113,13 +115,13 @@
         NSDictionary *json_data = [response JSONValue];
         NSArray *movies = [json_data objectForKey:@"cinemas"];
         for (NSDictionary *movie in movies) {
-            if ([Movie createOrReplaceFromDictionary:movie withContext:myStoreManager.managedObjectContext]){
+            if ([Movie createOrReplaceFromDictionary:movie withContext:moc]){
                 //
             }
         }
         NSArray *afishas = [json_data objectForKey:@"afisha"];
         for (NSDictionary *afisha in afishas) {
-            if ([Afisha createOrReplaceFromDictionary:afisha withContext:myStoreManager.managedObjectContext]){
+            if ([Afisha createOrReplaceFromDictionary:afisha withContext:moc]){
                 //
             }
         }
@@ -140,39 +142,37 @@
     [formatter release];
     
     NSFetchRequest * allAfisha = [[NSFetchRequest alloc] init];
-    [allAfisha setEntity:[NSEntityDescription entityForName:@"Afisha" inManagedObjectContext:myStoreManager.managedObjectContext]];
+    [allAfisha setEntity:[NSEntityDescription entityForName:@"Afisha" inManagedObjectContext:moc]];
     [allAfisha setIncludesPropertyValues:NO]; //only fetch the managedObjectID
     [allAfisha setPredicate:[NSPredicate predicateWithFormat:@"data_end < %@", dataBegin]];
-    NSArray * afishas = [myStoreManager.managedObjectContext executeFetchRequest:allAfisha error:&clear_error];
+    NSArray * afishas = [moc executeFetchRequest:allAfisha error:&clear_error];
     [allAfisha release];
     //error handling goes here
     for (Afisha *afisha in afishas) {
-        [myStoreManager.managedObjectContext deleteObject:afisha];
+        [moc deleteObject:afisha];
     }
 
     
     NSFetchRequest * allMovies = [[NSFetchRequest alloc] init];
-    [allMovies setEntity:[NSEntityDescription entityForName:@"Movie" inManagedObjectContext:myStoreManager.managedObjectContext]];
+    [allMovies setEntity:[NSEntityDescription entityForName:@"Movie" inManagedObjectContext:moc]];
     [allMovies setIncludesPropertyValues:NO]; //only fetch the managedObjectID
-    NSArray * movies = [myStoreManager.managedObjectContext executeFetchRequest:allMovies error:&clear_error];
+    NSArray * movies = [moc executeFetchRequest:allMovies error:&clear_error];
     [allMovies release];
     //error handling goes here
     for (Movie *movie in movies) {
         
         NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
         [fetchRequest setEntity:[NSEntityDescription entityForName:@"Afisha"
-                                            inManagedObjectContext:myStoreManager.managedObjectContext]];
+                                            inManagedObjectContext:moc]];
         [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"movie == %@", movie]];
         NSError *error = nil;
-        NSArray *results = [myStoreManager.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+        NSArray *results = [moc executeFetchRequest:fetchRequest error:&error];
         [fetchRequest release]; 
         fetchRequest = nil;
         if (results && [results count] == 0) {
-            [myStoreManager.managedObjectContext deleteObject:movie];
+            [moc deleteObject:movie];
         }
     }
-    
-    [myStoreManager release];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"updateTableViews" object:self];
 }

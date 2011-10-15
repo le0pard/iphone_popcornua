@@ -53,8 +53,8 @@
 }
 
 -(void)fetchCinemasTodayRecords{
-    PCUSharedManager *myStoreManager = [PCUSharedManager sharedManager];
-	self.afishasArray = [self groupByCinemas:[Afisha getAfishaTodayListByMovie:movieMain withContext:myStoreManager.managedObjectContext]];
+    PopcornuaAppDelegate *mainDelegate = (PopcornuaAppDelegate *)[[UIApplication sharedApplication] delegate];
+	self.afishasArray = [self groupByCinemas:[Afisha getAfishaTodayListByMovie:movieMain withContext:mainDelegate.managedObjectContext]];
 }
 
 - (void)viewChanged:(NSNotification *)notification{

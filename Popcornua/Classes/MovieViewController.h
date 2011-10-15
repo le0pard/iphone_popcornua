@@ -12,7 +12,6 @@
 #import "Movie.h"
 #import "Cinema.h"
 #import "NSStringUtil.h"
-#import "PCUSharedManager.h"
 #import "AfishaViewController.h"
 
 @interface MovieViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{

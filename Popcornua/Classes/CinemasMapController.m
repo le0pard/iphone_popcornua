@@ -30,8 +30,8 @@
 }
 
 -(void)fetchCinemasAndMapIts{
-    PCUSharedManager *myStoreManager = [PCUSharedManager sharedManager];
-	NSMutableArray *cinemasArray = [Cinema getCinemasList:myStoreManager.managedObjectContext];
+    PopcornuaAppDelegate *mainDelegate = (PopcornuaAppDelegate *)[[UIApplication sharedApplication] delegate];
+	NSMutableArray *cinemasArray = [Cinema getCinemasList:mainDelegate.managedObjectContext];
     
     
     MKCoordinateRegion cityRegion;

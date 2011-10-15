@@ -10,7 +10,6 @@
 #import "Cinema.h"
 #import "Movie.h"
 #import "Afisha.h"
-#import "PCUSharedManager.h"
 #import "MovieViewController.h"
 #import "CinemaViewController.h"
 #import "IASKSettingsReader.h"

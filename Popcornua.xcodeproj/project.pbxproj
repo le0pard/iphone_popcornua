@@ -47,11 +47,11 @@
 		B39135E11412D3350053C84B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B391356F1412A75B0053C84B /* InfoPlist.strings */; };
 		B39135E91412D5100053C84B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B39135E71412D5100053C84B /* InfoPlist.strings */; };
 		B39135EC1412D57B0053C84B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B39135EA1412D57B0053C84B /* Localizable.strings */; };
+		B39FE29C144A1B2800BEB249 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B39FE29B144A1B2800BEB249 /* libsqlite3.0.dylib */; };
 		B3A319D614139879004DCCBE /* MainNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A319D514139879004DCCBE /* MainNavController.m */; };
 		B3A319E71413A450004DCCBE /* Afisha.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A319E61413A450004DCCBE /* Afisha.m */; };
 		B3A319EA1413A46A004DCCBE /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A319E91413A46A004DCCBE /* Movie.m */; };
 		B3A319ED1413A46B004DCCBE /* Cinema.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A319EC1413A46A004DCCBE /* Cinema.m */; };
-		B3A9ECDE141D1D39007D94FB /* PCUSharedManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A9ECDD141D1D39007D94FB /* PCUSharedManager.m */; };
 		B3B321E4142E82D2004E6C68 /* AfishaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B321E2142E82D1004E6C68 /* AfishaViewController.m */; };
 		B3B321E8142E8313004E6C68 /* AfishaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3B321E7142E8313004E6C68 /* AfishaViewController.xib */; };
 		B3B89CC2141C189C00CCC495 /* PCUDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B89CC1141C189C00CCC495 /* PCUDataController.m */; };
@@ -107,7 +107,6 @@
 		B3E4E457142690CD000CD12A /* ImageLoadingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E4E456142690CD000CD12A /* ImageLoadingOperation.m */; };
 		B3EFCEB4142F96BD00D1260F /* Root.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3EFCEB2142F96BD00D1260F /* Root.strings */; };
 		B3FB21351449B1A3005E7470 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FB21341449B1A3005E7470 /* libz.dylib */; };
-		B3FB21371449B53E005E7470 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FB21361449B53E005E7470 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,6 +172,7 @@
 		B39135E81412D5100053C84B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
 		B39135EB1412D57B0053C84B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B39135ED1412D5840053C84B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = Resources/ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B39FE29B144A1B2800BEB249 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		B3A319D414139879004DCCBE /* MainNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainNavController.h; path = Classes/MainNavController.h; sourceTree = "<group>"; };
 		B3A319D514139879004DCCBE /* MainNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainNavController.m; path = Classes/MainNavController.m; sourceTree = "<group>"; };
 		B3A319E51413A450004DCCBE /* Afisha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Afisha.h; path = Classes/Objects/Afisha.h; sourceTree = "<group>"; };
@@ -181,8 +181,6 @@
 		B3A319E91413A46A004DCCBE /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Movie.m; path = Classes/Objects/Movie.m; sourceTree = "<group>"; };
 		B3A319EB1413A46A004DCCBE /* Cinema.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cinema.h; path = Classes/Objects/Cinema.h; sourceTree = "<group>"; };
 		B3A319EC1413A46A004DCCBE /* Cinema.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cinema.m; path = Classes/Objects/Cinema.m; sourceTree = "<group>"; };
-		B3A9ECDC141D1D39007D94FB /* PCUSharedManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCUSharedManager.h; path = Classes/Util/PCUSharedManager.h; sourceTree = "<group>"; };
-		B3A9ECDD141D1D39007D94FB /* PCUSharedManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCUSharedManager.m; path = Classes/Util/PCUSharedManager.m; sourceTree = "<group>"; };
 		B3B321E1142E82D1004E6C68 /* AfishaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AfishaViewController.h; path = Classes/AfishaViewController.h; sourceTree = "<group>"; };
 		B3B321E2142E82D1004E6C68 /* AfishaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AfishaViewController.m; path = Classes/AfishaViewController.m; sourceTree = "<group>"; };
 		B3B321E7142E8313004E6C68 /* AfishaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AfishaViewController.xib; path = VIews/AfishaViewController.xib; sourceTree = "<group>"; };
@@ -274,7 +272,6 @@
 		B3E4E455142690CD000CD12A /* ImageLoadingOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageLoadingOperation.h; path = Classes/Util/ImageLoadingOperation.h; sourceTree = "<group>"; };
 		B3E4E456142690CD000CD12A /* ImageLoadingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageLoadingOperation.m; path = Classes/Util/ImageLoadingOperation.m; sourceTree = "<group>"; };
 		B3FB21341449B1A3005E7470 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		B3FB21361449B53E005E7470 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,7 +279,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3FB21371449B53E005E7470 /* libsqlite3.dylib in Frameworks */,
+				B39FE29C144A1B2800BEB249 /* libsqlite3.0.dylib in Frameworks */,
 				B3FB21351449B1A3005E7470 /* libz.dylib in Frameworks */,
 				B3DC0BB1142F82E300E0E8E0 /* MessageUI.framework in Frameworks */,
 				B351B2431424E1F600BDA78B /* MapKit.framework in Frameworks */,
@@ -370,7 +367,7 @@
 				B351B2481424E3FB00BDA78B /* CoreLocation.framework */,
 				B351B2421424E1F600BDA78B /* MapKit.framework */,
 				B3FB21341449B1A3005E7470 /* libz.dylib */,
-				B3FB21361449B53E005E7470 /* libsqlite3.dylib */,
+				B39FE29B144A1B2800BEB249 /* libsqlite3.0.dylib */,
 				B3B89CED141C1AF700CCC495 /* MobileCoreServices.framework */,
 				B3B89CEB141C1AED00CCC495 /* SystemConfiguration.framework */,
 				B3B89CE9141C1ADF00CCC495 /* CFNetwork.framework */,
@@ -690,8 +687,6 @@
 			children = (
 				B3DC2E5D141CB3F100E1FDB0 /* NSStringUtil.h */,
 				B3DC2E5E141CB3F100E1FDB0 /* NSStringUtil.m */,
-				B3A9ECDC141D1D39007D94FB /* PCUSharedManager.h */,
-				B3A9ECDD141D1D39007D94FB /* PCUSharedManager.m */,
 				B3E4E455142690CD000CD12A /* ImageLoadingOperation.h */,
 				B3E4E456142690CD000CD12A /* ImageLoadingOperation.m */,
 			);
@@ -866,7 +861,6 @@
 				B3B89D0A141C2E5400CCC495 /* NSString+SBJSON.m in Sources */,
 				B3B89D0B141C2E5400CCC495 /* SBJSON.m in Sources */,
 				B3DC2E5F141CB3F100E1FDB0 /* NSStringUtil.m in Sources */,
-				B3A9ECDE141D1D39007D94FB /* PCUSharedManager.m in Sources */,
 				B3817EE014223AB000576C22 /* Coordinate.m in Sources */,
 				B31823DE1423E662008D62B6 /* MBProgressHUD.m in Sources */,
 				B351B2351424DDD900BDA78B /* CinemasMapController.m in Sources */,

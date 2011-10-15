@@ -11,7 +11,6 @@
 #import "Movie.h"
 #import "Afisha.h"
 #import "MovieCell.h"
-#import "PCUSharedManager.h"
 #import "AfishaViewController.h"
 #import "PopcornuaAppDelegate.h"
 
@@ -20,6 +19,7 @@
     Cinema *cinemaMain;
     UITableView *rootTableView;
     NSMutableArray *afishasArray;
+    PopcornuaAppDelegate *mainDelegate;
 }
 
 @property (nonatomic, retain) IBOutlet Cinema *cinemaMain;

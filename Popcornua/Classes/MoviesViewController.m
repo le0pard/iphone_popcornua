@@ -31,13 +31,14 @@
 
 #pragma mark - View lifecycle
 
--(void)fetchMoviesTodayRecords{
-    PCUSharedManager *myStoreManager = [PCUSharedManager sharedManager];
-	self.moviesArray = [Movie getMoviesTodayList:myStoreManager.managedObjectContext];
+-(void)fetchMoviesTodayRecords:(NSManagedObjectContext *)moc{
+    [moc lock];
+	self.moviesArray = [Movie getMoviesTodayList:moc];
+    [moc unlock];
 }
 
 -(void)updateTableView:(id)sender{
-    [self fetchMoviesTodayRecords];
+    [self fetchMoviesTodayRecords:mainDelegate.managedObjectContext];
     [self.rootTableView reloadData];
     [self.rootTableView flashScrollIndicators];
 }
@@ -53,11 +54,11 @@
     [super viewDidLoad];
     self.title = NSLocalizedString(@"Movies", @"");
     
+    mainDelegate = (PopcornuaAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTableView:) name:@"updateTableViews" object:nil];
     
-    [self fetchMoviesTodayRecords];
-    
-    PopcornuaAppDelegate *mainDelegate = (PopcornuaAppDelegate *)[[UIApplication sharedApplication] delegate];
+    [self fetchMoviesTodayRecords:mainDelegate.managedObjectContext];
     
     UIBarButtonItem *syncButton = [[UIBarButtonItem alloc]
                                    initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
