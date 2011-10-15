@@ -30,9 +30,10 @@
 }
 
 -(void)fetchCinemasRecords:(NSManagedObjectContext *)moc{
-    [moc lock];
-	self.cinemasArray = [Cinema getCinemasList:moc];
-    [moc unlock];
+    if ([moc tryLock]){
+        self.cinemasArray = [Cinema getCinemasList:moc];
+        [moc unlock];
+    }
 }
 
 -(void)updateTableView:(id)sender{

@@ -32,9 +32,10 @@
 #pragma mark - View lifecycle
 
 -(void)fetchMoviesTodayRecords:(NSManagedObjectContext *)moc{
-    [moc lock];
-	self.moviesArray = [Movie getMoviesTodayList:moc];
-    [moc unlock];
+    if ([moc tryLock]){
+        self.moviesArray = [Movie getMoviesTodayList:moc];
+        [moc unlock];
+    }
 }
 
 -(void)updateTableView:(id)sender{
