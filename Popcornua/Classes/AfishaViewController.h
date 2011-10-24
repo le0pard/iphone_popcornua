@@ -13,6 +13,7 @@
 #import "MovieViewController.h"
 #import "CinemaViewController.h"
 #import "IASKSettingsReader.h"
+#import "NSString+HTML.h"
 
 @interface AfishaViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
     Afisha *afishaMain;

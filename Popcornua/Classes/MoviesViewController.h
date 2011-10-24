@@ -10,6 +10,7 @@
 #import "Movie.h"
 #import "MovieViewController.h"
 #import "PopcornuaAppDelegate.h"
+#import "NSString+HTML.h"
 
 @interface MoviesViewController : UIViewController<UITableViewDelegate, UITableViewDataSource> {
     UITableView *rootTableView;

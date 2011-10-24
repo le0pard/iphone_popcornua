@@ -19,6 +19,8 @@
 		B3817EE014223AB000576C22 /* Coordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3817EDF14223AB000576C22 /* Coordinate.m */; };
 		B382A8B61427984600FCE8AB /* CinemaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B382A8B41427984600FCE8AB /* CinemaViewController.m */; };
 		B382A8BA1427987200FCE8AB /* CinemaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B382A8B91427987200FCE8AB /* CinemaViewController.xib */; };
+		B38320D51455CF4F00E477FA /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = B38320D41455CF4F00E477FA /* NSString+HTML.m */; };
+		B38320D81455CFA400E477FA /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = B38320D71455CFA300E477FA /* GTMNSString+HTML.m */; };
 		B3868382143B8320000340D7 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3868380143B8320000340D7 /* libGoogleAnalytics.a */; };
 		B3868383143B8320000340D7 /* libGoogleAnalytics_NoThumb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3868381143B8320000340D7 /* libGoogleAnalytics_NoThumb.a */; };
 		B39135451412A75A0053C84B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39135441412A75A0053C84B /* UIKit.framework */; };
@@ -137,6 +139,10 @@
 		B382A8B31427984600FCE8AB /* CinemaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CinemaViewController.h; path = Classes/CinemaViewController.h; sourceTree = "<group>"; };
 		B382A8B41427984600FCE8AB /* CinemaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CinemaViewController.m; path = Classes/CinemaViewController.m; sourceTree = "<group>"; };
 		B382A8B91427987200FCE8AB /* CinemaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CinemaViewController.xib; path = VIews/CinemaViewController.xib; sourceTree = "<group>"; };
+		B38320D31455CF1E00E477FA /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+HTML.h"; path = "Classes/Util/NSString+HTML.h"; sourceTree = "<group>"; };
+		B38320D41455CF4F00E477FA /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+HTML.m"; path = "Classes/Util/NSString+HTML.m"; sourceTree = "<group>"; };
+		B38320D61455CF6E00E477FA /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GTMNSString+HTML.h"; path = "Classes/Util/GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		B38320D71455CFA300E477FA /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "GTMNSString+HTML.m"; path = "Classes/Util/GTMNSString+HTML.m"; sourceTree = "<group>"; };
 		B386837F143B8320000340D7 /* GANTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GANTracker.h; sourceTree = "<group>"; };
 		B3868380143B8320000340D7 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
 		B3868381143B8320000340D7 /* libGoogleAnalytics_NoThumb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics_NoThumb.a; sourceTree = "<group>"; };
@@ -689,6 +695,10 @@
 				B3DC2E5E141CB3F100E1FDB0 /* NSStringUtil.m */,
 				B3E4E455142690CD000CD12A /* ImageLoadingOperation.h */,
 				B3E4E456142690CD000CD12A /* ImageLoadingOperation.m */,
+				B38320D31455CF1E00E477FA /* NSString+HTML.h */,
+				B38320D41455CF4F00E477FA /* NSString+HTML.m */,
+				B38320D61455CF6E00E477FA /* GTMNSString+HTML.h */,
+				B38320D71455CFA300E477FA /* GTMNSString+HTML.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -886,6 +896,8 @@
 				B3DC0BA3142F7CF200E0E8E0 /* IASKTextField.m in Sources */,
 				B3DC0BBB142F854A00E0E8E0 /* CinemaMapAnnotation.m in Sources */,
 				B3DC0BBC142F854A00E0E8E0 /* SettingsViewController.m in Sources */,
+				B38320D51455CF4F00E477FA /* NSString+HTML.m in Sources */,
+				B38320D81455CFA400E477FA /* GTMNSString+HTML.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

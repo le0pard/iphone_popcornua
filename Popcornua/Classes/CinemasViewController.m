@@ -106,8 +106,8 @@
     
     // Set up the cell...
     Cinema *cinema = [self.cinemasArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = cinema.title;
-    cell.detailTextLabel.text = cinema.address;
+    cell.textLabel.text = [cinema.title stringByConvertingHTMLToPlainText];
+    cell.detailTextLabel.text = [cinema.address stringByConvertingHTMLToPlainText];
     return cell;
 }
 

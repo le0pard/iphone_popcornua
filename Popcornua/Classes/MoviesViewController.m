@@ -105,8 +105,8 @@
     
     // Set up the cell...
     Movie *movie = [self.moviesArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = movie.title;
-    cell.detailTextLabel.text = movie.orig_title;
+    cell.textLabel.text = [movie.title stringByConvertingHTMLToPlainText];
+    cell.detailTextLabel.text = [movie.orig_title stringByConvertingHTMLToPlainText];
 
     return cell;
 }

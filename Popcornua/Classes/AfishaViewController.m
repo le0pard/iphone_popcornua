@@ -56,7 +56,7 @@
     self.navigationItem.backBarButtonItem = backButton;
     [backButton release];
     
-    self.title = afishaMain.movie.title;
+    self.title = [afishaMain.movie.title stringByConvertingHTMLToPlainText];
     
     UIImageView *posterView = nil;
     if (afishaMain.movie.getPosterImage){
@@ -152,8 +152,8 @@
 		case MOVIE_TITLE_CELL_INDEX:
             cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
             cell.textLabel.numberOfLines = 0;
-            cell.textLabel.text = afishaMain.movie.title;
-            cell.detailTextLabel.text = afishaMain.movie.orig_title;
+            cell.textLabel.text = [afishaMain.movie.title stringByConvertingHTMLToPlainText];
+            cell.detailTextLabel.text = [afishaMain.movie.orig_title stringByConvertingHTMLToPlainText];
 			break;
         case MOVIE_YEAR_CELL_INDEX:
             if (afishaMain.movie.year){
@@ -168,7 +168,7 @@
                 cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15.0];
                 cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
                 cell.textLabel.numberOfLines = 0;
-                cell.textLabel.text = [afishaMain.movie.casts htmlEntityDecode];
+                cell.textLabel.text = [afishaMain.movie.casts stringByConvertingHTMLToPlainText];
             } else {
                 cell.textLabel.text = NSLocalizedString(@"Not set", @"");
             }
@@ -179,7 +179,7 @@
                 cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15.0];
                 cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
                 cell.textLabel.numberOfLines = 0;
-                cell.textLabel.text = [afishaMain.movie.descr htmlEntityDecode];
+                cell.textLabel.text = [afishaMain.movie.descr stringByConvertingHTMLToPlainText];
             } else {
                 cell.textLabel.text = NSLocalizedString(@"Not set", @"");
             }
@@ -188,7 +188,7 @@
         case CINEMA_TITLE_CELL_INDEX:
             cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
             cell.textLabel.numberOfLines = 0;
-            cell.textLabel.text = afishaMain.cinema.title;
+            cell.textLabel.text = [afishaMain.cinema.title stringByConvertingHTMLToPlainText];
             cell.detailTextLabel.text = afishaMain.cinema.address;
 			break;
         case CINEMA_TIME_CELL_INDEX:
@@ -309,10 +309,10 @@
                 switch (self.interfaceOrientation) {
                     case UIInterfaceOrientationPortrait:
                     case UIInterfaceOrientationPortraitUpsideDown:
-                        height = ([[afishaMain.movie.descr htmlEntityDecode] length] / 1.5);
+                        height = ([[afishaMain.movie.descr stringByConvertingHTMLToPlainText] length] / 1.5);
                         break;
                     default:
-                        height = ([[afishaMain.movie.descr htmlEntityDecode] length] / 2.2);
+                        height = ([[afishaMain.movie.descr stringByConvertingHTMLToPlainText] length] / 2.2);
                         break;
                 }
             } else {

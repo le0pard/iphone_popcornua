@@ -58,8 +58,8 @@
     }
 }
 
-+ (BOOL)createOrReplaceFromDictionary:(NSDictionary *)movieInfo withContext:(NSManagedObjectContext *)moc {
-    Movie *movie = nil;
+
++ (Movie *)buildFromDictionary:(NSDictionary *)movieInfo withContext:(NSManagedObjectContext *)moc{
     NSNumber *extId = nil;
     if ([[movieInfo objectForKey:@"id"] isKindOfClass:[NSString class]]) {
         extId = [[movieInfo objectForKey:@"id"] numericValue];
@@ -67,7 +67,7 @@
         extId = [movieInfo objectForKey:@"id"];
     }
     
-    movie = [self movieExistForId:extId withContext:moc];
+    Movie *movie = [self movieExistForId:extId withContext:moc];
     
     if (nil == movie) {
         movie = [Movie newMovieObject:moc];
@@ -94,7 +94,13 @@
             movie.cached_poster = posterData;
         }
     }
-    
+
+    return movie;
+}
+
+
++ (BOOL)createOrReplaceFromDictionary:(NSDictionary *)movieInfo withContext:(NSManagedObjectContext *)moc {
+    [Movie buildFromDictionary:movieInfo withContext:moc];    
     NSError *error;
     if (![moc save:&error]) {
         NSLog(@"Error save to database : %@", [error userInfo]);

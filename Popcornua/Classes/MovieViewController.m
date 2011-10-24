@@ -74,7 +74,7 @@
     self.navigationItem.backBarButtonItem = backButton;
     [backButton release];
     
-    self.title = movieMain.title;
+    self.title = [movieMain.title stringByConvertingHTMLToPlainText];
     
     UIImageView *posterView = nil;
     if (movieMain.getPosterImage){
@@ -166,8 +166,8 @@
 		case 0:
             cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
             cell.textLabel.numberOfLines = 0;
-            cell.textLabel.text = movieMain.title;
-            cell.detailTextLabel.text = movieMain.orig_title;
+            cell.textLabel.text = [movieMain.title stringByConvertingHTMLToPlainText];
+            cell.detailTextLabel.text = [movieMain.orig_title stringByConvertingHTMLToPlainText];
 			break;
         case 2:
             if (movieMain.year){
@@ -182,7 +182,7 @@
                 cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15.0];
                 cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
                 cell.textLabel.numberOfLines = 0;
-                cell.textLabel.text = [movieMain.casts htmlEntityDecode];
+                cell.textLabel.text = [movieMain.casts stringByConvertingHTMLToPlainText];
             } else {
                 cell.textLabel.text = NSLocalizedString(@"Not set", @"");
             }
@@ -199,7 +199,7 @@
                 cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15.0];
                 cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
                 cell.textLabel.numberOfLines = 0;
-                cell.textLabel.text = [movieMain.descr htmlEntityDecode];
+                cell.textLabel.text = [movieMain.descr stringByConvertingHTMLToPlainText];
             } else {
                 cell.textLabel.text = NSLocalizedString(@"Not set", @"");
             }
@@ -258,10 +258,10 @@
                 switch (self.interfaceOrientation) {
                     case UIInterfaceOrientationPortrait:
                     case UIInterfaceOrientationPortraitUpsideDown:
-                        height = ([[movieMain.descr htmlEntityDecode] length] / 1.5);
+                        height = ([[movieMain.descr stringByConvertingHTMLToPlainText] length] / 1.5);
                         break;
                     default:
-                        height = ([[movieMain.descr htmlEntityDecode] length] / 2.2);
+                        height = ([[movieMain.descr stringByConvertingHTMLToPlainText] length] / 2.2);
                         break;
                 }
             } else {

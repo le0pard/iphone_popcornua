@@ -44,8 +44,28 @@
     return afisha;
 }
 
-+ (BOOL)createOrReplaceFromDictionary:(NSDictionary *)afishaInfo withContext:(NSManagedObjectContext *)moc {
-    Afisha *afisha = nil;
+
++ (BOOL)saveFromArrayOfDictionaries:(NSArray *)afishas andMovies:(NSArray *)movies withContext:(NSManagedObjectContext *)moc{
+    for (NSDictionary *movie in movies) {
+        if ([Movie buildFromDictionary:movie withContext:moc]){
+            //
+        }
+    }
+    for (NSDictionary *afisha in afishas) {
+        if ([Afisha buildFromDictionary:afisha withContext:moc]){
+            //
+        }
+    }
+    
+    NSError *error;
+    if (![moc save:&error]) {
+        NSLog(@"Error save to database : %@", [error userInfo]);
+        return false;
+    }
+    return true;
+}
+
++ (Afisha *)buildFromDictionary:(NSDictionary *)afishaInfo withContext:(NSManagedObjectContext *)moc{
     NSNumber *extId = nil;
     if ([[afishaInfo objectForKey:@"id"] isKindOfClass:[NSString class]]) {
         extId = [[afishaInfo objectForKey:@"id"] numericValue];
@@ -53,7 +73,7 @@
         extId = [afishaInfo objectForKey:@"id"];
     }
     
-    afisha = [self afishaExistForId:extId withContext:moc];
+    Afisha *afisha = [self afishaExistForId:extId withContext:moc];
     
     if (nil == afisha) {
         afisha = [Afisha newAfishaObject:moc];
@@ -69,7 +89,7 @@
     if (![[afishaInfo objectForKey:@"prices"] isKindOfClass:[NSNull class]]){
         afisha.prices = [afishaInfo objectForKey:@"prices"];
     }
-        
+    
     // Convert string to date object
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
@@ -112,7 +132,13 @@
             NSLog(@"Not found cinema: %@", theater_id);
         }
     }
+    
+    return afisha;
+}
 
+
++ (BOOL)createOrReplaceFromDictionary:(NSDictionary *)afishaInfo withContext:(NSManagedObjectContext *)moc {
+    [Afisha buildFromDictionary:afishaInfo withContext:moc];
     
     NSError *error;
     if (![moc save:&error]) {

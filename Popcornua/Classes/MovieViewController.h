@@ -11,6 +11,7 @@
 #import "Afisha.h"
 #import "Movie.h"
 #import "Cinema.h"
+#import "NSString+HTML.h"
 #import "NSStringUtil.h"
 #import "AfishaViewController.h"
 

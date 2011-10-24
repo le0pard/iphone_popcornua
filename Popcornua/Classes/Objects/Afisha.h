@@ -23,6 +23,9 @@
 @property (nonatomic, retain) Cinema *cinema;
 @property (nonatomic, retain) Movie *movie;
 
++ (BOOL)saveFromArrayOfDictionaries:(NSArray *)afishas andMovies:(NSArray *)movies withContext:(NSManagedObjectContext *)moc;
++ (Afisha *)buildFromDictionary:(NSDictionary *)afishaInfo withContext:(NSManagedObjectContext *)moc;
+
 + (Afisha *)afishaExistForId:(NSNumber *)extId withContext:(NSManagedObjectContext *)moc;
 + (BOOL)createOrReplaceFromDictionary:(NSDictionary *)movieInfo withContext:(NSManagedObjectContext *)moc;
 + (NSMutableArray *)getAfishaTodayList:(NSManagedObjectContext *)moc;

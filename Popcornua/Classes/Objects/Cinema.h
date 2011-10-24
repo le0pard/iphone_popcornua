@@ -28,6 +28,8 @@
 @property (nonatomic, retain) NSSet *afishas;
 
 + (Cinema *)cinemaExistForId:(NSNumber *)extId withContext:(NSManagedObjectContext *)moc;
++ (BOOL)saveFromArrayOfDictionaries:(NSArray *)theaters withContext:(NSManagedObjectContext *)moc;
++ (Cinema *)buildFromDictionary:(NSDictionary *)cinemaInfo withContext:(NSManagedObjectContext *)moc;
 + (BOOL)createOrReplaceFromDictionary:(NSDictionary *)cinemaInfo withContext:(NSManagedObjectContext *)moc;
 + (NSMutableArray *)getCinemasList:(NSManagedObjectContext *)moc;
 

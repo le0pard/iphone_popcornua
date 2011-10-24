@@ -30,6 +30,7 @@
 
 + (Movie *)movieExistForId:(NSNumber *)extId withContext:(NSManagedObjectContext *)moc;
 - (UIImage *)getPosterImage;
++ (Movie *)buildFromDictionary:(NSDictionary *)movieInfo withContext:(NSManagedObjectContext *)moc;
 + (BOOL)createOrReplaceFromDictionary:(NSDictionary *)cinemaInfo withContext:(NSManagedObjectContext *)moc;
 + (NSMutableArray *)getMoviesTodayList:(NSManagedObjectContext *)moc;
 + (NSMutableArray *)getMoviesTodayListByCinema:(Cinema *)cinema withContext:(NSManagedObjectContext *)moc;

@@ -46,8 +46,20 @@
     return cinema;
 }
 
-+ (BOOL)createOrReplaceFromDictionary:(NSDictionary *)cinemaInfo withContext:(NSManagedObjectContext *)moc {
-    Cinema *cinema = nil;
++ (BOOL)saveFromArrayOfDictionaries:(NSArray *)theaters withContext:(NSManagedObjectContext *)moc{
+    for (NSDictionary *theater in theaters) {
+        [Cinema buildFromDictionary:theater withContext:moc];
+    }
+    
+    NSError *error;
+    if (![moc save:&error]) {
+        NSLog(@"Error save to database : %@", [error userInfo]);
+        return false;
+    }
+    return true;
+}
+
++ (Cinema *)buildFromDictionary:(NSDictionary *)cinemaInfo withContext:(NSManagedObjectContext *)moc{
     NSNumber *extId = nil;
     if ([[cinemaInfo objectForKey:@"id"] isKindOfClass:[NSString class]]) {
         extId = [[cinemaInfo objectForKey:@"id"] numericValue];
@@ -55,7 +67,7 @@
         extId = [cinemaInfo objectForKey:@"id"];
     }
     
-    cinema = [self cinemaExistForId:extId withContext:moc];
+    Cinema *cinema = [self cinemaExistForId:extId withContext:moc];
     
     if (nil == cinema) {
         cinema = [Cinema newCinemaObject:moc];
@@ -86,7 +98,11 @@
         cinema.geolocation = c;
         [c release];
     }
-    
+    return cinema;
+}
+
++ (BOOL)createOrReplaceFromDictionary:(NSDictionary *)cinemaInfo withContext:(NSManagedObjectContext *)moc {
+    [Cinema buildFromDictionary:cinemaInfo withContext:moc];    
     NSError *error;
     if (![moc save:&error]) {
         NSLog(@"Error save to database : %@", [error userInfo]);

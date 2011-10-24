@@ -95,13 +95,7 @@
             //NSLog(@"Data: %@", response);
             NSDictionary *json_data = [response JSONValue];
             NSArray *theaters = [json_data objectForKey:@"theaters"];
-            
-            for (NSDictionary *theater in theaters) {
-                if ([Cinema createOrReplaceFromDictionary:theater withContext:moc]){
-                    //
-                }
-            }
-            
+            [Cinema saveFromArrayOfDictionaries:theaters withContext:moc];
         }
         
         hudView.labelText = NSLocalizedString(@"Updating movies", @"");
@@ -117,17 +111,8 @@
             NSString *response = [request responseString];
             NSDictionary *json_data = [response JSONValue];
             NSArray *movies = [json_data objectForKey:@"cinemas"];
-            for (NSDictionary *movie in movies) {
-                if ([Movie createOrReplaceFromDictionary:movie withContext:moc]){
-                    //
-                }
-            }
             NSArray *afishas = [json_data objectForKey:@"afisha"];
-            for (NSDictionary *afisha in afishas) {
-                if ([Afisha createOrReplaceFromDictionary:afisha withContext:moc]){
-                    //
-                }
-            }
+            [Afisha saveFromArrayOfDictionaries:afishas andMovies:movies withContext:moc];
         }
         
         hudView.labelText = NSLocalizedString(@"Delete trash", @"");
@@ -176,6 +161,8 @@
                 [moc deleteObject:movie];
             }
         }
+        
+        [moc save:nil];
         
         [moc unlock];
         
