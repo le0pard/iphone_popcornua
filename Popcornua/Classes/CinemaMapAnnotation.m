@@ -14,7 +14,9 @@
 
 -(id)initWithCoordinate:(CLLocationCoordinate2D) c{
 	self = [super init];
-	coordinate = c;
+    if (self) {
+        coordinate = c;
+    }
 	return self;
 }
 

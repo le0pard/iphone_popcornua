@@ -126,18 +126,29 @@
     MKPinAnnotationView* pinView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:MyIdentifier];
     if (!pinView)
     {
-        MKPinAnnotationView* customPinView = [[[MKPinAnnotationView alloc]
+        MKPinAnnotationView* pinView = [[[MKPinAnnotationView alloc]
                                                initWithAnnotation:annotation reuseIdentifier:MyIdentifier] autorelease];
-        customPinView.animatesDrop = NO;
-        customPinView.canShowCallout = YES;
-        customPinView.draggable = NO;
-        return customPinView;
-    }
-    else
-    {
+        pinView.draggable = NO;
+        pinView.animatesDrop = NO;
+        pinView.enabled = YES;
+    } else {
         pinView.annotation = annotation;
     }
+    
+    if(annotation != mapView.userLocation){
+        pinView.pinColor = MKPinAnnotationColorRed;
+        pinView.canShowCallout = YES;
+        // Add a detail disclosure button to the callout.
+        pinView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        pinView.userInteractionEnabled = YES;
+    } else {
+        pinView.pinColor = MKPinAnnotationColorGreen;
+    }
     return pinView;
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+    NSLog(@"Done");
 }
 
 #pragma mark - Reverce geocoder

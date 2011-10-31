@@ -75,6 +75,8 @@
 		B3B89D09141C2E5400CCC495 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B89D04141C2E5400CCC495 /* NSObject+SBJSON.m */; };
 		B3B89D0A141C2E5400CCC495 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B89D06141C2E5400CCC495 /* NSString+SBJSON.m */; };
 		B3B89D0B141C2E5400CCC495 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B89D08141C2E5400CCC495 /* SBJSON.m */; };
+		B3C29440145F0FF1003A8FDB /* cinema_map_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = B3C2943E145F0FF1003A8FDB /* cinema_map_selected.png */; };
+		B3C29441145F0FF1003A8FDB /* cinema_map.png in Resources */ = {isa = PBXBuildFile; fileRef = B3C2943F145F0FF1003A8FDB /* cinema_map.png */; };
 		B3DC0B95142F7CF200E0E8E0 /* IASKAppSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DC0B6F142F7CF200E0E8E0 /* IASKAppSettingsViewController.m */; };
 		B3DC0B96142F7CF200E0E8E0 /* IASKAppSettingsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DC0B71142F7CF200E0E8E0 /* IASKAppSettingsWebViewController.m */; };
 		B3DC0B97142F7CF200E0E8E0 /* IASKSpecifierValuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DC0B73142F7CF200E0E8E0 /* IASKSpecifierValuesViewController.m */; };
@@ -226,6 +228,8 @@
 		B3B89D06141C2E5400CCC495 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
 		B3B89D07141C2E5400CCC495 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
 		B3B89D08141C2E5400CCC495 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		B3C2943E145F0FF1003A8FDB /* cinema_map_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cinema_map_selected.png; sourceTree = "<group>"; };
+		B3C2943F145F0FF1003A8FDB /* cinema_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cinema_map.png; sourceTree = "<group>"; };
 		B3DC0B6E142F7CF200E0E8E0 /* IASKAppSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKAppSettingsViewController.h; sourceTree = "<group>"; };
 		B3DC0B6F142F7CF200E0E8E0 /* IASKAppSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKAppSettingsViewController.m; sourceTree = "<group>"; };
 		B3DC0B70142F7CF200E0E8E0 /* IASKAppSettingsWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKAppSettingsWebViewController.h; sourceTree = "<group>"; };
@@ -706,6 +710,8 @@
 		B3DFD6741434829B00BE123A /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B3C2943E145F0FF1003A8FDB /* cinema_map_selected.png */,
+				B3C2943F145F0FF1003A8FDB /* cinema_map.png */,
 				B3DFD6751434829B00BE123A /* noimage.png */,
 			);
 			name = images;
@@ -813,6 +819,8 @@
 				B3DC0BCC142F946800E0E8E0 /* Settings.bundle in Resources */,
 				B3EFCEB4142F96BD00D1260F /* Root.strings in Resources */,
 				B3DFD6761434829B00BE123A /* noimage.png in Resources */,
+				B3C29440145F0FF1003A8FDB /* cinema_map_selected.png in Resources */,
+				B3C29441145F0FF1003A8FDB /* cinema_map.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
