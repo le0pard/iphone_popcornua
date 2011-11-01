@@ -8,17 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
+#import "Cinema.h"
 
 @interface CinemaMapAnnotation : NSObject <MKAnnotation>{
     CLLocationCoordinate2D coordinate;
     NSString *title;
     NSString *subtitle;
-    
+    Cinema *cinemaMain;
 }
 
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 @property (nonatomic, copy) NSString* title;
 @property (nonatomic, copy) NSString* subtitle;
+@property (nonatomic, retain) IBOutlet Cinema *cinemaMain;
 
 -(id)initWithCoordinate:(CLLocationCoordinate2D) c;
 

@@ -10,7 +10,7 @@
 
 @implementation CinemaMapAnnotation
 
-@synthesize title, subtitle, coordinate;
+@synthesize title, subtitle, coordinate, cinemaMain;
 
 -(id)initWithCoordinate:(CLLocationCoordinate2D) c{
 	self = [super init];
@@ -23,6 +23,7 @@
 -(void) dealloc {
     self.title = nil;
     self.subtitle = nil;
+    self.cinemaMain = nil;
 	[super dealloc];
 }
 

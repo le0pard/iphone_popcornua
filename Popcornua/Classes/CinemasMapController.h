@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "Cinema.h"
+#import "CinemaViewController.h"
 #import "CinemaMapAnnotation.h"
 #import "PopcornuaAppDelegate.h"
 

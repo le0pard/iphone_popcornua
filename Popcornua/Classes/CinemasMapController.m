@@ -47,6 +47,7 @@
             CinemaMapAnnotation *cinemaTap = [[CinemaMapAnnotation alloc] initWithCoordinate:cinema.geolocation.coordinate];
             cinemaTap.title = cinema.title;
             cinemaTap.subtitle = cinema.address;
+            cinemaTap.cinemaMain = cinema;
             [mapView addAnnotation:cinemaTap];
             [cinemaTap release];
             
@@ -126,7 +127,7 @@
     MKPinAnnotationView* pinView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:MyIdentifier];
     if (!pinView)
     {
-        MKPinAnnotationView* pinView = [[[MKPinAnnotationView alloc]
+        pinView = [[[MKPinAnnotationView alloc]
                                                initWithAnnotation:annotation reuseIdentifier:MyIdentifier] autorelease];
         pinView.draggable = NO;
         pinView.animatesDrop = NO;
@@ -148,7 +149,27 @@
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-    NSLog(@"Done");
+    CinemaViewController *cinemaController = [[CinemaViewController alloc] initWithNibName:@"CinemaViewController" bundle:nil];
+    CinemaMapAnnotation *anotation = (CinemaMapAnnotation *)view.annotation;
+	cinemaController.cinemaMain = anotation.cinemaMain;
+    
+    // GA begin
+    NSError *error;
+    if (![[GANTracker sharedTracker] setCustomVariableAtIndex:1
+                                                         name:@"Cinema Selected"
+                                                        value:anotation.cinemaMain.title
+                                                    withError:&error]) {
+        NSLog(@"Error: %@", "Error load GA!");
+    }
+    if (![[GANTracker sharedTracker] trackPageview:@"/cinema_selected"
+                                         withError:&error]) {
+        NSLog(@"Error: %@", "Error load GA!");
+    }
+    [[GANTracker sharedTracker] dispatch];
+    // GA end
+    
+	[self.navigationController pushViewController:cinemaController animated:YES];
+    [cinemaController release];
 }
 
 #pragma mark - Reverce geocoder

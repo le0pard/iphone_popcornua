@@ -46,7 +46,7 @@ static const NSInteger kGANDispatchPeriodSec = 10;
     [[GANTracker sharedTracker] startTrackerWithAccountID:@"UA-7068020-10"
                                            dispatchPeriod:kGANDispatchPeriodSec
                                                  delegate:nil];
-    [[GANTracker sharedTracker] setSampleRate:98];
+    //[[GANTracker sharedTracker] setSampleRate:100];
     NSError *error;
     if (![[GANTracker sharedTracker] trackPageview:@"/"
                                          withError:&error]) {
