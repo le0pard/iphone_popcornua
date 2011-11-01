@@ -56,6 +56,7 @@
 		B3A319ED1413A46B004DCCBE /* Cinema.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A319EC1413A46A004DCCBE /* Cinema.m */; };
 		B3B321E4142E82D2004E6C68 /* AfishaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B321E2142E82D1004E6C68 /* AfishaViewController.m */; };
 		B3B321E8142E8313004E6C68 /* AfishaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3B321E7142E8313004E6C68 /* AfishaViewController.xib */; };
+		B3B5E9BA146016DD003A5E6B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B39135E71412D5100053C84B /* InfoPlist.strings */; };
 		B3B89CC2141C189C00CCC495 /* PCUDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B89CC1141C189C00CCC495 /* PCUDataController.m */; };
 		B3B89CD9141C19A000CCC495 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B89CC6141C19A000CCC495 /* ASIAuthenticationDialog.m */; };
 		B3B89CDA141C19A000CCC495 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B89CC9141C19A000CCC495 /* ASIDataCompressor.m */; };
@@ -192,6 +193,7 @@
 		B3B321E1142E82D1004E6C68 /* AfishaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AfishaViewController.h; path = Classes/AfishaViewController.h; sourceTree = "<group>"; };
 		B3B321E2142E82D1004E6C68 /* AfishaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AfishaViewController.m; path = Classes/AfishaViewController.m; sourceTree = "<group>"; };
 		B3B321E7142E8313004E6C68 /* AfishaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AfishaViewController.xib; path = VIews/AfishaViewController.xib; sourceTree = "<group>"; };
+		B3B5E9B9146016DD003A5E6B /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = Resources/uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B3B89CC0141C189C00CCC495 /* PCUDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCUDataController.h; path = Classes/Data/PCUDataController.h; sourceTree = "<group>"; };
 		B3B89CC1141C189C00CCC495 /* PCUDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCUDataController.m; path = Classes/Data/PCUDataController.m; sourceTree = "<group>"; };
 		B3B89CC5141C19A000CCC495 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
@@ -772,6 +774,7 @@
 			knownRegions = (
 				en,
 				ru,
+				uk,
 			);
 			mainGroup = B39135351412A75A0053C84B;
 			productRefGroup = B39135411412A75A0053C84B /* Products */;
@@ -821,6 +824,7 @@
 				B3DFD6761434829B00BE123A /* noimage.png in Resources */,
 				B3C29440145F0FF1003A8FDB /* cinema_map_selected.png in Resources */,
 				B3C29441145F0FF1003A8FDB /* cinema_map.png in Resources */,
+				B3B5E9BA146016DD003A5E6B /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -957,6 +961,7 @@
 			children = (
 				B39135EB1412D57B0053C84B /* en */,
 				B39135ED1412D5840053C84B /* ru */,
+				B3B5E9B9146016DD003A5E6B /* uk */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

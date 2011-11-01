@@ -12,6 +12,8 @@
 #import "Afisha.h"
 #import "NSStringUtil.h"
 #import "ImageLoadingOperation.h"
+#import "NSString+HTML.h"
+#import "NSStringUtil.h"
 
 @interface MovieCell : UITableViewCell {
     UILabel *title;

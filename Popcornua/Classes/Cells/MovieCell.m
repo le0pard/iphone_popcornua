@@ -22,8 +22,8 @@
 }
 
 - (void)setCellByAfisha:(Afisha *)afisha{
-    self.title.text = afisha.movie.title;
-    self.originalTitle.text = afisha.movie.orig_title;
+    self.title.text = [afisha.movie.title stringByConvertingHTMLToPlainText];
+    self.originalTitle.text = [afisha.movie.orig_title stringByConvertingHTMLToPlainText];
     self.yearLabel.text = [NSString stringWithFormat:@"%@:", NSLocalizedString(@"Year", @"")];
     if (afisha.movie.year != nil && ![afisha.movie.year isEqualToString:@"0"]){
         self.year.text = afisha.movie.year;
