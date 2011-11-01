@@ -1,0 +1,42 @@
+
+"Cinemas"                       = "Кінотеатри";
+"Movies"                        = "Фільми";
+"Map"                           = "Карта";
+"Settings"                      = "Налаштування";
+
+"Loading"                       = "Завантаження";
+"updating program data"         = "оновлення даних програми";
+"Updating cinemas"              = "Оновлення кінотеатрів";
+"Updating movies"               = "Оновлення фільмів";
+"Cleanup data"                  = "Очищення даних";
+"Delete trash"                  = "Видалення сміття";
+
+"SatellitView"                  = "Супутник";
+"MapView"                       = "Карта";
+
+"Movie"                         = "Фільм";
+"Cinema"                        = "Кінотеатр";
+
+"Year"                          = "Рік";
+"Hall"                          = "Зал";
+"Price"                         = "Ціни";
+"Times"                         = "Час";
+"Not set"                       = "Не вказано";
+
+"Movie Name"                    = "Назва фільму";
+"Movie Year"                    = "Рік випуску";
+"Movie Casts"                   = "У ролях";
+"Movie Description"             = "Опис";
+"Movie Afisha"                  = "Афіша";
+
+"Cinema Name"                   = "Кінотеатр";
+"Afisha Time"                   = "Час";
+"Afisha Price"                  = "Ціна";
+"Cinema Phone"                  = "Телефон";
+"Cinema Site"                   = "Web сайт";
+
+"Call Title"                    = "Телефонувати";
+"Call Descr"                    = "Зателефонувати %@?";
+"Yes"                           = "Так";
+"No"                            = "Ні";
+"Back"                          = "Назад";
