@@ -59,7 +59,12 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTableView:) name:@"updateTableViews" object:nil];
     
-    [self fetchMoviesTodayRecords:mainDelegate.managedObjectContext];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults boolForKey:@"updateOnStartup"]){
+        [mainDelegate syncDataCore];
+    } else {
+        [self fetchMoviesTodayRecords:mainDelegate.managedObjectContext];
+    }
     
     UIBarButtonItem *syncButton = [[UIBarButtonItem alloc]
                                    initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 

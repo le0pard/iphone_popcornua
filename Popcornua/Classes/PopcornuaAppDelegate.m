@@ -60,11 +60,6 @@ static const NSInteger kGANDispatchPeriodSec = 10;
     [self.window addSubview:self.rootController.view];
     [self.window makeKeyAndVisible];
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if ([defaults boolForKey:@"updateOnStartup"]){
-        [self syncDataCore];
-    }
-    
     return YES;
 }
 
